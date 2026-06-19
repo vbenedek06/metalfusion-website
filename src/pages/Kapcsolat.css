@@ -1,0 +1,111 @@
+.kapcsolat__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+.kapcsolat__form-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.kapcsolat__lead {
+  margin-bottom: 8px;
+}
+
+.kapcsolat__side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 96px;
+}
+
+.kapcsolat__card {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.kapcsolat__card h3 {
+  font-size: 1.2rem;
+}
+
+.kapcsolat__card ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 0.95rem;
+}
+
+.kapcsolat__card li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kapcsolat__card li span {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+.kapcsolat__card a {
+  color: var(--accent-strong);
+}
+
+.kapcsolat__map {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--bg-elev) 0%, var(--bg-elev-2) 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+}
+
+.kapcsolat__map-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(91, 143, 185, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 143, 185, 0.18) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.45;
+  mask-image: radial-gradient(ellipse at 30% 60%, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 30% 60%, black 30%, transparent 75%);
+}
+
+.kapcsolat__map-pin {
+  position: relative;
+  padding: 8px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: rgba(11, 13, 16, 0.7);
+  backdrop-filter: blur(6px);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--text);
+}
+
+@media (max-width: 960px) {
+  .kapcsolat__grid {
+    grid-template-columns: 1fr;
+  }
+  .kapcsolat__side {
+    position: static;
+  }
+}

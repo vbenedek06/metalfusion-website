@@ -1,0 +1,40 @@
+.refs__grid {
+  gap: 28px;
+}
+
+.refs__industries ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.refs__industries li {
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.refs__industries li:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .refs__industries ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .refs__industries ul {
+    grid-template-columns: 1fr;
+  }
+}

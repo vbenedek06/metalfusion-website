@@ -1,0 +1,30 @@
+METALFUSION WEBOLDAL – INDÍTÁSI ÚTMUTATÓ
+=========================================
+
+ELŐFELTÉTEL: Node.js telepítve legyen (https://nodejs.org)
+
+FEJLESZTŐI MÓD (helyi néző):
+  1. Nyissa meg a Terminalt
+  2. Navigáljon a mappába: cd metalfusion-website
+  3. Futtassa: npm install
+  4. Futtassa: npm run dev
+  5. Nyissa meg: http://localhost:5173
+
+PRODUKCIÓS BUILD:
+  npm run build
+  (eredmény: dist/ mappa – ezt kell feltölteni a tárhelyre)
+
+OLDALAK:
+  /                  → Főoldal
+  /rolunk            → Bemutatkozás
+  /szolgaltatasok    → Szolgáltatások
+  /szolgaltatasok/[slug] → Egyedi szolgáltatás
+  /referenciak       → Referencia lista
+  /referenciak/[slug]    → Egyedi projekt
+  /galeria           → Képgaléria (lightbox)
+  /ajanlatkeres      → Ajánlatkérő form
+  /kapcsolat         → Kapcsolatfelvétel
+  /adatvedelem       → Adatkezelési tájékoztató
+  /404               → Hibakezelő oldal
+
+TECHNOLÓGIA: Vite + React 18 + React Router v6
