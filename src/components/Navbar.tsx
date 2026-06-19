@@ -39,7 +39,7 @@ export default function Navbar() {
       <div className="container nav__inner">
         <Link to="/" className="nav__brand" aria-label="MetalFusion főoldal">
           <span className="nav__brand-mark" aria-hidden>
-            <img src="/images/logo.svg" alt="" />
+            <img src="/images/logo.png" alt="" />
           </span>
           <span className="nav__brand-block">
             <span className="nav__brand-text">METALFUSION</span>
@@ -69,11 +69,14 @@ export default function Navbar() {
           </button>
         </div>
 
-        <Link to="/kapcsolat" className="btn btn--primary nav__cta">
-          Ajánlatkérés
-          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.9" aria-hidden>
-            <path d="M9 18l6-6-6-6" />
-          </svg>
+        <Link to="/kapcsolat" className="nav__cta">
+          <span className="nav__cta-label">Ajánlatkérés</span>
+          <span className="nav__cta-arrow" aria-hidden>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+          <span className="nav__cta-shine" aria-hidden />
         </Link>
 
         <button
@@ -102,11 +105,14 @@ export default function Navbar() {
               {l.label}
             </NavLink>
           ))}
-          <Link to="/kapcsolat" className="btn btn--primary nav__mobile-cta">
-            Ajánlatkérés
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.9" aria-hidden>
-              <path d="M9 18l6-6-6-6" />
-            </svg>
+          <Link to="/kapcsolat" className="nav__cta nav__mobile-cta">
+            <span className="nav__cta-label">Ajánlatkérés</span>
+            <span className="nav__cta-arrow" aria-hidden>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+            <span className="nav__cta-shine" aria-hidden />
           </Link>
         </nav>
       </div>

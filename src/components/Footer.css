@@ -120,6 +120,27 @@
   letter-spacing: 0;
 }
 
+.footer__bottom-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.footer__bottom-links a {
+  color: rgba(218, 227, 236, 0.88);
+  transition: color 0.18s var(--ease);
+}
+
+.footer__bottom-links a:hover {
+  color: var(--accent-strong);
+}
+
+.footer__bottom-links span[aria-hidden] {
+  opacity: 0.4;
+}
+
 @media (max-width: 900px) {
   .footer__grid {
     grid-template-columns: 1fr 1fr;

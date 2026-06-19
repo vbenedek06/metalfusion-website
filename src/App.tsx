@@ -8,6 +8,7 @@ import Szolgaltatasok from './pages/Szolgaltatasok';
 import Referenciak from './pages/Referenciak';
 import Geppark from './pages/Geppark';
 import Kapcsolat from './pages/Kapcsolat';
+import Adatvedelem from './pages/Adatvedelem';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/referenciak" element={<Referenciak />} />
           <Route path="/geppark" element={<Geppark />} />
           <Route path="/kapcsolat" element={<Kapcsolat />} />
+          <Route path="/adatvedelem" element={<Adatvedelem />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <Link to="/" className="footer__brand-link" aria-label="MetalFusion főoldal">
-              <img src="/images/logo.svg" alt="" />
+              <img src="/images/logo.png" alt="" />
               <span>
                 METALFUSION
                 <small>Precízió a fémben</small>
@@ -69,7 +69,11 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <span>© {new Date().getFullYear()} MetalFusion. Minden jog fenntartva.</span>
-          <span className="footer__meta">Precíziós megmunkálás · Budapest</span>
+          <span className="footer__bottom-links">
+            <Link to="/adatvedelem">Adatvédelmi tájékoztató</Link>
+            <span aria-hidden>·</span>
+            <span className="footer__meta">Precíziós megmunkálás · Budapest</span>
+          </span>
         </div>
       </div>
     </footer>
