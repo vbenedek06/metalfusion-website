@@ -122,6 +122,13 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* iOS Safari: stop landscape text inflation */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 html,
 body {
   margin: 0;
@@ -135,12 +142,15 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* Kill the grey/blue tap flash on touch — we provide our own :active states */
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   background: var(--page-bg);
   background-attachment: fixed;
   min-height: 100vh;
+  min-height: 100dvh;
   transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 
@@ -286,6 +296,12 @@ p {
   transform: translateY(-1px);
 }
 
+/* Touch feedback — fires on tap where :hover never does */
+.btn:active {
+  transform: translateY(0) scale(0.97);
+  transition-duration: 0.06s;
+}
+
 .btn--block {
   width: 100%;
 }
@@ -343,6 +359,46 @@ p {
   transform: none;
 }
 
+/* ------------------------------------------------------------
+   Scroll-reveal system (driven by useScrollReveal + data attrs)
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+    will-change: opacity, transform;
+  }
+
+  [data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Staggered children — each direct child eases in slightly after the last */
+  [data-reveal-stagger] > * {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+    will-change: opacity, transform;
+  }
+
+  [data-reveal-stagger].is-revealed > * {
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-reveal-stagger].is-revealed > *:nth-child(1) { transition-delay: 0.04s; }
+  [data-reveal-stagger].is-revealed > *:nth-child(2) { transition-delay: 0.1s; }
+  [data-reveal-stagger].is-revealed > *:nth-child(3) { transition-delay: 0.16s; }
+  [data-reveal-stagger].is-revealed > *:nth-child(4) { transition-delay: 0.22s; }
+  [data-reveal-stagger].is-revealed > *:nth-child(5) { transition-delay: 0.28s; }
+  [data-reveal-stagger].is-revealed > *:nth-child(6) { transition-delay: 0.34s; }
+  [data-reveal-stagger].is-revealed > *:nth-child(7) { transition-delay: 0.4s; }
+  [data-reveal-stagger].is-revealed > *:nth-child(8) { transition-delay: 0.46s; }
+  [data-reveal-stagger].is-revealed > *:nth-child(n + 9) { transition-delay: 0.5s; }
+}
+
 ::selection {
   background: var(--accent);
   color: #ffffff;
@@ -364,6 +420,28 @@ button:focus-visible,
 .btn:focus-visible {
   outline: 2px solid var(--accent-strong);
   outline-offset: 3px;
+}
+
+/* ============================================================
+   MOBILE FOUNDATIONS — touch feel, safe areas, motion
+   ============================================================ */
+
+/* The global smooth scroll must yield to a user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Keep the fixed navbar clear of landscape notches, footer clear of the
+   home indicator, on devices that expose safe-area insets (iPhone etc.) */
+.nav {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+.footer {
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* ============================================================
@@ -566,17 +644,23 @@ button:focus-visible,
 }
 
 :root[data-theme='light'] .nav__mobile {
-  background: rgba(255, 255, 255, 0.98) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98)) !important;
   border-top-color: var(--rule-strong) !important;
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.16) !important;
 }
 
 :root[data-theme='light'] .nav__mobile-link {
   color: var(--text-dim) !important;
-  border-bottom-color: var(--rule) !important;
+  background: #ffffff !important;
+  border-color: var(--rule) !important;
+  box-shadow: 0 10px 22px -18px rgba(15, 23, 42, 0.22);
 }
 
 :root[data-theme='light'] .nav__mobile-link--active {
-  color: var(--text) !important;
+  color: var(--accent) !important;
+  background: var(--accent-soft) !important;
+  border-color: rgba(31, 114, 216, 0.28) !important;
 }
 
 :root[data-theme='light'] .nav__toggle {

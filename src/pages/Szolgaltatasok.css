@@ -190,6 +190,12 @@
   box-shadow: 0 32px 70px -22px rgba(0, 0, 0, 0.7);
 }
 
+.service-tile__link:active {
+  border-color: var(--accent);
+  transform: translateY(0) scale(0.99);
+  transition-duration: 0.08s;
+}
+
 .service-tile__link:hover .service-tile__media img {
   transform: scale(1.06);
   filter: grayscale(8%) saturate(1) contrast(1.05) brightness(0.85);
@@ -730,6 +736,10 @@
 
   .service-tile__media {
     aspect-ratio: 16 / 10;
+  }
+
+  .service-tile__desc {
+    font-size: 1rem;
   }
 
   .process {

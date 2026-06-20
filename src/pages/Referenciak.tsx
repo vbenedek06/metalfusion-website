@@ -123,7 +123,7 @@ export default function Referenciak() {
 
       <section className="refs-cases-section">
         <div className="container">
-          <header className="refs-head">
+          <header className="refs-head" data-reveal>
             <div className="refs-head__meta">
               <span className="refs-num">01 / 03</span>
               <span className="refs-tag">Case studies</span>
@@ -142,7 +142,7 @@ export default function Referenciak() {
               </button>
             </div>
           ) : (
-            <ul className="refs-cases">
+            <ul className="refs-cases" data-reveal-stagger>
               {filteredRefs.map((r, i) => (
                 <li key={r.slug} className={`refs-case refs-case--${i % 2 === 0 ? 'l' : 'r'}`}>
                   <button
@@ -199,7 +199,7 @@ export default function Referenciak() {
 
       <section className="refs-mosaic-section">
         <div className="container">
-          <header className="refs-head">
+          <header className="refs-head" data-reveal>
             <div className="refs-head__meta">
               <span className="refs-num">02 / 03</span>
               <span className="refs-tag">Workshop &amp; components</span>
@@ -243,7 +243,7 @@ export default function Referenciak() {
 
       <section className="refs-industries-section">
         <div className="container">
-          <header className="refs-head">
+          <header className="refs-head" data-reveal>
             <div className="refs-head__meta">
               <span className="refs-num">03 / 03</span>
               <span className="refs-tag">Industries</span>
@@ -254,7 +254,7 @@ export default function Referenciak() {
             </div>
           </header>
 
-          <ul className="refs-industries">
+          <ul className="refs-industries" data-reveal-stagger>
             {industries.map((i) => (
               <li key={i} className="refs-industry">
                 <span className="refs-industry__dot" aria-hidden />
@@ -267,7 +267,7 @@ export default function Referenciak() {
 
       <section className="refs-cta">
         <div className="container">
-          <div className="refs-cta__box">
+          <div className="refs-cta__box" data-reveal>
             <div className="refs-cta__grid" aria-hidden />
             <div className="refs-cta__copy">
               <span className="refs-num refs-num--light">Let's talk</span>

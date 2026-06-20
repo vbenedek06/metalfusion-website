@@ -112,7 +112,7 @@ export default function Home() {
 
       <section className="home__refs-band">
         <div className="container">
-          <div className="home__refs-head">
+          <div className="home__refs-head" data-reveal>
             <div className="home__refs-title-block">
               <span className="home__section-kicker">References</span>
               <h2 className="home__refs-title">Real solutions for real production projects</h2>
@@ -125,7 +125,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="home__refs-grid">
+          <div className="home__refs-grid" data-reveal-stagger>
             {featuredRefs.map((r) => (
               <Link key={r.slug} to="/referenciak" className="home__ref-link">
                 <ReferenceCard reference={r} compact />
@@ -137,9 +137,9 @@ export default function Home() {
 
       <section className="home__services-band">
         <div className="container">
-          <span className="home__section-kicker">Services</span>
+          <span className="home__section-kicker" data-reveal>Services</span>
           <div className="home__services-shell">
-            <ul className="home__services-row">
+            <ul className="home__services-row" data-reveal-stagger>
               {homeCapabilities.map((s) => (
                 <li key={s.slug} className="home__service-item">
                   <Link to="/szolgaltatasok" className="home__service-link">
@@ -174,7 +174,7 @@ export default function Home() {
 
       <section className="home__cta-bar">
         <div className="container home__cta-inner">
-          <div className="home__cta-copy">
+          <div className="home__cta-copy" data-reveal>
             <h2 className="home__cta-title">Request a <span>quote</span> for your project</h2>
             <p className="home__cta-lead">
               Send a technical drawing or 3D model and we will respond within 24 hours.
@@ -195,7 +195,7 @@ export default function Home() {
             </div>
           </div>
 
-          <ul className="home__cta-contact">
+          <ul className="home__cta-contact" data-reveal>
             <li>
               <span className="home__cta-ico" aria-hidden>
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6">

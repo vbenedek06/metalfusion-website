@@ -174,7 +174,7 @@ export default function Rolunk() {
 
       <section className="about-stats">
         <div className="container">
-          <ul className="about-stats__row">
+          <ul className="about-stats__row" data-reveal-stagger>
             {stats.map((s) => (
               <li key={s.label} className="about-stats__cell">
                 <span className="about-stats__value">{s.value}</span>
@@ -188,7 +188,7 @@ export default function Rolunk() {
 
       <section className="about-principles">
         <div className="container">
-          <header className="about-head">
+          <header className="about-head" data-reveal>
             <div className="about-head__meta">
               <span className="about-num">02 / 05</span>
               <span className="about-section-tag">Our principles</span>
@@ -199,7 +199,7 @@ export default function Rolunk() {
             </div>
           </header>
 
-          <ul className="about-principles__grid">
+          <ul className="about-principles__grid" data-reveal-stagger>
             {principles.map((p) => (
               <li key={p.title} className="about-principle">
                 <div className="about-principle__corner" aria-hidden>
@@ -225,7 +225,7 @@ export default function Rolunk() {
 
       <section className="about-timeline">
         <div className="container">
-          <header className="about-head">
+          <header className="about-head" data-reveal>
             <div className="about-head__meta">
               <span className="about-num">03 / 05</span>
               <span className="about-section-tag">Our story</span>
@@ -236,7 +236,7 @@ export default function Rolunk() {
             </div>
           </header>
 
-          <ol className="about-milestones">
+          <ol className="about-milestones" data-reveal-stagger>
             <span className="about-milestones__rail" aria-hidden />
             {milestones.map((m) => (
               <li key={m.year} className="about-milestone">
@@ -272,7 +272,7 @@ export default function Rolunk() {
           </figure>
 
           <div className="about-workshop__content">
-            <div className="about-head about-head--inline">
+            <div className="about-head about-head--inline" data-reveal>
               <div className="about-head__meta">
                 <span className="about-num">04 / 05</span>
                 <span className="about-section-tag">Workshop &amp; capabilities</span>
@@ -326,7 +326,7 @@ export default function Rolunk() {
 
       <section className="about-cta">
         <div className="container">
-          <div className="about-cta__box">
+          <div className="about-cta__box" data-reveal>
             <div className="about-cta__copy">
               <span className="about-num about-num--light">05 / 05 · Let's talk</span>
               <h2>Let's work together on your next project.</h2>

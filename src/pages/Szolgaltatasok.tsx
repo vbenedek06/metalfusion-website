@@ -205,7 +205,7 @@ export default function Szolgaltatasok() {
 
       <section className="services-grid-section">
         <div className="container">
-          <header className="services-head">
+          <header className="services-head" data-reveal>
             <div className="services-head__meta">
               <span className="services-num">01 / 04</span>
               <span className="services-tag">What we manufacture</span>
@@ -216,7 +216,7 @@ export default function Szolgaltatasok() {
             </div>
           </header>
 
-          <ul className="services-grid">
+          <ul className="services-grid" data-reveal-stagger>
             {services.map((s, i) => {
               const visual = serviceVisuals[s.slug];
               return (
@@ -267,7 +267,7 @@ export default function Szolgaltatasok() {
 
       <section className="services-process">
         <div className="container">
-          <header className="services-head">
+          <header className="services-head" data-reveal>
             <div className="services-head__meta">
               <span className="services-num">02 / 04</span>
               <span className="services-tag">Process</span>
@@ -278,7 +278,7 @@ export default function Szolgaltatasok() {
             </div>
           </header>
 
-          <ol className="process">
+          <ol className="process" data-reveal-stagger>
             <span className="process__rail" aria-hidden />
             {process.map((step, i) => (
               <li key={step.num} className="process__step" style={{ '--step-i': i } as React.CSSProperties}>
@@ -298,7 +298,7 @@ export default function Szolgaltatasok() {
 
       <section className="services-tech">
         <div className="container services-tech__grid">
-          <header className="services-head services-head--inline services-tech__head">
+          <header className="services-head services-head--inline services-tech__head" data-reveal>
             <div className="services-head__meta">
               <span className="services-num">03 / 04</span>
               <span className="services-tag">Material &amp; tolerance</span>
@@ -348,7 +348,7 @@ export default function Szolgaltatasok() {
 
       <section className="services-cta">
         <div className="container">
-          <div className="services-cta__box">
+          <div className="services-cta__box" data-reveal>
             <div className="services-cta__grid" aria-hidden />
             <div className="services-cta__copy">
               <span className="services-num services-num--light">04 / 04 · Let's talk</span>

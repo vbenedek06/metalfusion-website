@@ -31,6 +31,12 @@
   transform: scale(1.04);
 }
 
+.machine-card:active {
+  border-color: var(--accent);
+  transform: translateY(0) scale(0.99);
+  transition-duration: 0.08s;
+}
+
 .machine-card__body {
   padding: 22px 24px 26px;
   display: flex;

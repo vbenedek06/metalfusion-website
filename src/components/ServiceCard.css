@@ -32,6 +32,12 @@
   opacity: 1;
 }
 
+.service-card:active {
+  border-color: var(--accent);
+  transform: translateY(0) scale(0.99);
+  transition-duration: 0.08s;
+}
+
 .service-card__num {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.78rem;

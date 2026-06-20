@@ -470,6 +470,12 @@
   color: var(--text);
 }
 
+.contact-form__chip:active {
+  transform: scale(0.96);
+  border-color: var(--accent);
+  transition-duration: 0.08s;
+}
+
 .contact-form__chip input {
   position: absolute;
   opacity: 0;
@@ -563,6 +569,11 @@
   gap: 14px;
 }
 
+.contact-form__submit:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.08s;
+}
+
 .contact-form__submit:focus-visible {
   outline: 2px solid var(--accent-strong);
   outline-offset: 3px;
@@ -625,6 +636,12 @@
     linear-gradient(180deg, rgba(47, 141, 255, 0.06), rgba(47, 141, 255, 0.01)),
     rgba(10, 14, 19, 0.85);
   transform: translateY(-2px);
+}
+
+.contact-channel__link:active {
+  transform: translateY(0) scale(0.99);
+  border-color: var(--accent);
+  transition-duration: 0.08s;
 }
 
 .contact-channel__link:hover .contact-channel__arrow {
@@ -1126,6 +1143,12 @@
     grid-template-columns: 1fr;
   }
 
+  /* Larger, easier-to-tap topic chips on touch screens */
+  .contact-form__chip {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+
   .contact-form__footer {
     flex-direction: column;
     align-items: stretch;
@@ -1145,6 +1168,38 @@
     right: 14px;
     bottom: 14px;
     padding: 12px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Drop the trailing arrow column so the value never gets squeezed */
+  .contact-channel__link {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .contact-channel__arrow {
+    display: none;
+  }
+
+  .contact-hero__meta {
+    gap: 12px 22px;
+  }
+
+  /* Reclaim horizontal space on small phones */
+  .contact-form-card {
+    padding: 22px 18px;
+  }
+
+  .contact-faq summary {
+    padding: 16px 18px;
+    font-size: 1rem;
+    gap: 14px;
+  }
+
+  .contact-map__pin strong {
+    font-size: 0.92rem;
   }
 }
 

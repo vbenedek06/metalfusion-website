@@ -177,7 +177,7 @@ export default function Kapcsolat() {
       <section className="contact-main">
         <div className="container contact-main__grid">
           {/* FORM CARD */}
-          <div className="contact-form-card">
+          <div className="contact-form-card" data-reveal>
             <header className="contact-form-card__head">
               <span className="contact-form-card__eyebrow">Quote request form</span>
               <h2>Briefly describe the task.</h2>
@@ -301,7 +301,7 @@ export default function Kapcsolat() {
 
           {/* CHANNELS SIDEBAR */}
           <aside className="contact-side">
-            <ul className="contact-channels">
+            <ul className="contact-channels" data-reveal-stagger>
               {channels.map((c) => (
                 <li key={c.key} className="contact-channel">
                   <a
@@ -326,7 +326,7 @@ export default function Kapcsolat() {
               ))}
             </ul>
 
-            <div className="contact-hours">
+            <div className="contact-hours" data-reveal>
               <span className="contact-hours__head">Opening hours</span>
               <ul>
                 <li><span>Mon-Fri</span><strong>7:00-16:00</strong></li>
@@ -344,7 +344,7 @@ export default function Kapcsolat() {
       {/* MAP */}
       <section className="contact-map-section">
         <div className="container">
-          <header className="contact-map-head">
+          <header className="contact-map-head" data-reveal>
             <div>
               <span className="contact-map-head__eyebrow">Workshop</span>
               <h2>1108 Budapest, Kozma Street</h2>
@@ -388,13 +388,13 @@ export default function Kapcsolat() {
       {/* FAQ */}
       <section className="contact-faq-section">
         <div className="container contact-faq__grid">
-          <div className="contact-faq__intro">
+          <div className="contact-faq__intro" data-reveal>
             <span className="contact-faq__eyebrow">FAQ</span>
             <h2>Before you send a quote request.</h2>
             <p>A few answers to common questions. If something is missing, feel free to write to us.</p>
           </div>
 
-          <ul className="contact-faq">
+          <ul className="contact-faq" data-reveal-stagger>
             <li>
               <details>
                 <summary>

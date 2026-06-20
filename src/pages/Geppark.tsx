@@ -71,7 +71,7 @@ export default function Geppark() {
 
       <section className="geppark-stats">
         <div className="container">
-          <ul className="geppark-stats__row">
+          <ul className="geppark-stats__row" data-reveal-stagger>
             {stats.map((s) => (
               <li key={s.label} className="geppark-stats__cell">
                 <span className="geppark-stats__value">{s.value}</span>
@@ -104,7 +104,7 @@ export default function Geppark() {
 
       <section className="geppark-fleet">
         <div className="container">
-          <header className="geppark-head">
+          <header className="geppark-head" data-reveal>
             <div className="geppark-head__meta">
               <span className="geppark-num">01 / 03</span>
               <span className="geppark-tag">Production machines</span>
@@ -115,7 +115,7 @@ export default function Geppark() {
             </div>
           </header>
 
-          <ol className="geppark-list">
+          <ol className="geppark-list" data-reveal-stagger>
             {production.map((m, i) => (
               <li
                 key={m.slug}
@@ -189,7 +189,7 @@ export default function Geppark() {
 
       <section className="geppark-matrix-section">
         <div className="container">
-          <header className="geppark-head">
+          <header className="geppark-head" data-reveal>
             <div className="geppark-head__meta">
               <span className="geppark-num">02 / 03</span>
               <span className="geppark-tag">Comparison</span>
@@ -200,7 +200,7 @@ export default function Geppark() {
             </div>
           </header>
 
-          <div className="geppark-matrix">
+          <div className="geppark-matrix" data-reveal>
             <table className="geppark-table">
               <thead>
                 <tr>
@@ -252,7 +252,7 @@ export default function Geppark() {
               </div>
             </header>
 
-            <div className="geppark-quality__box">
+            <div className="geppark-quality__box" data-reveal>
               <figure className="geppark-quality__media">
                 <img src={quality.image} alt={quality.name} loading="lazy" decoding="async" />
                 <div className="geppark-card__corners" aria-hidden>
@@ -295,7 +295,7 @@ export default function Geppark() {
 
       <section className="geppark-cta">
         <div className="container">
-          <div className="geppark-cta__box">
+          <div className="geppark-cta__box" data-reveal>
             <div className="geppark-cta__grid" aria-hidden />
             <div className="geppark-cta__copy">
               <span className="geppark-num geppark-num--light">Let's talk</span>

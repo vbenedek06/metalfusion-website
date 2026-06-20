@@ -435,6 +435,14 @@
     font-size: 1.38rem;
   }
 
+  .home__cta-lead {
+    font-size: 1rem;
+  }
+
+  .home__service-text {
+    font-size: 0.9rem;
+  }
+
   .home__cta-actions {
     gap: 10px;
   }

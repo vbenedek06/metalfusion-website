@@ -4,6 +4,7 @@
   left: 0;
   right: 0;
   z-index: 50;
+  isolation: isolate;
   background: rgba(2, 5, 8, 0.68);
   border-bottom: 1px solid rgba(86, 106, 128, 0.26);
   backdrop-filter: saturate(130%) blur(12px);
@@ -22,6 +23,8 @@
 }
 
 .nav__inner {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -336,8 +339,15 @@
 .nav__mobile {
   position: fixed;
   inset: 70px 0 0 0;
+  z-index: 1;
+  height: calc(100dvh - 70px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: rgba(2, 5, 8, 0.98);
   border-top: 1px solid rgba(86, 106, 128, 0.34);
+  box-shadow: 0 32px 70px rgba(0, 0, 0, 0.38);
+  backdrop-filter: saturate(135%) blur(18px);
+  -webkit-backdrop-filter: saturate(135%) blur(18px);
   transform: translateY(-8px);
   opacity: 0;
   pointer-events: none;
@@ -353,20 +363,57 @@
 .nav__mobile-links {
   display: flex;
   flex-direction: column;
+  width: min(100%, 540px);
+  margin: 0 auto;
   padding: 24px var(--gutter);
-  gap: 4px;
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+  gap: 10px;
 }
 
 .nav__mobile-link {
-  padding: 16px 12px;
-  border-bottom: 1px solid rgba(86, 106, 128, 0.34);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 54px;
+  padding: 15px 16px;
+  border: 1px solid rgba(86, 106, 128, 0.34);
   font-size: 1.02rem;
   font-weight: 700;
   color: rgba(238, 245, 252, 0.8);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.035);
+  transition: color 0.18s var(--ease), background 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+
+.nav__mobile-link::after {
+  content: '→';
+  font-size: 1rem;
+  opacity: 0.5;
+  transform: translateX(0);
+  transition: transform 0.18s var(--ease), opacity 0.18s var(--ease);
 }
 
 .nav__mobile-link--active {
   color: var(--text);
+  border-color: rgba(83, 162, 255, 0.6);
+  background: rgba(47, 141, 255, 0.14);
+}
+
+.nav__mobile-link--active::after,
+.nav__mobile-link:active::after {
+  opacity: 0.9;
+  transform: translateX(2px);
+}
+
+.nav__mobile-link:active {
+  background: var(--accent-soft);
+  color: #ffffff;
+  border-color: rgba(83, 162, 255, 0.7);
+}
+
+.nav__toggle:active {
+  background: rgba(47, 141, 255, 0.16);
+  border-color: rgba(140, 192, 255, 0.6);
 }
 
 .nav__mobile-cta {
@@ -444,5 +491,6 @@
 
   .nav__mobile {
     inset: 66px 0 0 0;
+    height: calc(100dvh - 66px);
   }
 }

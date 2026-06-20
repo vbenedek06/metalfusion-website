@@ -454,6 +454,7 @@ const pairs = [
   ['< 24 hours', '< 24 óra'],
   ['Send a technical drawing, 3D model or PDF and a responsible engineer will get back to', 'Küldjön műhelyrajzot, 3D modellt vagy PDF-et, és egy felelős mérnök visszajelez'],
   ['you with a quote, manufacturability feedback and a realistic lead time.', 'árajánlattal, gyárthatósági visszajelzéssel és reális határidővel.'],
+  ['Send a technical drawing, 3D model or PDF and a responsible engineer will get back to you with a quote, manufacturability feedback and a realistic lead time.', 'Küldjön műhelyrajzot, 3D modellt vagy PDF-et, és egy felelős mérnök visszajelez árajánlattal, gyárthatósági javaslattal és reális határidővel.'],
   ['The more details you provide - material, quantity, deadline and drawings - the more accurate our quote can be.', 'Minél több részletet ad meg - anyag, mennyiség, határidő és rajzok -, annál pontosabb ajánlatot tudunk adni.'],
   ['Your data will only be used to respond to your quote request.', 'Adatait kizárólag az ajánlatkérés megválaszolására használjuk.'],
   ['Your email client is open - please send the message and we will respond within 24 hours.', 'Megnyitottuk a levelezőprogramot - küldje el az üzenetet, és 24 órán belül válaszolunk.'],
