@@ -343,11 +343,11 @@
   height: calc(100dvh - 70px);
   overflow-y: auto;
   overscroll-behavior: contain;
-  background: rgba(2, 5, 8, 0.98);
+  /* Solid, fully opaque — a translucent bg + backdrop-filter let the hero
+     bleed through (the page behind was visible). */
+  background: #06090d;
   border-top: 1px solid rgba(86, 106, 128, 0.34);
   box-shadow: 0 32px 70px rgba(0, 0, 0, 0.38);
-  backdrop-filter: saturate(135%) blur(18px);
-  -webkit-backdrop-filter: saturate(135%) blur(18px);
   transform: translateY(-8px);
   opacity: 0;
   pointer-events: none;

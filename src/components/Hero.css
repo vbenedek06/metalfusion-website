@@ -15,7 +15,7 @@
   background-image: url('/images/hero-cnc.png');
   background-size: cover;
   background-position: 62% center;
-  filter: saturate(0.94) contrast(1.08) brightness(0.86);
+  filter: saturate(0.96) contrast(1.06) brightness(1.08);
   transform: scale(1.01);
 }
 
@@ -30,8 +30,8 @@
 .hero::before {
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(2, 5, 8, 0.96) 0%, rgba(2, 5, 8, 0.88) 27%, rgba(2, 5, 8, 0.44) 49%, rgba(2, 5, 8, 0.14) 74%, rgba(2, 5, 8, 0.36) 100%),
-    linear-gradient(180deg, rgba(2, 5, 8, 0.62) 0%, rgba(2, 5, 8, 0.12) 35%, rgba(2, 5, 8, 0.46) 72%, #05080c 100%);
+    linear-gradient(90deg, rgba(2, 5, 8, 0.82) 0%, rgba(2, 5, 8, 0.6) 27%, rgba(2, 5, 8, 0.24) 49%, rgba(2, 5, 8, 0.05) 74%, rgba(2, 5, 8, 0.26) 100%),
+    linear-gradient(180deg, rgba(2, 5, 8, 0.4) 0%, rgba(2, 5, 8, 0.05) 35%, rgba(2, 5, 8, 0.4) 72%, #05080c 100%);
 }
 
 .hero::after {
@@ -73,7 +73,8 @@
   line-height: 1.05;
   letter-spacing: 0;
   text-wrap: balance;
-  text-shadow: 0 2px 26px rgba(0, 0, 0, 0.72);
+  /* soft glow + tight halo so white text holds up over bright metal */
+  text-shadow: 0 2px 26px rgba(0, 0, 0, 0.72), 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 .hero__title-accent {
@@ -90,7 +91,7 @@
   font-size: 1rem;
   line-height: 1.55;
   color: rgba(238, 245, 252, 0.9);
-  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.62);
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.62), 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 .hero__lead::before {
@@ -194,8 +195,8 @@
 
   .hero::before {
     background:
-      linear-gradient(90deg, rgba(2, 5, 8, 0.97) 0%, rgba(2, 5, 8, 0.88) 42%, rgba(2, 5, 8, 0.42) 76%, rgba(2, 5, 8, 0.48) 100%),
-      linear-gradient(180deg, rgba(2, 5, 8, 0.66) 0%, rgba(2, 5, 8, 0.22) 42%, #05080c 100%);
+      linear-gradient(90deg, rgba(2, 5, 8, 0.85) 0%, rgba(2, 5, 8, 0.62) 42%, rgba(2, 5, 8, 0.24) 76%, rgba(2, 5, 8, 0.34) 100%),
+      linear-gradient(180deg, rgba(2, 5, 8, 0.45) 0%, rgba(2, 5, 8, 0.12) 42%, #05080c 100%);
   }
 
   .hero__copy {
@@ -228,8 +229,7 @@
 
   .hero::before {
     background:
-      linear-gradient(90deg, rgba(2, 5, 8, 0.97), rgba(2, 5, 8, 0.84)),
-      linear-gradient(180deg, rgba(2, 5, 8, 0.55) 0%, #05080c 100%);
+      linear-gradient(180deg, rgba(2, 5, 8, 0.22) 0%, rgba(2, 5, 8, 0.12) 26%, rgba(2, 5, 8, 0.58) 46%, rgba(2, 5, 8, 0.85) 66%, rgba(2, 5, 8, 0.96) 86%, #05080c 100%);
   }
 
   .hero__inner {

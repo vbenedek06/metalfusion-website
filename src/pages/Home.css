@@ -462,78 +462,79 @@
    LIGHT THEME OVERRIDES — Home + Hero
    ============================================================ */
 
-/* HERO - light theme uses a bright veil with dark text over the workshop image */
+/* HERO - light theme keeps a dark, dramatic banner (light text) so the
+   workshop image reads strongly even though the rest of the page is light. */
 :root[data-theme='light'] .hero {
-  background: var(--bg);
+  background: #05080c;
   border-bottom-color: var(--rule-strong);
 }
 :root[data-theme='light'] .hero__bg {
-  filter: saturate(1.06) contrast(1.14) brightness(0.62);
+  filter: saturate(1.0) contrast(1.08) brightness(0.78);
 }
 :root[data-theme='light'] .hero::before {
   background:
-    linear-gradient(90deg, rgba(248, 250, 252, 0.82) 0%, rgba(248, 250, 252, 0.72) 34%, rgba(248, 250, 252, 0.34) 58%, rgba(15, 23, 42, 0.18) 78%, rgba(15, 23, 42, 0.28) 100%),
-    linear-gradient(180deg, rgba(248, 250, 252, 0.48) 0%, rgba(15, 23, 42, 0.04) 42%, rgba(248, 250, 252, 0.72) 84%, var(--bg) 100%);
+    linear-gradient(90deg, rgba(2, 5, 8, 0.84) 0%, rgba(2, 5, 8, 0.62) 27%, rgba(2, 5, 8, 0.26) 49%, rgba(2, 5, 8, 0.06) 74%, rgba(2, 5, 8, 0.28) 100%),
+    linear-gradient(180deg, rgba(2, 5, 8, 0.42) 0%, rgba(2, 5, 8, 0.06) 35%, rgba(2, 5, 8, 0.46) 72%, var(--bg) 100%);
 }
 :root[data-theme='light'] .hero::after {
   background:
-    radial-gradient(640px 300px at 68% 43%, rgba(31, 114, 216, 0.1), transparent 68%),
-    linear-gradient(90deg, rgba(31, 114, 216, 0.08), transparent 18%, transparent 74%, rgba(15, 23, 42, 0.06));
-  mix-blend-mode: normal;
+    radial-gradient(620px 280px at 68% 43%, rgba(58, 142, 245, 0.2), transparent 68%),
+    linear-gradient(90deg, rgba(37, 132, 236, 0.16), transparent 15%, transparent 72%, rgba(0, 0, 0, 0.34));
+  mix-blend-mode: screen;
 }
 :root[data-theme='light'] .hero__title,
 :root[data-theme='light'] .hero h1 {
-  color: var(--text) !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+  color: #ffffff !important;
+  text-shadow: 0 2px 26px rgba(0, 0, 0, 0.72), 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 :root[data-theme='light'] .hero__title-accent {
-  color: var(--accent-strong) !important;
+  color: #3b91ff !important;
   text-shadow: none;
 }
 :root[data-theme='light'] .hero__lead {
-  color: var(--text-dim) !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.72);
+  color: rgba(238, 245, 252, 0.9) !important;
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.62), 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 :root[data-theme='light'] .hero__eyebrow {
-  color: var(--accent);
+  color: var(--accent-strong);
   text-shadow: none;
 }
 :root[data-theme='light'] .hero__lead::before {
-  background: var(--accent);
-  box-shadow: none;
+  background: var(--accent-strong);
+  box-shadow: 0 0 16px rgba(47, 141, 255, 0.55);
 }
 :root[data-theme='light'] .hero__actions .btn {
-  box-shadow: 0 16px 34px -16px rgba(15, 23, 42, 0.26);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
 }
 :root[data-theme='light'] .hero__actions .btn--ghost {
-  background: rgba(255, 255, 255, 0.72);
-  border-color: var(--rule-strong);
-  color: var(--text);
+  background: rgba(3, 7, 11, 0.46);
+  border-color: rgba(194, 213, 232, 0.58);
+  color: #ffffff;
 }
 :root[data-theme='light'] .hero__values {
-  border-top-color: var(--rule-strong);
-  border-bottom-color: var(--rule);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.62));
-  box-shadow: 0 18px 44px -24px rgba(15, 23, 42, 0.24);
-  backdrop-filter: blur(5px);
+  border-top-color: rgba(96, 118, 139, 0.42);
+  border-bottom-color: rgba(96, 118, 139, 0.18);
+  background: linear-gradient(90deg, rgba(2, 7, 12, 0.74), rgba(2, 7, 12, 0.42), rgba(2, 7, 12, 0.1));
+  box-shadow: 0 18px 44px -24px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
 }
 :root[data-theme='light'] .hero__value + .hero__value {
-  border-left-color: var(--rule);
+  border-left-color: rgba(96, 118, 139, 0.28);
 }
 :root[data-theme='light'] .hero__value:nth-child(n + 3) {
-  border-top-color: var(--rule);
+  border-top-color: rgba(96, 118, 139, 0.28);
 }
 :root[data-theme='light'] .hero__value-icon {
-  color: var(--accent);
+  color: #70b4ff;
 }
 :root[data-theme='light'] .hero__value-icon svg {
-  filter: none;
+  filter: drop-shadow(0 0 10px rgba(45, 144, 255, 0.35));
 }
 :root[data-theme='light'] .hero__value-title {
-  color: var(--text) !important;
+  color: #f4f8fc !important;
 }
 :root[data-theme='light'] .hero__value-text {
-  color: var(--text-dim) !important;
+  color: rgba(217, 226, 236, 0.76) !important;
 }
 
 /* HOME refs band */
@@ -703,8 +704,7 @@
 @media (max-width: 760px) {
   :root[data-theme='light'] .hero::before {
     background:
-      linear-gradient(90deg, rgba(248, 250, 252, 0.8), rgba(248, 250, 252, 0.66)),
-      linear-gradient(180deg, rgba(248, 250, 252, 0.46) 0%, rgba(15, 23, 42, 0.02) 45%, var(--bg) 100%);
+      linear-gradient(180deg, rgba(2, 5, 8, 0.22) 0%, rgba(2, 5, 8, 0.12) 26%, rgba(2, 5, 8, 0.58) 46%, rgba(2, 5, 8, 0.85) 66%, rgba(2, 5, 8, 0.96) 86%, var(--bg) 100%);
   }
 }
 
