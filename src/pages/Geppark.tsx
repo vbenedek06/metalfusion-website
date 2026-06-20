@@ -6,24 +6,24 @@ import { useSEO } from '../hooks/useSEO';
 import './Geppark.css';
 
 const stats = [
-  { value: '6', label: 'gép a parkban', sub: 'CNC + segédgépek' },
-  { value: '4', label: 'max tengely', sub: 'Hurco VMX24' },
-  { value: '12 000', label: 'max ford/perc', sub: 'orsófordulat' },
-  { value: '±0.01', label: 'mm tűrés', sub: 'dokumentált mérés' },
+  { value: '6', label: 'machines in-house', sub: 'CNC + auxiliary machines' },
+  { value: '4', label: 'max axes', sub: 'Hurco VMX24' },
+  { value: '12,000', label: 'max rpm', sub: 'spindle speed' },
+  { value: '±0.01', label: 'mm tolerance', sub: 'documented inspection' },
 ];
 
 const categoryLabels: Record<string, string> = {
-  milling: 'Marás',
-  turning: 'Esztergálás',
-  manual: 'Segédgép',
-  quality: 'Mérés',
+  milling: 'Milling',
+  turning: 'Turning',
+  manual: 'Auxiliary',
+  quality: 'Inspection',
 };
 
 export default function Geppark() {
   useSEO({
-    title: 'Géppark — CNC megmunkálóközpontok és esztergagépek | MetalFusion',
+    title: 'Machine Park - CNC machining centres and lathes | MetalFusion',
     description:
-      'Hurco és Doosan CNC megmunkálóközpontok, Hwacheon hajtott szerszámos eszterga és precíziós mérőeszközök budapesti műhelyünkben.',
+      'Hurco and Doosan CNC machining centres, a Hwacheon driven-tool lathe and precision measuring equipment in our Budapest workshop.',
   });
 
   const production = useMemo(
@@ -63,9 +63,9 @@ export default function Geppark() {
   return (
     <div className="geppark-page">
       <PageHero
-        eyebrow="Géppark"
-        title={<>Modern CNC kapacitás <br />budapesti műhelyünkben.</>}
-        lead="3- és 4-tengelyes megmunkálóközpontok, hajtott szerszámos esztergák és kiegészítő gépek biztosítják az egyenletes minőséget és a kötött határidőket."
+        eyebrow="Machine Park"
+        title={<>Modern CNC capacity <br />in our Budapest workshop.</>}
+        lead="3- and 4-axis machining centres, driven-tool CNC lathes and auxiliary machines ensure consistent quality and reliable delivery dates."
         bgImage="/images/gallery/nagygep2.jpg"
       />
 
@@ -83,9 +83,9 @@ export default function Geppark() {
         </div>
       </section>
 
-      <nav className="geppark-nav" aria-label="Gépek navigációja">
+      <nav className="geppark-nav" aria-label="Machine navigation">
         <div className="container geppark-nav__row">
-          <span className="geppark-nav__label">Gépek</span>
+          <span className="geppark-nav__label">Machines</span>
           <div className="geppark-nav__chips">
             {production.map((m) => (
               <button
@@ -107,11 +107,11 @@ export default function Geppark() {
           <header className="geppark-head">
             <div className="geppark-head__meta">
               <span className="geppark-num">01 / 03</span>
-              <span className="geppark-tag">Gyártó gépek</span>
+              <span className="geppark-tag">Production machines</span>
             </div>
             <div className="geppark-head__copy">
-              <h2>Megmunkálóközpontok és esztergák.</h2>
-              <p>Hurco megmunkálóközpontok, Hwacheon hajtott szerszámos eszterga és Doosan tengelyeszterga — egyetlen műhelyben.</p>
+              <h2>Machining centres and lathes.</h2>
+              <p>Hurco machining centres, a Hwacheon driven-tool lathe and a Doosan shaft lathe in one workshop.</p>
             </div>
           </header>
 
@@ -135,7 +135,7 @@ export default function Geppark() {
                   {m.axes && (
                     <span className="geppark-card__axes">
                       <span className="geppark-card__axes-num">{m.axes}</span>
-                      <span className="geppark-card__axes-lbl">tengely</span>
+                      <span className="geppark-card__axes-lbl">axes</span>
                     </span>
                   )}
                 </figure>
@@ -177,7 +177,7 @@ export default function Geppark() {
 
                   {m.commissioned && (
                     <span className="geppark-card__year">
-                      Üzemben {m.commissioned} óta
+                      {`In operation since ${m.commissioned}`}
                     </span>
                   )}
                 </div>
@@ -192,11 +192,11 @@ export default function Geppark() {
           <header className="geppark-head">
             <div className="geppark-head__meta">
               <span className="geppark-num">02 / 03</span>
-              <span className="geppark-tag">Összehasonlítás</span>
+              <span className="geppark-tag">Comparison</span>
             </div>
             <div className="geppark-head__copy">
-              <h2>Melyik gép, mire való?</h2>
-              <p>Egy rövid összefoglaló — alkatrész-méret és művelet alapján gyorsan eldönthető, melyik gép a megfelelő.</p>
+              <h2>Which machine is best for which task?</h2>
+              <p>A quick overview to match part size and operation type with the right machine.</p>
             </div>
           </header>
 
@@ -204,11 +204,11 @@ export default function Geppark() {
             <table className="geppark-table">
               <thead>
                 <tr>
-                  <th scope="col">Gép</th>
-                  <th scope="col">Kategória</th>
-                  <th scope="col">Tengely</th>
-                  <th scope="col">Munkatér / Tokmány</th>
-                  <th scope="col">Tipikus felhasználás</th>
+                  <th scope="col">Machine</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Axes</th>
+                  <th scope="col">Work envelope / chuck</th>
+                  <th scope="col">Typical use</th>
                 </tr>
               </thead>
               <tbody>
@@ -226,8 +226,8 @@ export default function Geppark() {
                     <td className="geppark-table__num">{m.axes ?? '—'}</td>
                     <td>
                       {m.category === 'turning'
-                        ? m.detailedSpecs?.find((s) => s.label === 'Tokmány')?.value ?? '—'
-                        : m.detailedSpecs?.find((s) => s.label.startsWith('Munkatér'))?.value ?? '—'}
+                        ? m.detailedSpecs?.find((s) => s.label === 'Chuck')?.value ?? '—'
+                        : m.detailedSpecs?.find((s) => s.label.startsWith('Work envelope'))?.value ?? '—'}
                     </td>
                     <td>{m.highlights?.join(' · ') ?? '—'}</td>
                   </tr>
@@ -244,11 +244,11 @@ export default function Geppark() {
             <header className="geppark-head">
               <div className="geppark-head__meta">
                 <span className="geppark-num">03 / 03</span>
-                <span className="geppark-tag">Minőségbiztosítás</span>
+                <span className="geppark-tag">Quality assurance</span>
               </div>
               <div className="geppark-head__copy">
-                <h2>Mérés és dokumentált minőség.</h2>
-                <p>Méretellenőrzés a megmunkálás közben és után. A leadott alkatrészek tűréseit kérésre mérőjegyzőkönyvben igazoljuk.</p>
+                <h2>Inspection and documented quality.</h2>
+                <p>Dimensional inspection during and after machining. We can verify part tolerances in an inspection report on request.</p>
               </div>
             </header>
 
@@ -298,18 +298,18 @@ export default function Geppark() {
           <div className="geppark-cta__box">
             <div className="geppark-cta__grid" aria-hidden />
             <div className="geppark-cta__copy">
-              <span className="geppark-num geppark-num--light">Beszéljünk</span>
-              <h2>Bonyolultabb darab? Egyeztessünk a megmunkálhatóságról.</h2>
-              <p>A gyárthatósági javaslatainkkal időt és anyagot is spórolhat. Küldje el a modellt — végigvesszük a megmunkálási stratégiát.</p>
+              <span className="geppark-num geppark-num--light">Let's talk</span>
+              <h2>Complex part? Let's review manufacturability.</h2>
+              <p>Our manufacturability feedback can save time and material. Send us the model and we will walk through the machining strategy.</p>
               <div className="geppark-cta__actions">
                 <Link to="/kapcsolat" className="btn btn--primary">
-                  Ajánlatot kérek
+                  Request a quote
                   <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                     <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
                 <Link to="/szolgaltatasok" className="btn btn--ghost">
-                  Szolgáltatások
+                  Services
                   <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                     <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>

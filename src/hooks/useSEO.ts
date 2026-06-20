@@ -72,7 +72,7 @@ export function useSEO({
       ['og:description', description],
       ['og:type', ogType],
       ['og:site_name', 'MetalFusion'],
-      ['og:locale', 'hu_HU'],
+      ['og:locale', 'en_US'],
     ];
     if (ogImage) {
       ogPairs.push(['og:image', new URL(ogImage, window.location.origin).toString()]);

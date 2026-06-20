@@ -20,9 +20,9 @@ export default function ContactForm() {
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const subject = encodeURIComponent('Ajánlatkérés – ' + (data.name || 'MetalFusion'));
+    const subject = encodeURIComponent('Quote request - ' + (data.name || 'MetalFusion'));
     const body = encodeURIComponent(
-      `Név: ${data.name}\nE-mail: ${data.email}\nTelefon: ${data.phone}\n\nÜzenet:\n${data.message}`,
+      `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\n\nMessage:\n${data.message}`,
     );
     window.location.href = `mailto:info@metalfusion.hu?subject=${subject}&body=${body}`;
     setStatus('sent');
@@ -32,31 +32,31 @@ export default function ContactForm() {
     <form className="contact-form" onSubmit={onSubmit} noValidate>
       <div className="contact-form__row">
         <label className="contact-form__field">
-          <span>Név</span>
+          <span>Name</span>
           <input
             required
             type="text"
             value={data.name}
             onChange={(e) => update('name', e.target.value)}
             autoComplete="name"
-            placeholder="Kovács János"
+            placeholder="John Smith"
           />
         </label>
         <label className="contact-form__field">
-          <span>E-mail cím</span>
+          <span>Email address</span>
           <input
             required
             type="email"
             value={data.email}
             onChange={(e) => update('email', e.target.value)}
             autoComplete="email"
-            placeholder="nev@cegnev.hu"
+            placeholder="name@company.com"
           />
         </label>
       </div>
 
       <label className="contact-form__field">
-        <span>Telefonszám</span>
+        <span>Phone number</span>
         <input
           type="tel"
           value={data.phone}
@@ -67,27 +67,27 @@ export default function ContactForm() {
       </label>
 
       <label className="contact-form__field">
-        <span>Üzenet</span>
+        <span>Message</span>
         <textarea
           required
           rows={6}
           value={data.message}
           onChange={(e) => update('message', e.target.value)}
-          placeholder="Anyagminőség, mennyiség, határidő, csatolt műhelyrajz / 3D modell elérhetősége…"
+          placeholder="Material grade, quantity, deadline, drawing / 3D model availability..."
         />
       </label>
 
       <div className="contact-form__footer">
         <button type="submit" className="btn btn--primary">
-          Ajánlatkérés elküldése
+          Send quote request
         </button>
         {status === 'sent' && (
-          <span className="contact-form__note">Megnyitottuk a levelezőjét — küldje el az üzenetet.</span>
+          <span className="contact-form__note">Your email client is open - please send the message.</span>
         )}
       </div>
       <p className="contact-form__hint">
-        Az űrlap elküldése a beépített e-mail kliensét nyitja meg. Ha gyorsabban szeretne válaszolni,
-        írjon közvetlenül: <a href="mailto:info@metalfusion.hu">info@metalfusion.hu</a>
+        Submitting the form opens your default email client. For the fastest response, write to us
+        directly at <a href="mailto:info@metalfusion.hu">info@metalfusion.hu</a>
       </p>
     </form>
   );

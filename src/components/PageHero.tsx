@@ -24,7 +24,7 @@ export default function PageHero({ eyebrow, title, lead, bgImage, showCrumb = tr
       <div className="container page-hero__inner">
         {showCrumb && (
           <div className="page-hero__crumb">
-            <Link to="/">Főoldal</Link>
+            <Link to="/">Home</Link>
             <span aria-hidden>/</span>
             <span>{eyebrow}</span>
           </div>

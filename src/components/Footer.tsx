@@ -2,20 +2,20 @@ import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const pages = [
-  { to: '/', label: 'Főoldal' },
-  { to: '/rolunk', label: 'Rólunk' },
-  { to: '/szolgaltatasok', label: 'Szolgáltatások' },
-  { to: '/referenciak', label: 'Referenciák' },
-  { to: '/geppark', label: 'Géppark' },
-  { to: '/kapcsolat', label: 'Kapcsolat' },
+  { to: '/', label: 'Home' },
+  { to: '/rolunk', label: 'About' },
+  { to: '/szolgaltatasok', label: 'Services' },
+  { to: '/referenciak', label: 'References' },
+  { to: '/geppark', label: 'Machine Park' },
+  { to: '/kapcsolat', label: 'Contact' },
 ];
 
 const services = [
-  'CNC marás',
-  'CNC esztergálás',
-  'Egyéb megmunkálás',
-  'Összeszerelés',
-  'Minőségbiztosítás',
+  'CNC milling',
+  'CNC turning',
+  'Secondary machining',
+  'Assembly',
+  'Quality assurance',
 ];
 
 export default function Footer() {
@@ -24,21 +24,21 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__brand">
-            <Link to="/" className="footer__brand-link" aria-label="MetalFusion főoldal">
+            <Link to="/" className="footer__brand-link" aria-label="MetalFusion home">
               <img src="/images/logo.png" alt="" />
               <span>
                 METALFUSION
-                <small>Precízió a fémben</small>
+                <small>Precision in metal</small>
               </span>
             </Link>
             <p>
-              Egyedi kis- és nagyszériás alkatrészgyártás magas minőségben, modern gépparkkal
-              és tapasztalt szakembergárdával.
+              Custom low- and high-volume component manufacturing with modern machinery,
+              experienced specialists and consistently high quality.
             </p>
           </div>
 
           <div className="footer__col">
-            <h4>Gyors linkek</h4>
+            <h4>Quick links</h4>
             <ul>
               {pages.map((page) => (
                 <li key={page.to}>
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
 
           <div className="footer__col">
-            <h4>Szolgáltatások</h4>
+            <h4>Services</h4>
             <ul>
               {services.map((service) => (
                 <li key={service}>{service}</li>
@@ -58,9 +58,9 @@ export default function Footer() {
           </div>
 
           <div className="footer__col">
-            <h4>Elérhetőség</h4>
+            <h4>Contact</h4>
             <ul>
-              <li>Budapest 10. ker. Kozma utca</li>
+              <li>Budapest, District X, Kozma Street</li>
               <li><a href="tel:+36203331218">+36 20 333 1218</a></li>
               <li><a href="mailto:info@metalfusion.hu">info@metalfusion.hu</a></li>
             </ul>
@@ -68,11 +68,11 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <span>© {new Date().getFullYear()} MetalFusion. Minden jog fenntartva.</span>
+          <span>© {new Date().getFullYear()} MetalFusion. All rights reserved.</span>
           <span className="footer__bottom-links">
-            <Link to="/adatvedelem">Adatvédelmi tájékoztató</Link>
+            <Link to="/adatvedelem">Privacy policy</Link>
             <span aria-hidden>·</span>
-            <span className="footer__meta">Precíziós megmunkálás · Budapest</span>
+            <span className="footer__meta">Precision machining · Budapest</span>
           </span>
         </div>
       </div>

@@ -2,20 +2,20 @@ import './ValueRow.css';
 
 const values = [
   {
-    title: 'Precizitás',
-    text: 'Szoros tűréseket tartó megmunkálás és gondos minőségellenőrzés minden darabnál.',
+    title: 'Precision',
+    text: 'Machining to tight tolerances with careful quality control on every part.',
   },
   {
-    title: 'Megbízhatóság',
-    text: 'Kötött határidők, kiszámítható ütemezés, dokumentált gyártási folyamat.',
+    title: 'Reliability',
+    text: 'Fixed deadlines, predictable scheduling and a documented production process.',
   },
   {
-    title: 'Rugalmasság',
-    text: 'Egyedi darabtól a sorozatgyártásig, gyors átfutás és személyes egyeztetés.',
+    title: 'Flexibility',
+    text: 'From one-off parts to series production, with fast turnaround and direct technical discussion.',
   },
   {
-    title: 'Tapasztalat',
-    text: 'Több mint másfél évtizedes szakmai háttér, számos iparágban szerzett tudás.',
+    title: 'Experience',
+    text: 'More than a decade and a half of expertise across multiple industrial sectors.',
   },
 ];
 

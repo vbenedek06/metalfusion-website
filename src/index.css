@@ -1,17 +1,45 @@
 :root {
+  color-scheme: dark;
+
+  /* Core palette — dark theme (default) */
   --bg: #0b0d10;
   --bg-elev: #111418;
   --bg-elev-2: #161a1f;
   --surface: #14181d;
+  --surface-card: rgba(10, 14, 19, 0.85);
+  --surface-card-hi: rgba(255, 255, 255, 0.025);
   --line: #23282f;
   --line-strong: #2e353e;
+  --rule: rgba(86, 106, 128, 0.22);
+  --rule-strong: rgba(86, 106, 128, 0.44);
   --text: #e7ecf2;
   --text-dim: #aab3bf;
   --text-mute: #7c8693;
+  --text-soft: rgba(218, 227, 236, 0.76);
+  --text-faint: rgba(218, 227, 236, 0.5);
   --steel: #b8c1cb;
   --accent: #1f72d8;
   --accent-strong: #2f8dff;
   --accent-soft: rgba(47, 141, 255, 0.14);
+  --accent-glow: rgba(47, 141, 255, 0.55);
+
+  /* Hero / page background gradients */
+  --page-bg:
+    radial-gradient(900px 540px at 82% 12%, rgba(31, 114, 216, 0.07), transparent 70%),
+    radial-gradient(800px 460px at -6% 56%, rgba(47, 141, 255, 0.05), transparent 70%),
+    linear-gradient(180deg, #05080c 0%, #080c12 50%, #05080c 100%);
+
+  /* Glass / overlays */
+  --glass-bg: rgba(8, 12, 18, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.16);
+
+  /* Image / media tone — darker filter on dark theme */
+  --img-filter: grayscale(20%) saturate(0.85) contrast(1.06) brightness(0.74);
+  --img-filter-hi: grayscale(8%) saturate(0.95) contrast(1.05) brightness(0.85);
+  --video-filter: grayscale(18%) saturate(0.85) contrast(1.05) brightness(0.55);
+  --hero-veil:
+    linear-gradient(180deg, rgba(11, 13, 16, 0.55) 0%, rgba(11, 13, 16, 0.85) 75%, var(--bg) 100%),
+    linear-gradient(90deg, rgba(11, 13, 16, 0.9) 0%, rgba(11, 13, 16, 0.5) 60%, transparent 100%);
 
   --radius: 4px;
   --radius-lg: 8px;
@@ -45,6 +73,51 @@
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
+/* ============================================================
+   LIGHT THEME
+   ============================================================ */
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #f5f7fa;
+  --bg-elev: #ffffff;
+  --bg-elev-2: #f0f3f7;
+  --surface: #ffffff;
+  --surface-card: #ffffff;
+  --surface-card-hi: rgba(15, 23, 42, 0.03);
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --rule: rgba(15, 23, 42, 0.1);
+  --rule-strong: rgba(15, 23, 42, 0.18);
+  --text: #0f172a;
+  --text-dim: #334155;
+  --text-mute: #475569;
+  --text-soft: rgba(15, 23, 42, 0.78);
+  --text-faint: rgba(15, 23, 42, 0.55);
+  --steel: #475569;
+  --accent: #1456a8;
+  --accent-strong: #1f72d8;
+  --accent-soft: rgba(31, 114, 216, 0.1);
+  --accent-glow: rgba(31, 114, 216, 0.28);
+
+  --page-bg:
+    radial-gradient(900px 540px at 82% 12%, rgba(31, 114, 216, 0.06), transparent 70%),
+    radial-gradient(800px 460px at -6% 56%, rgba(47, 141, 255, 0.04), transparent 70%),
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #f8fafc 100%);
+
+  --glass-bg: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(15, 23, 42, 0.12);
+
+  --img-filter: grayscale(0%) saturate(1.02) contrast(1.02) brightness(0.98);
+  --img-filter-hi: grayscale(0%) saturate(1.05) contrast(1.04) brightness(1);
+  --video-filter: grayscale(0%) saturate(1) contrast(1) brightness(0.95);
+  --hero-veil:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.55) 0%, rgba(248, 250, 252, 0.82) 75%, var(--bg) 100%),
+    linear-gradient(90deg, rgba(248, 250, 252, 0.9) 0%, rgba(248, 250, 252, 0.5) 60%, transparent 100%);
+
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -65,11 +138,10 @@ body {
 }
 
 body {
-  background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(91, 143, 185, 0.06), transparent 60%),
-    radial-gradient(900px 600px at -10% 30%, rgba(255, 255, 255, 0.02), transparent 60%),
-    var(--bg);
+  background: var(--page-bg);
+  background-attachment: fixed;
   min-height: 100vh;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 
 #root,
@@ -144,10 +216,10 @@ p {
 
 .section--alt {
   background:
-    radial-gradient(700px 360px at 15% 0%, rgba(47, 141, 255, 0.05), transparent 70%),
-    rgba(255, 255, 255, 0.012);
-  border-top: 1px solid rgba(86, 106, 128, 0.2);
-  border-bottom: 1px solid rgba(86, 106, 128, 0.18);
+    radial-gradient(700px 360px at 15% 0%, var(--accent-soft), transparent 70%),
+    var(--surface-card-hi);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
 }
 
 .eyebrow {
@@ -210,7 +282,7 @@ p {
 
 .btn--ghost:hover {
   border-color: var(--steel);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--surface-card-hi);
   transform: translateY(-1px);
 }
 
@@ -273,7 +345,7 @@ p {
 
 ::selection {
   background: var(--accent);
-  color: #0b0d10;
+  color: #ffffff;
 }
 
 /* Universal keyboard focus ring (a11y) */
@@ -292,4 +364,366 @@ button:focus-visible,
 .btn:focus-visible {
   outline: 2px solid var(--accent-strong);
   outline-offset: 3px;
+}
+
+/* ============================================================
+   LIGHT THEME — page-scoped variable overrides + hardcoded fixes
+   ============================================================ */
+:root[data-theme='light'] .about-page,
+:root[data-theme='light'] .services-page,
+:root[data-theme='light'] .refs-page,
+:root[data-theme='light'] .geppark-page,
+:root[data-theme='light'] .contact-page {
+  --rule: rgba(15, 23, 42, 0.1);
+  --rule-strong: rgba(15, 23, 42, 0.18);
+  background: var(--page-bg) !important;
+}
+
+/* Cards & surfaces — dark hardcoded → light */
+:root[data-theme='light'] [class*='__box'],
+:root[data-theme='light'] [class*='__card'],
+:root[data-theme='light'] [class*='__cell'],
+:root[data-theme='light'] [class*='__content'],
+:root[data-theme='light'] [class*='__col'],
+:root[data-theme='light'] [class*='__row'] {
+  background-color: transparent;
+}
+
+:root[data-theme='light'] .about-stats,
+:root[data-theme='light'] .about-stats__row,
+:root[data-theme='light'] .about-principles__grid,
+:root[data-theme='light'] .about-principle,
+:root[data-theme='light'] .about-spec,
+:root[data-theme='light'] .about-spec__col,
+:root[data-theme='light'] .about-workshop__content,
+:root[data-theme='light'] .about-cta__box,
+:root[data-theme='light'] .services-grid > li > a,
+:root[data-theme='light'] .service-tile__link,
+:root[data-theme='light'] .services-materials,
+:root[data-theme='light'] .services-specs,
+:root[data-theme='light'] .services-cta__box,
+:root[data-theme='light'] .refs-case__media,
+:root[data-theme='light'] .refs-mosaic__btn,
+:root[data-theme='light'] .refs-industry,
+:root[data-theme='light'] .refs-cta__box,
+:root[data-theme='light'] .geppark-stats__row,
+:root[data-theme='light'] .geppark-card__media,
+:root[data-theme='light'] .geppark-card__specs,
+:root[data-theme='light'] .geppark-matrix,
+:root[data-theme='light'] .geppark-quality__media,
+:root[data-theme='light'] .geppark-quality__content,
+:root[data-theme='light'] .geppark-quality__specs,
+:root[data-theme='light'] .geppark-cta__box,
+:root[data-theme='light'] .contact-form-card,
+:root[data-theme='light'] .contact-channel__link,
+:root[data-theme='light'] .contact-hours,
+:root[data-theme='light'] .contact-map,
+:root[data-theme='light'] .contact-faq details {
+  background: var(--surface-card) !important;
+  border-color: var(--rule-strong) !important;
+  box-shadow: 0 12px 32px -10px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Inputs */
+:root[data-theme='light'] .contact-form input[type='text'],
+:root[data-theme='light'] .contact-form input[type='email'],
+:root[data-theme='light'] .contact-form input[type='tel'],
+:root[data-theme='light'] .contact-form textarea {
+  background: #ffffff !important;
+  color: var(--text) !important;
+  border-color: var(--line-strong) !important;
+}
+
+:root[data-theme='light'] .contact-form input::placeholder,
+:root[data-theme='light'] .contact-form textarea::placeholder {
+  color: var(--text-mute) !important;
+}
+
+/* Text — globally lighten the dark-hardcoded text colours */
+:root[data-theme='light'] body,
+:root[data-theme='light'] p,
+:root[data-theme='light'] li,
+:root[data-theme='light'] dd,
+:root[data-theme='light'] span {
+  color: inherit;
+}
+
+:root[data-theme='light'] h1,
+:root[data-theme='light'] h2,
+:root[data-theme='light'] h3,
+:root[data-theme='light'] h4,
+:root[data-theme='light'] .about-principle__title,
+:root[data-theme='light'] .about-stats__value,
+:root[data-theme='light'] .about-cta__copy h2,
+:root[data-theme='light'] .service-tile__title,
+:root[data-theme='light'] .services-cta__copy h2,
+:root[data-theme='light'] .refs-case__title,
+:root[data-theme='light'] .refs-cta__copy h2,
+:root[data-theme='light'] .geppark-card__name,
+:root[data-theme='light'] .geppark-cta__copy h2,
+:root[data-theme='light'] .contact-hero__title,
+:root[data-theme='light'] .contact-form-card__head h2,
+:root[data-theme='light'] .contact-map-head h2,
+:root[data-theme='light'] .contact-faq__intro h2,
+:root[data-theme='light'] .contact-faq summary {
+  color: var(--text) !important;
+}
+
+/* Dim text — body-level descriptions */
+:root[data-theme='light'] [class*='__desc'],
+:root[data-theme='light'] [class*='__lead'],
+:root[data-theme='light'] [class*='__summary'],
+:root[data-theme='light'] [class*='__short'],
+:root[data-theme='light'] [class*='__text'],
+:root[data-theme='light'] .about-head__copy p,
+:root[data-theme='light'] .services-head__copy p,
+:root[data-theme='light'] .refs-head__copy p,
+:root[data-theme='light'] .geppark-head__copy p,
+:root[data-theme='light'] .contact-hero__lead,
+:root[data-theme='light'] .contact-form-card__head p,
+:root[data-theme='light'] .contact-map-head p,
+:root[data-theme='light'] .contact-faq__intro p,
+:root[data-theme='light'] .contact-faq details > p {
+  color: var(--text-dim) !important;
+}
+
+/* Faint / mono labels */
+:root[data-theme='light'] [class*='__label']:not(.contact-form__label),
+:root[data-theme='light'] [class*='__sub'],
+:root[data-theme='light'] [class*='__meta-label'],
+:root[data-theme='light'] [class*='__cap-label'],
+:root[data-theme='light'] [class*='__line-key'],
+:root[data-theme='light'] [class*='__year'],
+:root[data-theme='light'] [class*='-tag'],
+:root[data-theme='light'] .about-section-tag,
+:root[data-theme='light'] .services-tag,
+:root[data-theme='light'] .refs-tag,
+:root[data-theme='light'] .geppark-tag,
+:root[data-theme='light'] .contact-form__label {
+  color: var(--text-mute) !important;
+}
+
+/* Images — remove dark filter so they show natural colour */
+:root[data-theme='light'] .about-image img,
+:root[data-theme='light'] .about-workshop__visual img,
+:root[data-theme='light'] .service-tile__media img,
+:root[data-theme='light'] .refs-case__media img,
+:root[data-theme='light'] .refs-mosaic__btn img,
+:root[data-theme='light'] .geppark-card__media img,
+:root[data-theme='light'] .geppark-quality__media img {
+  filter: var(--img-filter) !important;
+}
+
+:root[data-theme='light'] .contact-hero__video {
+  filter: var(--video-filter) !important;
+}
+
+/* Hero veil for light — keep text readable over photo bg */
+:root[data-theme='light'] .page-hero__veil {
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.55) 0%, rgba(248, 250, 252, 0.88) 75%, var(--bg) 100%),
+    linear-gradient(90deg, rgba(248, 250, 252, 0.92) 0%, rgba(248, 250, 252, 0.55) 60%, transparent 100%) !important;
+}
+
+:root[data-theme='light'] .contact-hero__video-overlay {
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.55) 0%, rgba(248, 250, 252, 0.78) 60%, rgba(248, 250, 252, 0.92) 100%),
+    linear-gradient(90deg, rgba(248, 250, 252, 0.88) 0%, rgba(248, 250, 252, 0.55) 50%, rgba(248, 250, 252, 0.35) 100%),
+    radial-gradient(700px 400px at 78% 30%, rgba(31, 114, 216, 0.08), transparent 70%) !important;
+}
+
+/* Navbar */
+:root[data-theme='light'] .nav {
+  background: rgba(255, 255, 255, 0.78) !important;
+  border-bottom-color: var(--rule) !important;
+}
+
+:root[data-theme='light'] .nav--scrolled {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-bottom-color: var(--rule-strong) !important;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06) !important;
+}
+
+:root[data-theme='light'] .nav__link {
+  color: var(--text-dim) !important;
+}
+
+:root[data-theme='light'] .nav__link:hover,
+:root[data-theme='light'] .nav__link--active {
+  color: var(--text) !important;
+}
+
+:root[data-theme='light'] .nav__brand-text {
+  color: var(--text) !important;
+}
+
+:root[data-theme='light'] .nav__brand-tag {
+  color: var(--text-mute) !important;
+}
+
+:root[data-theme='light'] .nav__brand-mark img {
+  filter: drop-shadow(0 0 14px rgba(31, 114, 216, 0.18)) !important;
+}
+
+:root[data-theme='light'] .nav__mobile {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-top-color: var(--rule-strong) !important;
+}
+
+:root[data-theme='light'] .nav__mobile-link {
+  color: var(--text-dim) !important;
+  border-bottom-color: var(--rule) !important;
+}
+
+:root[data-theme='light'] .nav__mobile-link--active {
+  color: var(--text) !important;
+}
+
+:root[data-theme='light'] .nav__toggle {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: var(--line-strong) !important;
+}
+
+:root[data-theme='light'] .nav__toggle span {
+  background: var(--text) !important;
+}
+
+/* Footer */
+:root[data-theme='light'] .footer {
+  background: var(--bg-elev) !important;
+  border-top: 1px solid var(--rule) !important;
+}
+
+:root[data-theme='light'] .footer * {
+  color: var(--text-dim);
+}
+
+:root[data-theme='light'] .footer h2,
+:root[data-theme='light'] .footer h3,
+:root[data-theme='light'] .footer h4,
+:root[data-theme='light'] .footer strong,
+:root[data-theme='light'] .footer__brand-link span {
+  color: var(--text) !important;
+}
+
+/* Lightbox stays dark (image viewer always wants a dark surround) */
+
+/* ============================================================
+   LIGHT — Home page + shared components
+   ============================================================ */
+
+/* Home hero */
+:root[data-theme='light'] .home-hero {
+  background: var(--page-bg);
+}
+:root[data-theme='light'] .home-hero h1,
+:root[data-theme='light'] .home-hero__title,
+:root[data-theme='light'] .home-hero__copy h1,
+:root[data-theme='light'] .home-page h1,
+:root[data-theme='light'] .home-page h2,
+:root[data-theme='light'] .home-page h3 {
+  color: var(--text) !important;
+}
+:root[data-theme='light'] .home-page p,
+:root[data-theme='light'] .home-page .lead {
+  color: var(--text-dim) !important;
+}
+:root[data-theme='light'] .home-page section,
+:root[data-theme='light'] .home-page .section--alt {
+  background: var(--page-bg);
+}
+
+/* Reference cards / Service cards / Machine cards */
+:root[data-theme='light'] .ref-card,
+:root[data-theme='light'] .service-card,
+:root[data-theme='light'] .machine-card {
+  background: var(--surface-card) !important;
+  border-color: var(--rule-strong) !important;
+  box-shadow: 0 12px 28px -10px rgba(15, 23, 42, 0.1) !important;
+}
+:root[data-theme='light'] .ref-card__title,
+:root[data-theme='light'] .service-card__title,
+:root[data-theme='light'] .machine-card__name {
+  color: var(--text) !important;
+}
+:root[data-theme='light'] .ref-card__summary,
+:root[data-theme='light'] .service-card__short,
+:root[data-theme='light'] .ref-card__meta {
+  color: var(--text-dim) !important;
+}
+:root[data-theme='light'] .service-card__list,
+:root[data-theme='light'] .machine-card__specs {
+  color: var(--text-mute) !important;
+  border-top-color: var(--rule) !important;
+}
+:root[data-theme='light'] .machine-card__media {
+  background: #f1f5f9 !important;
+}
+
+/* Page hero shared */
+:root[data-theme='light'] .page-hero {
+  background:
+    radial-gradient(900px 420px at 18% 0%, var(--accent-soft), transparent 70%),
+    var(--bg) !important;
+  border-bottom-color: var(--rule) !important;
+}
+:root[data-theme='light'] .page-hero__title {
+  color: var(--text) !important;
+}
+:root[data-theme='light'] .page-hero__lead {
+  color: var(--text-dim) !important;
+}
+:root[data-theme='light'] .page-hero__crumb,
+:root[data-theme='light'] .page-hero__crumb a {
+  color: var(--text-mute) !important;
+}
+:root[data-theme='light'] .page-hero__crumb span:not([aria-hidden]) {
+  color: var(--text) !important;
+}
+:root[data-theme='light'] .page-hero__bg {
+  filter: grayscale(8%) contrast(1.02) brightness(0.96) !important;
+}
+
+/* SectionTitle */
+:root[data-theme='light'] .section-title__heading {
+  color: var(--text) !important;
+}
+:root[data-theme='light'] .section-title__lead {
+  color: var(--text-dim) !important;
+}
+
+/* CTASection */
+:root[data-theme='light'] .cta-section {
+  background:
+    radial-gradient(700px 320px at 75% -10%, rgba(31, 114, 216, 0.35), transparent 70%),
+    linear-gradient(135deg, #1f72d8 0%, #1456a8 100%) !important;
+  border-color: rgba(31, 114, 216, 0.5) !important;
+}
+:root[data-theme='light'] .cta-section h2,
+:root[data-theme='light'] .cta-section p {
+  color: #ffffff !important;
+}
+
+/* ValueRow */
+:root[data-theme='light'] .value-row {
+  border-color: var(--rule) !important;
+}
+:root[data-theme='light'] .value-row__title {
+  color: var(--text) !important;
+}
+:root[data-theme='light'] .value-row__text {
+  color: var(--text-dim) !important;
+}
+
+/* Hero (component) */
+:root[data-theme='light'] .hero {
+  background: var(--page-bg) !important;
+}
+:root[data-theme='light'] .hero h1,
+:root[data-theme='light'] .hero__title {
+  color: var(--text) !important;
+}
+:root[data-theme='light'] .hero__lead,
+:root[data-theme='light'] .hero p {
+  color: var(--text-dim) !important;
 }

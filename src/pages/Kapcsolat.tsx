@@ -16,16 +16,16 @@ const empty: FormState = {
   company: '',
   email: '',
   phone: '',
-  topic: 'Ajánlatkérés',
+  topic: 'Quote request',
   message: '',
 };
 
 const topics = [
-  'Ajánlatkérés',
-  'Prototípus / kis széria',
-  'Sorozatgyártás',
-  'Műhely-látogatás',
-  'Egyéb',
+  'Quote request',
+  'Prototype / small batch',
+  'Series production',
+  'Workshop visit',
+  'Other',
 ];
 
 const acceptedFormats = ['STEP', 'IGES', 'DWG', 'STL', 'PDF', 'JPG'];
@@ -33,8 +33,8 @@ const acceptedFormats = ['STEP', 'IGES', 'DWG', 'STL', 'PDF', 'JPG'];
 const channels = [
   {
     key: 'phone',
-    label: 'Telefon',
-    sub: 'H–P · 7:00 – 16:00',
+    label: 'Phone',
+    sub: 'Mon-Fri · 7:00-16:00',
     value: '+36 20 333 1218',
     href: 'tel:+36203331218',
     icon: (
@@ -45,8 +45,8 @@ const channels = [
   },
   {
     key: 'email',
-    label: 'E-mail',
-    sub: 'Garantált 24h válasz',
+    label: 'Email',
+    sub: 'Guaranteed 24h response',
     value: 'info@metalfusion.hu',
     href: 'mailto:info@metalfusion.hu',
     icon: (
@@ -58,9 +58,9 @@ const channels = [
   },
   {
     key: 'addr',
-    label: 'Műhely',
-    sub: 'Időpont-egyeztetéssel',
-    value: '1108 Budapest, Kozma utca',
+    label: 'Workshop',
+    sub: 'By appointment',
+    value: '1108 Budapest, Kozma Street',
     href: 'https://www.openstreetmap.org/?mlat=47.4783&mlon=19.1880#map=17/47.4783/19.1880',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -78,19 +78,19 @@ function getOpenStatus(now: Date) {
   const openMin = 7 * 60;
   const closeMin = 16 * 60;
   if (isWeekday && minutes >= openMin && minutes < closeMin) {
-    return { open: true, label: 'Műhely nyitva', sub: 'Most felveszi valaki' };
+    return { open: true, label: 'Workshop open', sub: 'Someone is available now' };
   }
   if (isWeekday && minutes < openMin) {
-    return { open: false, label: 'Hamarosan nyitunk', sub: '7:00-kor a műhelyben' };
+    return { open: false, label: 'Opening soon', sub: 'In the workshop from 7:00' };
   }
-  return { open: false, label: 'Most zárva', sub: 'H–P 7:00 – 16:00' };
+  return { open: false, label: 'Closed now', sub: 'Mon-Fri 7:00-16:00' };
 }
 
 export default function Kapcsolat() {
   useSEO({
-    title: 'Kapcsolat — MetalFusion ajánlatkérés',
+    title: 'Contact - MetalFusion quote request',
     description:
-      'Küldje el műhelyrajzát vagy 3D modelljét — 24 órán belül válaszolunk. Telefon, e-mail, budapesti műhely.',
+      'Send your technical drawing or 3D model and we will respond within 24 hours. Phone, email and Budapest workshop contact details.',
   });
 
   const [data, setData] = useState<FormState>(empty);
@@ -103,7 +103,7 @@ export default function Kapcsolat() {
   }, []);
 
   const liveStatus = useMemo(() => getOpenStatus(now), [now]);
-  const localTime = now.toLocaleTimeString('hu-HU', {
+  const localTime = now.toLocaleTimeString('en-GB', {
     hour: '2-digit',
     minute: '2-digit',
   });
@@ -114,9 +114,9 @@ export default function Kapcsolat() {
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const subject = encodeURIComponent(`${data.topic} – ${data.name || 'MetalFusion'}`);
+    const subject = encodeURIComponent(`${data.topic} - ${data.name || 'MetalFusion'}`);
     const body = encodeURIComponent(
-      `Név: ${data.name}\nCég: ${data.company}\nE-mail: ${data.email}\nTelefon: ${data.phone}\nTéma: ${data.topic}\n\nÜzenet:\n${data.message}`
+      `Name: ${data.name}\nCompany: ${data.company}\nEmail: ${data.email}\nPhone: ${data.phone}\nTopic: ${data.topic}\n\nMessage:\n${data.message}`
     );
     window.location.href = `mailto:info@metalfusion.hu?subject=${subject}&body=${body}`;
     setStatus('sent');
@@ -147,24 +147,24 @@ export default function Kapcsolat() {
               <span className="contact-hero__status-sub">{liveStatus.sub}</span>
             </div>
 
-            <h1 className="contact-hero__title">Kérje ajánlatát.</h1>
+            <h1 className="contact-hero__title">Request your quote.</h1>
 
             <p className="contact-hero__lead">
-              Műhelyrajz, 3D modell vagy PDF — küldje el, és egy felelős mérnök még ma jelentkezik
-              árajánlattal, gyárthatósági javaslatokkal és reális határidővel.
+              Send a technical drawing, 3D model or PDF and a responsible engineer will get back to
+              you with a quote, manufacturability feedback and a realistic lead time.
             </p>
 
             <div className="contact-hero__meta">
               <div className="contact-hero__meta-item">
-                <span className="contact-hero__meta-label">Helyi idő</span>
+                <span className="contact-hero__meta-label">Local time</span>
                 <span className="contact-hero__meta-value">{localTime} <small>Budapest</small></span>
               </div>
               <div className="contact-hero__meta-item">
-                <span className="contact-hero__meta-label">Válaszidő</span>
-                <span className="contact-hero__meta-value">&lt; 24 óra</span>
+                <span className="contact-hero__meta-label">Response time</span>
+                <span className="contact-hero__meta-value">&lt; 24 hours</span>
               </div>
               <div className="contact-hero__meta-item">
-                <span className="contact-hero__meta-label">Nyelv</span>
+                <span className="contact-hero__meta-label">Languages</span>
                 <span className="contact-hero__meta-value">HU · EN · DE</span>
               </div>
             </div>
@@ -179,50 +179,50 @@ export default function Kapcsolat() {
           {/* FORM CARD */}
           <div className="contact-form-card">
             <header className="contact-form-card__head">
-              <span className="contact-form-card__eyebrow">Ajánlatkérő űrlap</span>
-              <h2>Írja le röviden a feladatot.</h2>
-              <p>Minél több részletet ad meg (anyag, mennyiség, határidő, csatolt rajz), annál pontosabb árajánlatot küldünk.</p>
+              <span className="contact-form-card__eyebrow">Quote request form</span>
+              <h2>Briefly describe the task.</h2>
+              <p>The more details you provide - material, quantity, deadline and drawings - the more accurate our quote can be.</p>
             </header>
 
             <form className="contact-form" onSubmit={onSubmit} noValidate>
               <div className="contact-form__row">
                 <label className="contact-form__field">
-                  <span className="contact-form__label">Név</span>
+                  <span className="contact-form__label">Name</span>
                   <input
                     required
                     type="text"
                     value={data.name}
                     onChange={(e) => update('name', e.target.value)}
                     autoComplete="name"
-                    placeholder="Kovács János"
+                    placeholder="John Smith"
                   />
                 </label>
                 <label className="contact-form__field">
-                  <span className="contact-form__label">Cégnév</span>
+                  <span className="contact-form__label">Company</span>
                   <input
                     type="text"
                     value={data.company}
                     onChange={(e) => update('company', e.target.value)}
                     autoComplete="organization"
-                    placeholder="Példa Kft."
+                    placeholder="Example Ltd."
                   />
                 </label>
               </div>
 
               <div className="contact-form__row">
                 <label className="contact-form__field">
-                  <span className="contact-form__label">E-mail cím</span>
+                  <span className="contact-form__label">Email address</span>
                   <input
                     required
                     type="email"
                     value={data.email}
                     onChange={(e) => update('email', e.target.value)}
                     autoComplete="email"
-                    placeholder="nev@cegnev.hu"
+                    placeholder="name@company.com"
                   />
                 </label>
                 <label className="contact-form__field">
-                  <span className="contact-form__label">Telefonszám</span>
+                  <span className="contact-form__label">Phone number</span>
                   <input
                     type="tel"
                     value={data.phone}
@@ -234,7 +234,7 @@ export default function Kapcsolat() {
               </div>
 
               <fieldset className="contact-form__topic">
-                <legend className="contact-form__label">Téma</legend>
+                <legend className="contact-form__label">Topic</legend>
                 <div className="contact-form__chips">
                   {topics.map((t) => (
                     <label key={t} className={`contact-form__chip${data.topic === t ? ' contact-form__chip--active' : ''}`}>
@@ -252,13 +252,13 @@ export default function Kapcsolat() {
               </fieldset>
 
               <label className="contact-form__field">
-                <span className="contact-form__label">Üzenet</span>
+                <span className="contact-form__label">Message</span>
                 <textarea
                   required
                   rows={6}
                   value={data.message}
                   onChange={(e) => update('message', e.target.value)}
-                  placeholder="Anyagminőség, mennyiség, határidő, csatolt műhelyrajz / 3D modell elérhetősége…"
+                  placeholder="Material grade, quantity, deadline, attached drawing / 3D model availability..."
                 />
               </label>
 
@@ -267,7 +267,7 @@ export default function Kapcsolat() {
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                     <path d="M21 12.5l-9 9a5 5 0 0 1-7-7l9-9a3.5 3.5 0 0 1 5 5l-9 9a2 2 0 0 1-3-3l8-8" />
                   </svg>
-                  Elfogadott fájlok az e-mailben
+                  Accepted file formats by email
                 </span>
                 <ul className="contact-form__formats">
                   {acceptedFormats.map((f) => (
@@ -278,13 +278,13 @@ export default function Kapcsolat() {
 
               <div className="contact-form__footer">
                 <button type="submit" className="contact-form__submit">
-                  <span>Ajánlatkérés elküldése</span>
+                  <span>Send quote request</span>
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                     <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
                 <span className="contact-form__legal">
-                  Az adatait kizárólag az ajánlatkérés megválaszolására használjuk.
+                  Your data will only be used to respond to your quote request.
                 </span>
               </div>
 
@@ -293,7 +293,7 @@ export default function Kapcsolat() {
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                     <path d="M5 12l5 5L20 7" />
                   </svg>
-                  Megnyitottuk a levelezőjét — küldje el az üzenetet, és 24 órán belül jelentkezünk.
+                  Your email client is open - please send the message and we will respond within 24 hours.
                 </div>
               )}
             </form>
@@ -327,10 +327,10 @@ export default function Kapcsolat() {
             </ul>
 
             <div className="contact-hours">
-              <span className="contact-hours__head">Nyitvatartás</span>
+              <span className="contact-hours__head">Opening hours</span>
               <ul>
-                <li><span>H – P</span><strong>7:00 – 16:00</strong></li>
-                <li><span>Szo – V</span><strong>Zárva</strong></li>
+                <li><span>Mon-Fri</span><strong>7:00-16:00</strong></li>
+                <li><span>Sat-Sun</span><strong>Closed</strong></li>
               </ul>
               <div className={`contact-hours__pill${liveStatus.open ? ' contact-hours__pill--open' : ''}`}>
                 <span className="contact-hours__pill-dot" aria-hidden />
@@ -346,9 +346,9 @@ export default function Kapcsolat() {
         <div className="container">
           <header className="contact-map-head">
             <div>
-              <span className="contact-map-head__eyebrow">Műhely</span>
-              <h2>1108 Budapest, Kozma utca</h2>
-              <p>A X. kerületi műhelyünkbe előzetes időpont-egyeztetés után szívesen várjuk.</p>
+              <span className="contact-map-head__eyebrow">Workshop</span>
+              <h2>1108 Budapest, Kozma Street</h2>
+              <p>Visits to our District X workshop are welcome by prior appointment.</p>
             </div>
             <a
               href="https://www.google.com/maps/dir/?api=1&destination=1108+Budapest+Kozma+utca"
@@ -356,7 +356,7 @@ export default function Kapcsolat() {
               rel="noreferrer noopener"
               className="contact-map-head__btn"
             >
-              Útvonal Google Maps-ben
+              Directions in Google Maps
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                 <path d="M7 17L17 7M9 7h8v8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -365,7 +365,7 @@ export default function Kapcsolat() {
 
           <div className="contact-map">
             <iframe
-              title="MetalFusion műhely – térkép"
+              title="MetalFusion workshop - map"
               src="https://www.openstreetmap.org/export/embed.html?bbox=19.180%2C47.475%2C19.196%2C47.482&amp;layer=mapnik&amp;marker=47.4783%2C19.1880"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -374,8 +374,8 @@ export default function Kapcsolat() {
             <div className="contact-map__pin">
               <span className="contact-map__pin-dot" aria-hidden />
               <div>
-                <strong>MetalFusion műhely</strong>
-                <span>1108 Budapest, Kozma utca</span>
+                <strong>MetalFusion workshop</strong>
+                <span>1108 Budapest, Kozma Street</span>
               </div>
             </div>
             <div className="contact-map__corners" aria-hidden>
@@ -389,55 +389,55 @@ export default function Kapcsolat() {
       <section className="contact-faq-section">
         <div className="container contact-faq__grid">
           <div className="contact-faq__intro">
-            <span className="contact-faq__eyebrow">Gyakori kérdések</span>
-            <h2>Mielőtt elküldi az ajánlatkérést.</h2>
-            <p>Néhány válasz a leggyakoribb kérdésekre — ha valamelyik nincs a listán, írjon bátran.</p>
+            <span className="contact-faq__eyebrow">FAQ</span>
+            <h2>Before you send a quote request.</h2>
+            <p>A few answers to common questions. If something is missing, feel free to write to us.</p>
           </div>
 
           <ul className="contact-faq">
             <li>
               <details>
                 <summary>
-                  Milyen fájlformátumot fogadtok?
+                  Which file formats do you accept?
                   <span aria-hidden />
                 </summary>
-                <p>STEP, IGES, DWG, STL, PDF és JPG — minden szokványos műhelyrajz és 3D modell formátumot. Ha a fájlja nagyobb 10 MB-nál, küldjön WeTransfer / Google Drive linket.</p>
+                <p>STEP, IGES, DWG, STL, PDF and JPG - all common technical drawing and 3D model formats. If your file is larger than 10 MB, send a WeTransfer or Google Drive link.</p>
               </details>
             </li>
             <li>
               <details>
                 <summary>
-                  Mennyi az átfutási idő?
+                  What is the typical lead time?
                   <span aria-hidden />
                 </summary>
-                <p>A feladattól függően általában 3 – 21 munkanap. Egyszerű alkatrésznél akár pár nap, komplex sorozatnál 2–3 hét. A pontos határidőt mindig az ajánlatban rögzítjük.</p>
+                <p>Depending on the task, it is usually 3-21 business days. Simple parts can take only a few days, while complex series may take 2-3 weeks. The exact deadline is always stated in the quote.</p>
               </details>
             </li>
             <li>
               <details>
                 <summary>
-                  Vállaltok-e egyetlen prototípust?
+                  Do you accept a single prototype?
                   <span aria-hidden />
                 </summary>
-                <p>Igen — 1 db-tól is dolgozunk. Prototípusgyártásnál külön figyelemmel egyeztetjük a gyárthatóságot, hogy a sorozatra is felkészüljünk.</p>
+                <p>Yes, we work from a single piece. For prototypes, we pay special attention to manufacturability so the part can be prepared for series production later.</p>
               </details>
             </li>
             <li>
               <details>
                 <summary>
-                  Mit ír az ajánlatban?
+                  What is included in the quote?
                   <span aria-hidden />
                 </summary>
-                <p>Anyagköltség, megmunkálási idő, teljes ár, határidő, fizetési feltételek, csomagolás és szállítás. Opciók esetén alternatívákat is jelölünk.</p>
+                <p>Material cost, machining time, total price, deadline, payment terms, packaging and delivery. If there are options, we also list the alternatives.</p>
               </details>
             </li>
             <li>
               <details>
                 <summary>
-                  Lehet-e a műhelyt meglátogatni?
+                  Can I visit the workshop?
                   <span aria-hidden />
                 </summary>
-                <p>Igen, előzetes időpont-egyeztetést követően szívesen fogadunk. Telefonon vagy e-mailben tudja egyeztetni a látogatást.</p>
+                <p>Yes, we are happy to welcome visitors by prior appointment. You can arrange a visit by phone or email.</p>
               </details>
             </li>
           </ul>

@@ -9,21 +9,21 @@ import './Referenciak.css';
 type Filter = 'all' | string;
 
 const industries = [
-  'Gyógyszeripar',
-  'Orvostechnika',
-  'Gépgyártás',
-  'Csomagolástechnika',
-  'Élelmiszeripar',
-  'Műanyagipar',
-  'Építőipari vasalat',
-  'Prototípusfejlesztés',
+  'Pharmaceuticals',
+  'Medical technology',
+  'Machine building',
+  'Packaging technology',
+  'Food industry',
+  'Plastics industry',
+  'Construction hardware',
+  'Prototype development',
 ];
 
 export default function Referenciak() {
   useSEO({
-    title: 'Referenciák — MetalFusion gyártási projektek',
+    title: 'References - MetalFusion manufacturing projects',
     description:
-      'Gyógyszeripari, orvostechnikai és gépgyártó vállalatoknak gyártott egyedi alkatrészek és komplett mechanikák.',
+      'Custom components and complete mechanical assemblies manufactured for pharmaceutical, medical technology and machine-building companies.',
   });
 
   const [filter, setFilter] = useState<Filter>('all');
@@ -84,15 +84,15 @@ export default function Referenciak() {
   return (
     <div className="refs-page">
       <PageHero
-        eyebrow="Referenciák"
-        title={<>Valós gyártási projektek, <br />valós ügyfeleknek.</>}
-        lead="Egy bemutató válogatás megvalósult munkáinkból. Iparági partnereink között gyógyszergyártó, orvostechnikai és gépgyártó vállalatok egyaránt megtalálhatók."
+        eyebrow="References"
+        title={<>Real manufacturing projects <br />for real customers.</>}
+        lead="A curated selection of completed work. Our industrial partners include pharmaceutical, medical technology and machine-building companies."
         bgImage="/images/gallery/Screenshot_20211014-220249_Gallery.jpg"
       />
 
       <div className="refs-filter">
         <div className="container refs-filter__row">
-          <span className="refs-filter__label">Szűrés iparág szerint</span>
+          <span className="refs-filter__label">Filter by industry</span>
           <div className="refs-filter__chips" role="tablist">
             <button
               type="button"
@@ -101,7 +101,7 @@ export default function Referenciak() {
               className={`refs-chip${filter === 'all' ? ' refs-chip--active' : ''}`}
               onClick={() => setFilter('all')}
             >
-              Mind
+              All
               <span className="refs-chip__count">{references.length}</span>
             </button>
             {refIndustries.map(([name, count]) => (
@@ -126,19 +126,19 @@ export default function Referenciak() {
           <header className="refs-head">
             <div className="refs-head__meta">
               <span className="refs-num">01 / 03</span>
-              <span className="refs-tag">Esettanulmányok</span>
+              <span className="refs-tag">Case studies</span>
             </div>
             <div className="refs-head__copy">
-              <h2>{filter === 'all' ? 'Megvalósult projektek.' : `${filter} — ${filteredRefs.length} projekt`}</h2>
-              <p>Kattints egy projekt borítóképére a teljes galéria megnyitásához.</p>
+              <h2>{filter === 'all' ? 'Completed projects.' : `${filter} - ${filteredRefs.length} projects`}</h2>
+              <p>Click a project cover image to open the full gallery.</p>
             </div>
           </header>
 
           {filteredRefs.length === 0 ? (
             <div className="refs-empty">
-              <p>Ehhez az iparághoz még nem publikáltunk referencia esetet.</p>
+              <p>No reference case has been published for this industry yet.</p>
               <button type="button" className="btn btn--ghost" onClick={() => setFilter('all')}>
-                Mind mutatása
+                Show all
               </button>
             </div>
           ) : (
@@ -149,7 +149,7 @@ export default function Referenciak() {
                     type="button"
                     className="refs-case__media"
                     onClick={() => openProjectGallery(r.slug, 0)}
-                    aria-label={`${r.title} galéria megnyitása`}
+                    aria-label={`Open gallery for ${r.title}`}
                   >
                     <img
                       src={r.cover}
@@ -167,7 +167,7 @@ export default function Referenciak() {
                         <path d="M16 16l5 5M9 11h4M11 9v4" />
                       </svg>
                     </span>
-                    <span className="refs-case__count">{r.gallery.length} kép</span>
+                    <span className="refs-case__count">{r.gallery.length} images</span>
                   </button>
 
                   <div className="refs-case__body">
@@ -184,7 +184,7 @@ export default function Referenciak() {
                       className="refs-case__cta"
                       onClick={() => openProjectGallery(r.slug, 0)}
                     >
-                      Galéria megnyitása
+                      Open gallery
                       <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                         <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
@@ -202,11 +202,11 @@ export default function Referenciak() {
           <header className="refs-head">
             <div className="refs-head__meta">
               <span className="refs-num">02 / 03</span>
-              <span className="refs-tag">Műhely &amp; alkatrészek</span>
+              <span className="refs-tag">Workshop &amp; components</span>
             </div>
             <div className="refs-head__copy">
-              <h2>Pillanatképek a hétköznapokból.</h2>
-              <p>Egy válogatás a gépparkról, finomalkatrészekről és a munka közbeni állapotokról. Kattints bármelyik képre a nagyításhoz.</p>
+              <h2>Snapshots from everyday production.</h2>
+              <p>A selection of machines, precision parts and work-in-progress moments. Click any image to enlarge it.</p>
             </div>
           </header>
 
@@ -217,7 +217,7 @@ export default function Referenciak() {
                   type="button"
                   className="refs-mosaic__btn"
                   onClick={() => openWorkshop(i)}
-                  aria-label={`Kép nagyítása: ${img.alt}`}
+                  aria-label={`Enlarge image: ${img.alt}`}
                 >
                   <img
                     src={img.src}
@@ -246,11 +246,11 @@ export default function Referenciak() {
           <header className="refs-head">
             <div className="refs-head__meta">
               <span className="refs-num">03 / 03</span>
-              <span className="refs-tag">Iparágak</span>
+              <span className="refs-tag">Industries</span>
             </div>
             <div className="refs-head__copy">
-              <h2>Beszállítóként szinte minden iparágban otthon.</h2>
-              <p>A gyógyszer-, orvostechnika- és gépgyártó vállalatoktól az élelmiszeriparig — egyedi gyártási igények mindenhol.</p>
+              <h2>A supplier for almost every industrial sector.</h2>
+              <p>From pharmaceutical, medical technology and machine-building companies to the food industry, custom manufacturing needs appear everywhere.</p>
             </div>
           </header>
 
@@ -270,18 +270,18 @@ export default function Referenciak() {
           <div className="refs-cta__box">
             <div className="refs-cta__grid" aria-hidden />
             <div className="refs-cta__copy">
-              <span className="refs-num refs-num--light">Beszéljünk</span>
-              <h2>Hasonló projekttel keres beszállítót?</h2>
-              <p>Küldje el a műhelyrajzot vagy 3D modellt — 24 órán belül árajánlattal jelentkezünk.</p>
+              <span className="refs-num refs-num--light">Let's talk</span>
+              <h2>Looking for a supplier for a similar project?</h2>
+              <p>Send us your technical drawing or 3D model and we will respond with a quote within 24 hours.</p>
               <div className="refs-cta__actions">
                 <Link to="/kapcsolat" className="btn btn--primary">
-                  Ajánlatot kérek
+                  Request a quote
                   <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                     <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
                 <Link to="/szolgaltatasok" className="btn btn--ghost">
-                  Szolgáltatások
+                  Services
                   <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                     <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>

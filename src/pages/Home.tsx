@@ -71,38 +71,38 @@ const serviceIcons: Record<string, JSX.Element> = {
 const homeCapabilities = [
   {
     slug: 'cnc-maras',
-    title: 'CNC marás',
-    text: 'Nagy pontosságú CNC marás 3-, 4- és 5-tengelyes gépekkel',
+    title: 'CNC milling',
+    text: 'High-precision CNC milling on 3-, 4- and 5-axis machines',
   },
   {
     slug: 'cnc-esztergalas',
-    title: 'CNC esztergálás',
-    text: 'Kis- és nagyszériás esztergálás komplex alkatrészek gyártása',
+    title: 'CNC turning',
+    text: 'Low- and high-volume turning for complex components',
   },
   {
     slug: 'egyeb-megmunkalas',
-    title: 'Egyéb megmunkálás',
-    text: 'Köszörülés, fúrás, menetvágás, hegesztés, felületkezelés',
+    title: 'Secondary machining',
+    text: 'Grinding, drilling, threading, welding and surface treatment',
   },
   {
     slug: 'osszeszereles',
-    title: 'Összeszerelés',
-    text: 'Gépösszeállítás, modulok és komplett berendezések',
+    title: 'Assembly',
+    text: 'Machine builds, modules and complete industrial equipment',
   },
   {
     slug: 'minosegbiztositas',
-    title: 'Minőségbiztosítás',
-    text: 'Mérések 3D mérőgéppel, precíz minőségellenőrzés',
+    title: 'Quality assurance',
+    text: '3D measurement and precise quality control',
   },
 ];
 
-const materials = ['Acél, rozsdamentes acél', 'Alumínium, sárgaréz', 'Műanyagok'];
+const materials = ['Steel and stainless steel', 'Aluminium and brass', 'Engineering plastics'];
 
 export default function Home() {
   useSEO({
-    title: 'MetalFusion – Precíziós CNC alkatrészgyártás Budapesten',
+    title: 'MetalFusion - Precision CNC component manufacturing in Budapest',
     description:
-      'Egyedi kis- és nagyszériás CNC megmunkálás, prototípusgyártás és szerszámkészítés. Műhelyrajz vagy 3D modell alapján, prémium minőségben.',
+      'Custom low- and high-volume CNC machining, prototype manufacturing and tooling from technical drawings or 3D models.',
   });
 
   const featuredRefs = references.slice(0, 4);
@@ -114,11 +114,11 @@ export default function Home() {
         <div className="container">
           <div className="home__refs-head">
             <div className="home__refs-title-block">
-              <span className="home__section-kicker">Referenciáink</span>
-              <h2 className="home__refs-title">Valós megoldások, valós projektek</h2>
+              <span className="home__section-kicker">References</span>
+              <h2 className="home__refs-title">Real solutions for real production projects</h2>
             </div>
             <Link to="/referenciak" className="home__refs-link">
-              Összes referencia megtekintése
+              View all references
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                 <path d="M5 12h14M13 5l7 7-7 7" />
               </svg>
@@ -137,7 +137,7 @@ export default function Home() {
 
       <section className="home__services-band">
         <div className="container">
-          <span className="home__section-kicker">Szolgáltatásaink</span>
+          <span className="home__section-kicker">Services</span>
           <div className="home__services-shell">
             <ul className="home__services-row">
               {homeCapabilities.map((s) => (
@@ -155,8 +155,8 @@ export default function Home() {
               ))}
             </ul>
 
-            <aside className="home__materials" aria-label="Anyagok, amelyekkel dolgozunk">
-              <h3>Anyagok, amelyekkel dolgozunk</h3>
+            <aside className="home__materials" aria-label="Materials we machine">
+              <h3>Materials we machine</h3>
               <ul>
                 {materials.map((m) => (
                   <li key={m}>
@@ -175,19 +175,19 @@ export default function Home() {
       <section className="home__cta-bar">
         <div className="container home__cta-inner">
           <div className="home__cta-copy">
-            <h2 className="home__cta-title">Kérjen <span>ajánlatot</span> projektjére!</h2>
+            <h2 className="home__cta-title">Request a <span>quote</span> for your project</h2>
             <p className="home__cta-lead">
-              Műhelyrajz vagy 3D modell, és 24 órán belül válaszolunk.
+              Send a technical drawing or 3D model and we will respond within 24 hours.
             </p>
             <div className="home__cta-actions">
               <Link to="/kapcsolat" className="btn btn--primary">
-                Ajánlatkérés
+                Request a quote
                 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                   <path d="M9 18l6-6-6-6" />
                 </svg>
               </Link>
               <Link to="/kapcsolat" className="btn btn--ghost">
-                Kapcsolat
+                Contact
                 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                   <path d="M9 18l6-6-6-6" />
                 </svg>
@@ -220,7 +220,7 @@ export default function Home() {
                   <circle cx="12" cy="10" r="2.5" />
                 </svg>
               </span>
-              <span>Budapest 10. ker. Kozma utca</span>
+              <span>Budapest, District X, Kozma Street</span>
             </li>
           </ul>
         </div>

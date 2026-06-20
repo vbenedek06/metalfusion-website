@@ -9,50 +9,50 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: 'cnc-maras',
-    title: 'CNC marás',
-    short: '3- és 4-tengelyes megmunkálóközpontok, komplex geometriák.',
+    title: 'CNC milling',
+    short: '3- and 4-axis machining centres for complex geometries.',
     description:
-      'Acél, alumínium, rézötvözetek és műanyagok marása. Egyedi szerszámok, tokozatok, prototípusok és sorozatdarabok megmunkálása szoros tűréssel.',
-    bullets: ['3- és 4-tengelyes központok', 'Acél · alumínium · réz · műanyag', 'Tűrés akár ±0,01 mm'],
+      'Milling of steel, aluminium, copper alloys and engineering plastics. We machine custom tools, housings, prototypes and production parts to tight tolerances.',
+    bullets: ['3- and 4-axis machining centres', 'Steel · aluminium · copper · plastics', 'Tolerances down to ±0.01 mm'],
   },
   {
     slug: 'cnc-esztergalas',
-    title: 'CNC esztergálás',
-    short: 'Forgástestek, tengelyek, perselyek megmunkálása.',
+    title: 'CNC turning',
+    short: 'Machining of shafts, bushings and turned components.',
     description:
-      'Hajtott szerszámos esztergagépeken készülnek a tengelyek, perselyek és komplett forgástestek. Egydarabos megmunkálástól nagyszériáig.',
-    bullets: ['Hajtott szerszámos eszterga', 'Átmérő tartomány Ø3 – Ø250 mm', 'Sorjázás és megmunkálás egy felfogásban'],
+      'Shafts, bushings and complete turned parts are produced on CNC lathes with driven tooling. From one-off machining to high-volume production.',
+    bullets: ['Driven-tool CNC lathe', 'Diameter range Ø3-Ø250 mm', 'Deburring and machining in one setup'],
   },
   {
     slug: 'prototipusgyartas',
-    title: 'Prototípusgyártás',
-    short: 'Műhelyrajzból vagy 3D modellből egyedi darabok.',
+    title: 'Prototype manufacturing',
+    short: 'One-off parts from technical drawings or 3D models.',
     description:
-      'Új termékfejlesztés esetén gyors, pontos prototípusgyártást vállalunk. A modelltől a kész alkatrészig egy helyen, rugalmas ütemezéssel.',
-    bullets: ['STEP / IGES / DWG fájlok kezelése', 'Gyors átfutás', 'Egyeztetés mérnöki szinten'],
+      'For new product development, we provide fast and accurate prototype manufacturing. From model to finished part in one workshop, with flexible scheduling.',
+    bullets: ['STEP / IGES / DWG file support', 'Fast turnaround', 'Engineer-to-engineer consultation'],
   },
   {
     slug: 'szerszamgyartas',
-    title: 'Szerszám- és készülékgyártás',
-    short: 'Öntő-, sajtoló- és alakos szerszámok.',
+    title: 'Tooling and fixture manufacturing',
+    short: 'Moulds, forming tools, press tools and fixtures.',
     description:
-      'Alakos öntőszerszámok, sajtolószerszámok, fúrósablonok és gyártási készülékek tervezéséhez és gyártásához nyújtunk komplett megoldást.',
-    bullets: ['Alakos öntőszerszámok', 'Sajtoló- és vágószerszámok', 'Gyártási készülékek, sablonok'],
+      'We deliver complete solutions for shaped moulds, press tools, drilling templates and production fixtures, from design support to manufacturing.',
+    bullets: ['Shaped moulds', 'Press and cutting tools', 'Production fixtures and templates'],
   },
   {
     slug: 'kis-es-nagysorozat',
-    title: 'Kis- és nagyszériás gyártás',
-    short: 'Megbízható ütemezés, állandó minőség.',
+    title: 'Low- and high-volume production',
+    short: 'Reliable scheduling and consistent quality.',
     description:
-      'Heti vagy havi rendszerességű ismétlődő gyártásokat is vállalunk. Minőségellenőrzés minden batch után, kötött határidőkkel.',
-    bullets: ['Sorozatgyártás 10 – 10 000 db', 'Kötött határidők', 'Mérőjegyzőkönyv kérésre'],
+      'We also handle recurring weekly or monthly production runs. Each batch is checked for quality and delivered against fixed deadlines.',
+    bullets: ['Series production from 10 to 10,000 pcs', 'Fixed deadlines', 'Inspection report on request'],
   },
   {
     slug: 'komplett-mechanika',
-    title: 'Komplett mechanikai gyártás',
-    short: 'Berendezések és részegységek teljes legyártása.',
+    title: 'Complete mechanical manufacturing',
+    short: 'Full production of machines, assemblies and subassemblies.',
     description:
-      'Csomagológépek, orvosi eszközök, ipari berendezések komplett mechanikai legyártása, beleértve az alkatrészek készítését és az összeszerelést.',
-    bullets: ['Tervtől összeszerelésig', 'Egy felelős partner', 'Dokumentált gyártási folyamat'],
+      'Complete mechanical production for packaging machines, medical devices and industrial equipment, including part manufacturing and assembly.',
+    bullets: ['From design to assembly', 'One responsible partner', 'Documented production process'],
   },
 ];

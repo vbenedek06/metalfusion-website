@@ -1001,3 +1001,171 @@
     transform: none;
   }
 }
+
+/* ============================================================
+   LIGHT THEME OVERRIDES
+   ============================================================ */
+:root[data-theme='light'] .geppark-page .geppark-num {
+  color: var(--accent);
+}
+:root[data-theme='light'] .geppark-page .geppark-tag,
+:root[data-theme='light'] .geppark-page .geppark-nav__label {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .geppark-page .geppark-head__copy h2,
+:root[data-theme='light'] .geppark-page .geppark-card__name,
+:root[data-theme='light'] .geppark-page .geppark-stats__value {
+  color: var(--text);
+  text-shadow: none;
+}
+:root[data-theme='light'] .geppark-page .geppark-head__copy p,
+:root[data-theme='light'] .geppark-page .geppark-card__desc {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .geppark-page .geppark-card__short {
+  color: var(--text);
+}
+:root[data-theme='light'] .geppark-page .geppark-stats__row {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 14px 32px -10px rgba(15, 23, 42, 0.08);
+}
+:root[data-theme='light'] .geppark-page .geppark-stats__label {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .geppark-page .geppark-stats__sub,
+:root[data-theme='light'] .geppark-page .geppark-card__index,
+:root[data-theme='light'] .geppark-page .geppark-card__type,
+:root[data-theme='light'] .geppark-page .geppark-card__year {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .geppark-page .geppark-nav {
+  background: rgba(255, 255, 255, 0.85);
+  border-top-color: var(--rule);
+  border-bottom-color: var(--rule);
+}
+:root[data-theme='light'] .geppark-page .geppark-nav__chip {
+  background: #ffffff;
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .geppark-page .geppark-nav__chip:hover {
+  color: var(--text);
+}
+:root[data-theme='light'] .geppark-page .geppark-nav__chip--active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+:root[data-theme='light'] .geppark-page .geppark-nav__chip-cat {
+  background: rgba(15, 23, 42, 0.05);
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .geppark-page .geppark-nav__chip--active .geppark-nav__chip-cat {
+  background: rgba(31, 114, 216, 0.18);
+  color: var(--accent);
+}
+:root[data-theme='light'] .geppark-page .geppark-card__media {
+  background: #f1f5f9;
+  box-shadow: 0 22px 50px -22px rgba(15, 23, 42, 0.18);
+}
+:root[data-theme='light'] .geppark-page .geppark-card__media-overlay {
+  background:
+    linear-gradient(180deg, transparent 50%, rgba(15, 23, 42, 0.35) 100%),
+    radial-gradient(circle at 80% 20%, rgba(31, 114, 216, 0.08), transparent 50%);
+}
+:root[data-theme='light'] .geppark-page .geppark-card__badge {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: var(--rule-strong);
+  color: var(--text);
+}
+:root[data-theme='light'] .geppark-page .geppark-card__axes {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: var(--accent);
+}
+:root[data-theme='light'] .geppark-page .geppark-card__axes-lbl {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .geppark-page .geppark-card__specs {
+  background: #ffffff;
+}
+:root[data-theme='light'] .geppark-page .geppark-card__spec dt {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .geppark-page .geppark-card__spec dd {
+  color: var(--text);
+}
+:root[data-theme='light'] .geppark-page .geppark-card__tag {
+  background: #ffffff;
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .geppark-page .geppark-matrix {
+  background: #ffffff;
+}
+:root[data-theme='light'] .geppark-page .geppark-table thead {
+  background: rgba(15, 23, 42, 0.03);
+}
+:root[data-theme='light'] .geppark-page .geppark-table th {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .geppark-page .geppark-table td {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .geppark-page .geppark-table th[scope='row'],
+:root[data-theme='light'] .geppark-page .geppark-table__name {
+  color: var(--text);
+}
+:root[data-theme='light'] .geppark-page .geppark-table__sub {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .geppark-page .geppark-table tbody tr:hover {
+  background: rgba(31, 114, 216, 0.05);
+}
+:root[data-theme='light'] .geppark-page .geppark-quality__media {
+  background: #f1f5f9;
+}
+:root[data-theme='light'] .geppark-page .geppark-quality__media::after {
+  background:
+    linear-gradient(180deg, transparent 40%, rgba(15, 23, 42, 0.25) 100%),
+    radial-gradient(circle at 80% 20%, rgba(110, 231, 183, 0.1), transparent 50%);
+}
+:root[data-theme='light'] .geppark-page .geppark-quality__icon {
+  background: rgba(255, 255, 255, 0.9);
+  color: #047857;
+  border-color: rgba(4, 120, 87, 0.4);
+}
+:root[data-theme='light'] .geppark-page .geppark-quality__content {
+  background: #ffffff;
+}
+:root[data-theme='light'] .geppark-page .geppark-quality__content h3 {
+  color: var(--text);
+}
+:root[data-theme='light'] .geppark-page .geppark-quality__desc {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .geppark-page .geppark-quality__specs {
+  background: #f8fafc;
+}
+:root[data-theme='light'] .geppark-page .geppark-quality__spec dt {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .geppark-page .geppark-quality__spec dd {
+  color: var(--text);
+}
+:root[data-theme='light'] .geppark-page .geppark-quality__tags li {
+  background: #ffffff;
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .geppark-page .geppark-cta__box {
+  background:
+    radial-gradient(700px 320px at 75% -10%, rgba(31, 114, 216, 0.4), transparent 70%),
+    linear-gradient(135deg, #1f72d8 0%, #1456a8 100%);
+  border-color: rgba(31, 114, 216, 0.5);
+}
+:root[data-theme='light'] .geppark-page .geppark-cta__box h2,
+:root[data-theme='light'] .geppark-page .geppark-cta__box p {
+  color: #ffffff !important;
+}
+:root[data-theme='light'] .geppark-page .geppark-cta__grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+}

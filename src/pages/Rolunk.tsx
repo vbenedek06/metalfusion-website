@@ -6,9 +6,9 @@ import './Rolunk.css';
 const principles = [
   {
     num: '01',
-    title: 'Precizitás',
-    text: 'Minden alkatrész dokumentált mérési eredménnyel kerül ki a műhelyből. A pontosság nem opció — alapelvárás.',
-    meta: '±0.01 mm tűréshatár',
+    title: 'Precision',
+    text: 'Every part leaves the workshop with documented inspection results. Accuracy is not an option - it is the baseline.',
+    meta: '±0.01 mm tolerance',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round">
         <circle cx="16" cy="16" r="11" />
@@ -20,9 +20,9 @@ const principles = [
   },
   {
     num: '02',
-    title: 'Megbízhatóság',
-    text: 'Amit ígérünk, azt teljesítjük. Határidőre, leírt feltételekkel, kiszámítható módon — ipari mércével.',
-    meta: 'Határidő · 98%',
+    title: 'Reliability',
+    text: 'We deliver what we commit to: on time, under clearly agreed conditions and with industrial predictability.',
+    meta: 'Deadline reliability · 98%',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 3l11 4.5v8c0 6.5-4.6 11.2-11 13.5-6.4-2.3-11-7-11-13.5v-8z" />
@@ -32,9 +32,9 @@ const principles = [
   },
   {
     num: '03',
-    title: 'Rugalmasság',
-    text: 'Egyetlen prototípustól több ezres szériáig — ugyanazzal a műhellyel, ugyanazzal az igényességgel.',
-    meta: '1 db – 10 000 db',
+    title: 'Flexibility',
+    text: 'From a single prototype to thousands of parts, with the same workshop discipline and attention to detail.',
+    meta: '1 pc - 10,000 pcs',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="16" cy="16" r="3.4" />
@@ -44,9 +44,9 @@ const principles = [
   },
   {
     num: '04',
-    title: 'Tapasztalat',
-    text: 'Több mint egy évtizednyi fémmegmunkálás vegyipari, járműipari és gépgyártó megrendelők szolgálatában.',
-    meta: '15+ év a piacon',
+    title: 'Experience',
+    text: 'More than a decade of metalworking for chemical, automotive and machine-building customers.',
+    meta: '15+ years in business',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 27h24" />
@@ -58,79 +58,79 @@ const principles = [
 ];
 
 const stats = [
-  { value: '15+', label: 'év tapasztalat', sub: 'aktív gyártás 2010 óta' },
-  { value: '5000+', label: 'legyártott alkatrész', sub: 'éves volumen' },
-  { value: '50+', label: 'aktív partner', sub: 'visszatérő megrendelő' },
-  { value: '±0.01', label: 'mm tűréshatár', sub: 'dokumentált mérés' },
+  { value: '15+', label: 'years of experience', sub: 'active production since 2010' },
+  { value: '5000+', label: 'parts manufactured', sub: 'annual production volume' },
+  { value: '50+', label: 'active partners', sub: 'returning customers' },
+  { value: '±0.01', label: 'mm tolerance', sub: 'documented inspection' },
 ];
 
 const milestones = [
   {
     year: '2010',
-    title: 'A kezdetek',
-    text: 'A MetalFusion egy kis budapesti műhelyben indult, fókuszban a precíz egyedi gyártással és a partneri bizalom építésével.',
+    title: 'The beginning',
+    text: 'MetalFusion started in a small Budapest workshop, focused on precision custom manufacturing and building long-term customer trust.',
   },
   {
     year: '2014',
-    title: 'Első CNC technológia',
-    text: 'Az első 3-tengelyes CNC marógép üzembe helyezésével új minőségi szintre léptünk — bonyolultabb geometriák, jobb ismételhetőség.',
+    title: 'First CNC technology',
+    text: 'With the first 3-axis CNC milling machine, we stepped up to more complex geometries and better repeatability.',
   },
   {
     year: '2018',
-    title: 'Műhelybővítés',
-    text: 'A megnövekedett megrendelési igények miatt új, korszerű telephelyre költöztünk Kőbányára, ahol több gépet és nagyobb logisztikai teret üzemeltetünk.',
+    title: 'Workshop expansion',
+    text: 'Growing demand led us to a modern site in Kobanya, with more machines and more space for logistics and production.',
   },
   {
     year: '2021',
-    title: '5-tengelyes megmunkálás',
-    text: 'Új 5-tengelyes CNC központtal bővítettük a gépparkot. Komplex alkatrészek egyetlen befogással, kisebb hibalehetőséggel.',
+    title: '5-axis machining',
+    text: 'We expanded the machine park with a new 5-axis CNC centre for complex parts in a single setup and with fewer handling risks.',
   },
   {
-    year: 'Ma',
-    title: 'Komplett mechanikai partner',
-    text: 'Marástól és esztergálástól az összeszerelésig — komplett mechanikai gyártási folyamat egyetlen partneren keresztül.',
+    year: 'Today',
+    title: 'Complete mechanical partner',
+    text: 'From milling and turning to assembly, we provide a complete mechanical manufacturing process through one responsible partner.',
   },
 ];
 
 const machines = [
-  '3-tengelyes CNC marógép',
-  '4- és 5-tengelyes CNC központ',
-  'CNC esztergagép',
-  'Hagyományos esztergák és marógépek',
-  'Hegesztő- és összeszerelő munkaállomás',
-  '3D koordináta mérőgép',
+  '3-axis CNC milling machine',
+  '4- and 5-axis CNC machining centre',
+  'CNC lathe',
+  'Conventional lathes and milling machines',
+  'Welding and assembly workstation',
+  '3D coordinate measuring machine',
 ];
 
 const materials = [
-  'Szerkezeti és nemesített acél',
-  'Rozsdamentes acél (V2A, V4A)',
-  'Alumínium ötvözetek',
-  'Sárgaréz, vörösréz, bronz',
-  'Műszaki műanyagok (POM, PA, PEEK)',
+  'Structural and heat-treated steel',
+  'Stainless steel (V2A, V4A)',
+  'Aluminium alloys',
+  'Brass, copper and bronze',
+  'Engineering plastics (POM, PA, PEEK)',
 ];
 
 const specs = [
-  { label: 'Tűréshatár', value: '±0.01 mm' },
-  { label: 'Sorozatnagyság', value: '1 – 10 000 db' },
-  { label: 'Munkadarab', value: '1500 × 800 × 600 mm-ig' },
-  { label: 'Átfutási idő', value: '3 – 21 munkanap' },
-  { label: 'Mérés', value: '3D koordináta mérőgép' },
-  { label: 'Dokumentáció', value: 'Mérési jegyzőkönyv' },
+  { label: 'Tolerance', value: '±0.01 mm' },
+  { label: 'Batch size', value: '1-10,000 pcs' },
+  { label: 'Workpiece', value: 'up to 1500 × 800 × 600 mm' },
+  { label: 'Lead time', value: '3-21 business days' },
+  { label: 'Inspection', value: '3D coordinate measuring machine' },
+  { label: 'Documentation', value: 'Inspection report' },
 ];
 
 export default function Rolunk() {
   useSEO({
-    title: 'Rólunk — MetalFusion CNC műhely',
+    title: 'About us - MetalFusion CNC workshop',
     description:
-      'Több mint egy évtizede gyártunk CNC alkatrészeket Budapesten. Komplett mechanikai gyártás, precíz kivitelezés, dokumentált minőség.',
+      'For more than a decade, we have manufactured CNC components in Budapest. Complete mechanical production, precise execution and documented quality.',
   });
 
   return (
     <div className="about-page">
       <PageHero
-        eyebrow="Rólunk"
-        title={<>Műhely, gépek, mérnökök <br />— egy partnerrel.</>}
-        lead="A MetalFusion 2010 óta gyárt egyedi kis- és nagyszériás fémalkatrészeket Budapesten. Modern géppark, tapasztalt szakemberek, mérnöki gondolkodás — egyetlen kapcsolaton keresztül."
+        eyebrow="About us"
+        title={<>Workshop, machines and engineers <br />through one partner.</>}
+        lead="Since 2010, MetalFusion has manufactured custom low- and high-volume metal components in Budapest. Modern machinery, experienced specialists and engineering thinking through a single point of contact."
         bgImage="/images/gallery/Screenshot_20211014-220249_Gallery.jpg"
       />
 
@@ -138,13 +138,13 @@ export default function Rolunk() {
         <div className="container about-marker__row">
           <span className="about-marker__chip">
             <span className="about-marker__dot" aria-hidden />
-            Aktív műhely · 2010 óta
+            Active workshop · since 2010
           </span>
           <span className="about-marker__chip">
-            Budapest, X. ker., Kozma utca
+            Budapest, District X, Kozma Street
           </span>
           <span className="about-marker__chip">
-            Komplett mechanikai gyártás
+            Complete mechanical manufacturing
           </span>
         </div>
       </div>
@@ -153,19 +153,19 @@ export default function Rolunk() {
         <div className="container about-manifesto__grid">
           <aside className="about-manifesto__label">
             <span className="about-num">01 / 05</span>
-            <span className="about-section-tag">Kik vagyunk</span>
+            <span className="about-section-tag">Who we are</span>
           </aside>
 
           <div className="about-manifesto__copy">
             <h2 className="about-manifesto__title">
-              Olyan partner, amelyik <span>a műhelyrajzból nem feltevést, hanem alkatrészt</span> készít.
+              A partner that turns <span>technical drawings into parts, not assumptions</span>.
             </h2>
             <div className="about-manifesto__text">
               <p>
-                A MetalFusion 2010 óta gyárt egyedi fémalkatrészeket Magyarországon. Indulás óta egyetlen elven dolgozunk: a precizitás nem marketingszöveg, hanem mérhető kategória.
+                MetalFusion has manufactured custom metal components in Hungary since 2010. From the beginning, we have followed one principle: precision is not marketing language, it is something measurable.
               </p>
               <p>
-                Hiszünk abban, hogy a megbízható gyártásnak nem a brosúrában, hanem az átadott alkatrészben kell látszania. Ezért minden megrendelést dokumentálunk, és minden lépésnél felelős mérnök áll a vonal másik végén.
+                We believe reliable manufacturing should be visible in the delivered part, not in a brochure. That is why every order is documented and every step has a responsible engineer behind it.
               </p>
             </div>
           </div>
@@ -191,11 +191,11 @@ export default function Rolunk() {
           <header className="about-head">
             <div className="about-head__meta">
               <span className="about-num">02 / 05</span>
-              <span className="about-section-tag">Elveink</span>
+              <span className="about-section-tag">Our principles</span>
             </div>
             <div className="about-head__copy">
-              <h2>Elvek, amelyek mentén gyártunk.</h2>
-              <p>Nem szlogenek — operatív szabályok, amelyek minden megrendelésünkben tetten érhetők, a műhelyrajz beérkezésétől az utolsó méréséig.</p>
+              <h2>The principles behind our production.</h2>
+              <p>Not slogans, but operating rules visible in every order from the first drawing review to the final inspection.</p>
             </div>
           </header>
 
@@ -228,11 +228,11 @@ export default function Rolunk() {
           <header className="about-head">
             <div className="about-head__meta">
               <span className="about-num">03 / 05</span>
-              <span className="about-section-tag">Történetünk</span>
+              <span className="about-section-tag">Our story</span>
             </div>
             <div className="about-head__copy">
-              <h2>15+ év — lépésről lépésre.</h2>
-              <p>Egy kis műhelyből megbízható ipari partnerré. A MetalFusion fejlődésének főbb mérföldkövei.</p>
+              <h2>15+ years, step by step.</h2>
+              <p>From a small workshop to a reliable industrial partner. Key milestones in MetalFusion's development.</p>
             </div>
           </header>
 
@@ -259,12 +259,12 @@ export default function Rolunk() {
           <figure className="about-workshop__visual">
             <img
               src="/images/gallery/nagygep1.jpg"
-              alt="MetalFusion CNC műhely, üzem közben"
+              alt="MetalFusion CNC workshop in operation"
               loading="lazy"
             />
             <figcaption className="about-workshop__caption">
-              <span className="about-workshop__cap-label">Műhely</span>
-              <span className="about-workshop__cap-val">Budapest · Kőbánya</span>
+              <span className="about-workshop__cap-label">Workshop</span>
+              <span className="about-workshop__cap-val">Budapest · Kobanya</span>
             </figcaption>
             <div className="about-workshop__corners" aria-hidden>
               <span /><span /><span /><span />
@@ -275,17 +275,17 @@ export default function Rolunk() {
             <div className="about-head about-head--inline">
               <div className="about-head__meta">
                 <span className="about-num">04 / 05</span>
-                <span className="about-section-tag">Műhely &amp; képességek</span>
+                <span className="about-section-tag">Workshop &amp; capabilities</span>
               </div>
               <div className="about-head__copy">
-                <h2>Korszerű géppark, fegyelmezett folyamat.</h2>
-                <p>Minden, ami egy hosszú távú ipari partnerhez kell — egy helyen, egy felelős kapcsolattartóval.</p>
+                <h2>Modern machines, disciplined process.</h2>
+                <p>Everything a long-term industrial partner needs in one place, with one responsible contact.</p>
               </div>
             </div>
 
             <div className="about-spec">
               <div className="about-spec__col">
-                <h4 className="about-spec__head">Géppark</h4>
+                <h4 className="about-spec__head">Machine park</h4>
                 <ul className="about-spec__list">
                   {machines.map((item) => (
                     <li key={item}>
@@ -297,7 +297,7 @@ export default function Rolunk() {
               </div>
 
               <div className="about-spec__col">
-                <h4 className="about-spec__head">Anyagok</h4>
+                <h4 className="about-spec__head">Materials</h4>
                 <ul className="about-spec__list">
                   {materials.map((item) => (
                     <li key={item}>
@@ -309,7 +309,7 @@ export default function Rolunk() {
               </div>
 
               <div className="about-spec__col about-spec__col--data">
-                <h4 className="about-spec__head">Paraméterek</h4>
+                <h4 className="about-spec__head">Parameters</h4>
                 <dl className="about-spec__dl">
                   {specs.map((s) => (
                     <div key={s.label} className="about-spec__row">
@@ -328,18 +328,18 @@ export default function Rolunk() {
         <div className="container">
           <div className="about-cta__box">
             <div className="about-cta__copy">
-              <span className="about-num about-num--light">05 / 05 · Beszéljünk</span>
-              <h2>Dolgozzunk együtt a következő projektjén.</h2>
-              <p>Küldje el a műhelyrajzot vagy a 3D modellt — 24 órán belül árajánlattal jelentkezünk.</p>
+              <span className="about-num about-num--light">05 / 05 · Let's talk</span>
+              <h2>Let's work together on your next project.</h2>
+              <p>Send us your drawing or 3D model and we will respond with a quote within 24 hours.</p>
               <div className="about-cta__actions">
                 <Link to="/kapcsolat" className="btn btn--primary">
-                  Ajánlatot kérek
+                  Request a quote
                   <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                     <path d="M9 18l6-6-6-6" />
                   </svg>
                 </Link>
                 <Link to="/kapcsolat" className="btn btn--ghost">
-                  Kapcsolat
+                  Contact
                   <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                     <path d="M9 18l6-6-6-6" />
                   </svg>
@@ -355,7 +355,7 @@ export default function Rolunk() {
                   </svg>
                 </span>
                 <div className="about-cta__line">
-                  <span className="about-cta__line-key">Telefon</span>
+                  <span className="about-cta__line-key">Phone</span>
                   <a href="tel:+36203331218">+36 20 333 1218</a>
                 </div>
               </li>
@@ -367,7 +367,7 @@ export default function Rolunk() {
                   </svg>
                 </span>
                 <div className="about-cta__line">
-                  <span className="about-cta__line-key">E-mail</span>
+                  <span className="about-cta__line-key">Email</span>
                   <a href="mailto:info@metalfusion.hu">info@metalfusion.hu</a>
                 </div>
               </li>
@@ -379,8 +379,8 @@ export default function Rolunk() {
                   </svg>
                 </span>
                 <div className="about-cta__line">
-                  <span className="about-cta__line-key">Műhely</span>
-                  <span>Budapest 10. ker. Kozma utca</span>
+                  <span className="about-cta__line-key">Workshop</span>
+                  <span>Budapest, District X, Kozma Street</span>
                 </div>
               </li>
             </ul>

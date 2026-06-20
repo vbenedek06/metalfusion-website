@@ -399,9 +399,13 @@
 
 @media (max-width: 1024px) {
   .nav .nav__links,
-  .nav .nav__cta,
-  .nav .nav__lang {
+  .nav .nav__cta {
     display: none;
+  }
+
+  .nav .nav__lang {
+    display: inline-flex;
+    gap: 8px;
   }
 
   .nav .nav__toggle {
@@ -412,6 +416,7 @@
 @media (max-width: 520px) {
   .nav__inner {
     height: 66px;
+    gap: 10px;
   }
 
   .nav__brand-mark {
@@ -426,6 +431,15 @@
   .nav__brand-tag {
     font-size: 0.52rem;
     letter-spacing: 0;
+  }
+
+  .nav__lang {
+    gap: 6px;
+  }
+
+  .nav__lang-flag {
+    width: 22px;
+    height: 22px;
   }
 
   .nav__mobile {

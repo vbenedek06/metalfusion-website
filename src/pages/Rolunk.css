@@ -1085,3 +1085,147 @@
     transform: none;
   }
 }
+
+/* ============================================================
+   LIGHT THEME OVERRIDES
+   ============================================================ */
+:root[data-theme='light'] .about-page .about-num {
+  color: var(--accent);
+}
+:root[data-theme='light'] .about-page .about-section-tag,
+:root[data-theme='light'] .about-page .about-num::before {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .about-page .about-marker {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.025), rgba(15, 23, 42, 0));
+  border-bottom: 1px solid var(--rule);
+}
+:root[data-theme='light'] .about-page .about-marker__chip {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .about-page .about-marker__chip + .about-marker__chip {
+  border-left-color: var(--rule-strong);
+}
+:root[data-theme='light'] .about-page .about-manifesto__title {
+  color: var(--text);
+}
+:root[data-theme='light'] .about-page .about-manifesto__title span {
+  background: linear-gradient(180deg, var(--text-mute), var(--text-dim));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+:root[data-theme='light'] .about-page .about-manifesto__text p,
+:root[data-theme='light'] .about-page .about-head__copy p {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .about-page .about-stats__row {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 14px 32px -10px rgba(15, 23, 42, 0.08);
+}
+:root[data-theme='light'] .about-page .about-stats__cell + .about-stats__cell,
+:root[data-theme='light'] .about-page .about-principles__grid {
+  background: var(--rule);
+}
+:root[data-theme='light'] .about-page .about-stats__value,
+:root[data-theme='light'] .about-page .about-principle__title,
+:root[data-theme='light'] .about-page .about-milestone__year,
+:root[data-theme='light'] .about-page .about-milestone__card h3 {
+  color: var(--text);
+  text-shadow: none;
+}
+:root[data-theme='light'] .about-page .about-stats__label {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .about-page .about-principle {
+  background: #ffffff;
+}
+:root[data-theme='light'] .about-page .about-principle:hover {
+  background: #f8fafc;
+}
+:root[data-theme='light'] .about-page .about-principle__icon {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .about-page .about-principle:hover .about-principle__icon {
+  color: var(--accent);
+}
+:root[data-theme='light'] .about-page .about-principle__text,
+:root[data-theme='light'] .about-page .about-milestone__card p {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .about-page .about-principle__meta {
+  color: var(--text-dim);
+  border-top-color: var(--rule);
+}
+:root[data-theme='light'] .about-page .about-milestones__rail {
+  background: linear-gradient(180deg, transparent, var(--rule-strong) 12%, var(--rule-strong) 88%, transparent);
+}
+:root[data-theme='light'] .about-page .about-milestone__dot {
+  background: #ffffff;
+  box-shadow: 0 0 0 4px #f5f7fa, 0 0 14px rgba(31, 114, 216, 0.4);
+}
+:root[data-theme='light'] .about-page .about-image,
+:root[data-theme='light'] .about-page .about-workshop__visual {
+  background: #f1f5f9;
+  border-color: var(--rule-strong);
+}
+:root[data-theme='light'] .about-page .about-image::after,
+:root[data-theme='light'] .about-page .about-workshop__visual::after {
+  background:
+    linear-gradient(180deg, transparent 50%, rgba(15, 23, 42, 0.12) 100%),
+    radial-gradient(circle at 60% 42%, rgba(31, 114, 216, 0.05), transparent 50%);
+}
+:root[data-theme='light'] .about-page .about-workshop__caption {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: var(--rule-strong);
+}
+:root[data-theme='light'] .about-page .about-workshop__caption .about-workshop__cap-label {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .about-page .about-workshop__caption .about-workshop__cap-val {
+  color: var(--text);
+}
+:root[data-theme='light'] .about-page .about-workshop__corners span {
+  border-color: rgba(31, 114, 216, 0.4);
+}
+:root[data-theme='light'] .about-page .about-spec__col {
+  background: #ffffff;
+}
+:root[data-theme='light'] .about-page .about-spec__row dd {
+  color: var(--text);
+}
+:root[data-theme='light'] .about-page .about-spec__row dt,
+:root[data-theme='light'] .about-page .about-spec__head {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .about-page .about-cta__box {
+  background: linear-gradient(135deg, #1f72d8 0%, #1456a8 100%);
+  border-color: rgba(31, 114, 216, 0.5);
+  color: #ffffff;
+}
+:root[data-theme='light'] .about-page .about-cta__box::before {
+  background:
+    linear-gradient(90deg, rgba(15, 23, 42, 0.78) 0%, rgba(15, 23, 42, 0.45) 48%, rgba(15, 23, 42, 0.72) 100%),
+    url('/images/gallery/m1d.png');
+  background-size: cover;
+  background-position: center 58%;
+  filter: grayscale(20%) contrast(1.05);
+}
+:root[data-theme='light'] .about-page .about-cta__box,
+:root[data-theme='light'] .about-page .about-cta__box h2,
+:root[data-theme='light'] .about-page .about-cta__box p,
+:root[data-theme='light'] .about-page .about-cta__contact a,
+:root[data-theme='light'] .about-page .about-cta__contact span {
+  color: #ffffff !important;
+}
+:root[data-theme='light'] .about-page .about-cta__contact {
+  border-left-color: rgba(255, 255, 255, 0.3);
+}
+:root[data-theme='light'] .about-page .about-cta__icon {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+:root[data-theme='light'] .about-page .about-cta__line-key {
+  color: rgba(255, 255, 255, 0.7) !important;
+}

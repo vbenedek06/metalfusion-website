@@ -11,11 +11,11 @@ interface Props {
 }
 
 export default function CTASection({
-  title = 'Van egy gyártási feladata? Kérjen ajánlatot.',
-  text = 'Küldje el a műhelyrajzot vagy 3D modellt — 1-2 munkanapon belül visszajelzünk.',
-  primaryLabel = 'Ajánlatkérés',
+  title = 'Have a manufacturing task? Request a quote.',
+  text = 'Send us your drawing or 3D model and we will get back to you within 1-2 business days.',
+  primaryLabel = 'Request a quote',
   primaryTo = '/kapcsolat',
-  secondaryLabel = 'Szolgáltatások megtekintése',
+  secondaryLabel = 'View services',
   secondaryTo = '/szolgaltatasok',
 }: Props) {
   return (
@@ -23,7 +23,7 @@ export default function CTASection({
       <div className="container">
         <div className="cta__box">
           <div className="cta__copy">
-            <span className="eyebrow">Beszéljünk</span>
+            <span className="eyebrow">Let's talk</span>
             <h2>{title}</h2>
             <p>{text}</p>
           </div>

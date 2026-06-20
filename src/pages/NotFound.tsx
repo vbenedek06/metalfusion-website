@@ -4,26 +4,26 @@ import { useSEO } from '../hooks/useSEO';
 
 export default function NotFound() {
   useSEO({
-    title: '404 – Az oldal nem található | MetalFusion',
-    description: 'A keresett oldal nem található. Térjen vissza a főoldalra.',
+    title: '404 - Page not found | MetalFusion',
+    description: 'The page you are looking for could not be found. Return to the home page.',
   });
 
   return (
     <>
       <PageHero
         eyebrow="404"
-        title={<>Az oldal nem található.</>}
-        lead="A keresett oldal nem létezik vagy átkerült. Térjen vissza a főoldalra, vagy keressen minket közvetlenül."
+        title={<>Page not found.</>}
+        lead="The page you are looking for does not exist or has been moved. Return to the home page or contact us directly."
         showCrumb={false}
       />
       <section className="section section--tight">
         <div className="container">
         <div style={{ display: 'flex', gap: 12, marginTop: 8, flexWrap: 'wrap' }}>
           <Link to="/" className="btn btn--primary">
-            Vissza a főoldalra
+            Back to home
           </Link>
           <Link to="/kapcsolat" className="btn btn--ghost">
-            Kapcsolat
+            Contact
           </Link>
         </div>
         </div>

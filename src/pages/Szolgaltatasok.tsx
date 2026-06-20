@@ -7,7 +7,7 @@ import './Szolgaltatasok.css';
 const serviceVisuals: Record<string, { image: string; tag: string; icon: JSX.Element }> = {
   'cnc-maras': {
     image: '/images/gallery/nagygep1.jpg',
-    tag: '3- · 4-tengely',
+    tag: '3- · 4-axis',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 3v8" />
@@ -40,7 +40,7 @@ const serviceVisuals: Record<string, { image: string; tag: string; icon: JSX.Ele
   },
   'szerszamgyartas': {
     image: '/images/gallery/nagygep4.jpg',
-    tag: 'Egyedi tervezés',
+    tag: 'Custom design',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M19.5 8a5.5 5.5 0 0 0-7.6 7.1L4 23.2 8.8 28l8.1-7.9A5.5 5.5 0 0 0 24 12.5l-3.4 3.4-2-2 3.4-3.4A5.5 5.5 0 0 0 19.5 8z" />
@@ -49,7 +49,7 @@ const serviceVisuals: Record<string, { image: string; tag: string; icon: JSX.Ele
   },
   'kis-es-nagysorozat': {
     image: '/images/gallery/1.jpg',
-    tag: '10 – 10 000 db',
+    tag: '10-10,000 pcs',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <rect x="4" y="14" width="6" height="14" />
@@ -60,7 +60,7 @@ const serviceVisuals: Record<string, { image: string; tag: string; icon: JSX.Ele
   },
   'komplett-mechanika': {
     image: '/images/gallery/a-1.jpg',
-    tag: 'Komplett részegység',
+    tag: 'Complete assembly',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="3.5" />
@@ -73,23 +73,23 @@ const serviceVisuals: Record<string, { image: string; tag: string; icon: JSX.Ele
 };
 
 const capabilities = [
-  '±0.01 mm tűréshatár',
-  '5-tengelyes CNC központ',
-  '24h válasz ajánlatkérésre',
-  'STEP · IGES · DWG fájlok',
-  '1 db-tól 10 000 db-ig',
-  '3D koordináta mérőgép',
-  'Acél · alumínium · rozsdamentes',
-  '3 – 21 munkanap átfutás',
-  'Mérési jegyzőkönyv',
-  'Komplett mechanikai gyártás',
+  '±0.01 mm tolerance',
+  '5-axis CNC centre',
+  '24h quote response',
+  'STEP · IGES · DWG files',
+  '1 to 10,000 pcs',
+  '3D coordinate measuring machine',
+  'Steel · aluminium · stainless',
+  '3-21 business day lead time',
+  'Inspection report',
+  'Complete mechanical manufacturing',
 ];
 
 const process = [
   {
     num: '01',
     title: 'Briefing',
-    text: 'Műhelyrajz, 3D modell, mennyiség, határidő. Egy felelős mérnök válaszol, nem call center.',
+    text: 'Technical drawing, 3D model, quantity and deadline. A responsible engineer answers, not a call centre.',
     icon: (
       <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M5 6h18v12H10l-5 4z" />
@@ -99,8 +99,8 @@ const process = [
   },
   {
     num: '02',
-    title: 'Ajánlat',
-    text: '24 órán belül árajánlat — anyagköltség, megmunkálás, határidő, opciók egyértelműen kibontva.',
+    title: 'Quotation',
+    text: 'A quote within 24 hours, with material cost, machining, deadline and options clearly broken down.',
     icon: (
       <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M7 4h10l4 4v16H7z" />
@@ -111,8 +111,8 @@ const process = [
   },
   {
     num: '03',
-    title: 'CAM &amp; előkészítés',
-    text: 'Megmunkálási stratégia, szerszámlista, befogás. A gép „elindításáig" minden eldől.',
+    title: 'CAM &amp; preparation',
+    text: 'Machining strategy, tool list and workholding. Everything is decided before the machine starts.',
     icon: (
       <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <rect x="4" y="5" width="20" height="14" rx="1" />
@@ -123,8 +123,8 @@ const process = [
   },
   {
     num: '04',
-    title: 'Gyártás',
-    text: 'CNC marás, esztergálás, kiegészítő műveletek — saját műhelyben, dokumentált folyamatban.',
+    title: 'Production',
+    text: 'CNC milling, turning and secondary operations in our own workshop with a documented process.',
     icon: (
       <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="14" cy="14" r="3" />
@@ -134,8 +134,8 @@ const process = [
   },
   {
     num: '05',
-    title: 'Minőségellenőrzés',
-    text: '3D koordináta mérőgép, vizuális kontroll, dokumentált mérési jegyzőkönyv kérésre.',
+    title: 'Quality control',
+    text: '3D coordinate measurement, visual inspection and documented inspection reports on request.',
     icon: (
       <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 3l9 4v6c0 5-3.8 9-9 11-5.2-2-9-6-9-11V7z" />
@@ -145,8 +145,8 @@ const process = [
   },
   {
     num: '06',
-    title: 'Szállítás',
-    text: 'Csomagolás, szállítólevél, futárszolgálat vagy személyes átvétel — kérés szerint.',
+    title: 'Delivery',
+    text: 'Packaging, delivery note, courier shipment or personal pickup according to your preference.',
     icon: (
       <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M2 9h13v11H2z" />
@@ -159,36 +159,36 @@ const process = [
 ];
 
 const materials = [
-  { name: 'Szerkezeti acél', note: 'S235, S355', swatch: '#8a93a0' },
-  { name: 'Nemesített acél', note: '42CrMo4, C45', swatch: '#6f7884' },
-  { name: 'Rozsdamentes acél', note: 'V2A, V4A', swatch: '#aeb6c1' },
-  { name: 'Alumínium', note: 'AlMg, AlCuMg', swatch: '#cdd2da' },
-  { name: 'Sárgaréz · vörösréz', note: 'MS58, Cu-ETP', swatch: '#c7a37a' },
-  { name: 'Műszaki műanyagok', note: 'POM · PA · PEEK', swatch: '#d9d9d9' },
+  { name: 'Structural steel', note: 'S235, S355', swatch: '#8a93a0' },
+  { name: 'Heat-treated steel', note: '42CrMo4, C45', swatch: '#6f7884' },
+  { name: 'Stainless steel', note: 'V2A, V4A', swatch: '#aeb6c1' },
+  { name: 'Aluminium', note: 'AlMg, AlCuMg', swatch: '#cdd2da' },
+  { name: 'Brass · copper', note: 'MS58, Cu-ETP', swatch: '#c7a37a' },
+  { name: 'Engineering plastics', note: 'POM · PA · PEEK', swatch: '#d9d9d9' },
 ];
 
 const tolerances = [
-  { label: 'Méretpontosság', value: '±0.01 mm' },
-  { label: 'Felületi érdesség', value: 'Ra 0.8 – 3.2' },
-  { label: 'Munkadarab méret', value: '1500 × 800 × 600 mm-ig' },
-  { label: 'Sorozat', value: '1 – 10 000 db' },
-  { label: 'Átfutási idő', value: '3 – 21 munkanap' },
-  { label: 'Bemenet', value: 'STEP · IGES · DWG · PDF' },
+  { label: 'Dimensional accuracy', value: '±0.01 mm' },
+  { label: 'Surface roughness', value: 'Ra 0.8-3.2' },
+  { label: 'Workpiece size', value: 'up to 1500 × 800 × 600 mm' },
+  { label: 'Batch size', value: '1-10,000 pcs' },
+  { label: 'Lead time', value: '3-21 business days' },
+  { label: 'Input files', value: 'STEP · IGES · DWG · PDF' },
 ];
 
 export default function Szolgaltatasok() {
   useSEO({
-    title: 'Szolgáltatások — CNC marás, esztergálás, szerszámgyártás | MetalFusion',
+    title: 'Services - CNC milling, turning and tooling | MetalFusion',
     description:
-      'CNC marás, esztergálás, prototípusgyártás, kis- és nagyszériás gyártás, szerszámkészítés és komplett mechanikai megoldások. Műhelyrajz vagy 3D modell alapján.',
+      'CNC milling, turning, prototype manufacturing, low- and high-volume production, tooling and complete mechanical solutions from drawings or 3D models.',
   });
 
   return (
     <div className="services-page">
       <PageHero
-        eyebrow="Szolgáltatások"
-        title={<>Komplex gyártási folyamatok, <br />egy partnerrel.</>}
-        lead="A megmunkálástól az összeszerelésig: marás, esztergálás, szerszámkészítés és dokumentált sorozatgyártás. Műhelyrajz és/vagy 3D modell alapján dolgozunk."
+        eyebrow="Services"
+        title={<>Complex manufacturing processes <br />through one partner.</>}
+        lead="From machining to assembly: milling, turning, tooling and documented series production from technical drawings and/or 3D models."
         bgImage="/images/gallery/nagygep2.jpg"
       />
 
@@ -208,11 +208,11 @@ export default function Szolgaltatasok() {
           <header className="services-head">
             <div className="services-head__meta">
               <span className="services-num">01 / 04</span>
-              <span className="services-tag">Amit gyártunk</span>
+              <span className="services-tag">What we manufacture</span>
             </div>
             <div className="services-head__copy">
-              <h2>Hat szolgáltatás, egy felelős partner.</h2>
-              <p>Saját műhely, képzett szakemberek, dokumentált folyamatok. Egyetlen kapcsolattartón keresztül a teljes gyártási láncon végig.</p>
+              <h2>Six services, one responsible partner.</h2>
+              <p>Own workshop, skilled specialists and documented processes through a single contact across the entire production chain.</p>
             </div>
           </header>
 
@@ -221,7 +221,7 @@ export default function Szolgaltatasok() {
               const visual = serviceVisuals[s.slug];
               return (
                 <li key={s.slug} className="service-tile">
-                  <Link to="/kapcsolat" className="service-tile__link" aria-label={`Ajánlatkérés: ${s.title}`}>
+                  <Link to="/kapcsolat" className="service-tile__link" aria-label={`Request a quote for ${s.title}`}>
                     <div className="service-tile__media">
                       {visual?.image && (
                         <img src={visual.image} alt={s.title} loading="lazy" />
@@ -251,7 +251,7 @@ export default function Szolgaltatasok() {
                       </ul>
 
                       <span className="service-tile__cta">
-                        Ajánlatot kérek
+                        Request a quote
                         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                           <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
@@ -270,11 +270,11 @@ export default function Szolgaltatasok() {
           <header className="services-head">
             <div className="services-head__meta">
               <span className="services-num">02 / 04</span>
-              <span className="services-tag">Folyamat</span>
+              <span className="services-tag">Process</span>
             </div>
             <div className="services-head__copy">
-              <h2>A briefingtől a szállításig.</h2>
-              <p>Egy egyértelmű, hat lépésből álló folyamat. Minden lépésnél tudja, hol tart a megrendelése, és ki a felelős mérnök.</p>
+              <h2>From briefing to delivery.</h2>
+              <p>A clear six-step process. At every stage you know where your order stands and who the responsible engineer is.</p>
             </div>
           </header>
 
@@ -301,17 +301,17 @@ export default function Szolgaltatasok() {
           <header className="services-head services-head--inline services-tech__head">
             <div className="services-head__meta">
               <span className="services-num">03 / 04</span>
-              <span className="services-tag">Anyag &amp; tolerancia</span>
+              <span className="services-tag">Material &amp; tolerance</span>
             </div>
             <div className="services-head__copy">
-              <h2>Mivel és milyen pontossággal.</h2>
-              <p>Acéltól a műszaki műanyagokig, prototípustól a nagyszériáig — mérnöki precizitással.</p>
+              <h2>Materials and achievable precision.</h2>
+              <p>From steel to engineering plastics, from prototypes to high-volume series, with engineering-level precision.</p>
             </div>
           </header>
 
           <div className="services-materials">
             <h4 className="services-materials__head">
-              <span /> Megmunkált anyagok
+              <span /> Materials we machine
             </h4>
             <ul className="services-materials__list">
               {materials.map((m) => (
@@ -332,7 +332,7 @@ export default function Szolgaltatasok() {
 
           <div className="services-specs">
             <h4 className="services-materials__head">
-              <span /> Műszaki paraméterek
+              <span /> Technical parameters
             </h4>
             <dl className="services-specs__dl">
               {tolerances.map((t) => (
@@ -351,18 +351,18 @@ export default function Szolgaltatasok() {
           <div className="services-cta__box">
             <div className="services-cta__grid" aria-hidden />
             <div className="services-cta__copy">
-              <span className="services-num services-num--light">04 / 04 · Beszéljünk</span>
-              <h2>Küldje el a műhelyrajzot — 24 órán belül árajánlattal jelentkezünk.</h2>
-              <p>STEP, IGES, DWG vagy PDF. Egyetlen alkatrésztől a több ezres szériáig — ugyanazzal az igényességgel.</p>
+              <span className="services-num services-num--light">04 / 04 · Let's talk</span>
+              <h2>Send us your drawing and we will respond with a quote within 24 hours.</h2>
+              <p>STEP, IGES, DWG or PDF. From a single part to thousands of pieces, with the same level of care.</p>
               <div className="services-cta__actions">
                 <Link to="/kapcsolat" className="btn btn--primary">
-                  Ajánlatot kérek
+                  Request a quote
                   <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                     <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
                 <Link to="/referenciak" className="btn btn--ghost">
-                  Referenciák
+                  References
                   <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                     <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>

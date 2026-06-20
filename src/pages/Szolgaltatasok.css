@@ -769,3 +769,125 @@
     transform: none;
   }
 }
+
+/* ============================================================
+   LIGHT THEME OVERRIDES
+   ============================================================ */
+:root[data-theme='light'] .services-page .services-num {
+  color: var(--accent);
+}
+:root[data-theme='light'] .services-page .services-tag,
+:root[data-theme='light'] .services-page .services-marquee__item {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .services-page .services-marquee {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.025), rgba(15, 23, 42, 0));
+  border-bottom-color: var(--rule);
+}
+:root[data-theme='light'] .services-page .services-head__copy h2 {
+  color: var(--text);
+}
+:root[data-theme='light'] .services-page .services-head__copy p {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .services-page .service-tile__link {
+  background: #ffffff;
+  box-shadow: 0 14px 32px -12px rgba(15, 23, 42, 0.12);
+}
+:root[data-theme='light'] .services-page .service-tile__link:hover {
+  box-shadow: 0 22px 42px -12px rgba(15, 23, 42, 0.18);
+}
+:root[data-theme='light'] .services-page .service-tile__media {
+  background: #e2e8f0;
+  border-bottom-color: var(--rule-strong);
+}
+:root[data-theme='light'] .services-page .service-tile__overlay {
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.35) 100%),
+    radial-gradient(circle at 80% 20%, rgba(31, 114, 216, 0.08), transparent 50%);
+}
+:root[data-theme='light'] .services-page .service-tile__num {
+  color: #ffffff;
+  background: rgba(15, 23, 42, 0.65);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+:root[data-theme='light'] .services-page .service-tile__tag {
+  color: #ffffff;
+  background: rgba(31, 114, 216, 0.85);
+  border-color: rgba(31, 114, 216, 0.6);
+}
+:root[data-theme='light'] .services-page .service-tile__icon {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+:root[data-theme='light'] .services-page .service-tile__title {
+  color: var(--text);
+}
+:root[data-theme='light'] .services-page .service-tile__desc {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .services-page .service-tile__specs {
+  border-top-color: var(--rule);
+}
+:root[data-theme='light'] .services-page .service-tile__specs li {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .services-page .service-tile__cta {
+  color: var(--text);
+}
+:root[data-theme='light'] .services-page .service-tile__link:hover .service-tile__cta {
+  color: var(--accent);
+}
+:root[data-theme='light'] .services-page .process__node {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border-color: var(--rule-strong);
+  color: var(--text-dim);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 8px 24px -8px rgba(15, 23, 42, 0.1);
+}
+:root[data-theme='light'] .services-page .process__step:hover .process__node {
+  color: var(--accent);
+  border-color: var(--accent-strong);
+}
+:root[data-theme='light'] .services-page .process__copy h3 {
+  color: var(--text);
+}
+:root[data-theme='light'] .services-page .process__copy p {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .services-page .services-materials,
+:root[data-theme='light'] .services-page .services-specs {
+  background: #ffffff;
+}
+:root[data-theme='light'] .services-page .services-materials__list li {
+  background: #f8fafc;
+  border-color: var(--rule);
+}
+:root[data-theme='light'] .services-page .services-materials__name {
+  color: var(--text);
+}
+:root[data-theme='light'] .services-page .services-materials__note,
+:root[data-theme='light'] .services-page .services-materials__head {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .services-page .services-specs__row dt {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .services-page .services-specs__row dd {
+  color: var(--text);
+}
+:root[data-theme='light'] .services-page .services-cta__box {
+  background:
+    radial-gradient(700px 320px at 75% -10%, rgba(31, 114, 216, 0.4), transparent 70%),
+    linear-gradient(135deg, #1f72d8 0%, #1456a8 100%);
+  border-color: rgba(31, 114, 216, 0.5);
+}
+:root[data-theme='light'] .services-page .services-cta__box h2,
+:root[data-theme='light'] .services-page .services-cta__box p {
+  color: #ffffff !important;
+}
+:root[data-theme='light'] .services-page .services-cta__grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+}

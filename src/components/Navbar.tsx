@@ -1,20 +1,23 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
+import { useLanguage, type Language } from '../i18n';
 import './Navbar.css';
 
 const links = [
-  { to: '/', label: 'Főoldal' },
-  { to: '/rolunk', label: 'Rólunk' },
-  { to: '/szolgaltatasok', label: 'Szolgáltatások' },
-  { to: '/referenciak', label: 'Referenciák' },
-  { to: '/geppark', label: 'Géppark' },
-  { to: '/kapcsolat', label: 'Kapcsolat' },
+  { to: '/', label: 'Home' },
+  { to: '/rolunk', label: 'About' },
+  { to: '/szolgaltatasok', label: 'Services' },
+  { to: '/referenciak', label: 'References' },
+  { to: '/geppark', label: 'Machine Park' },
+  { to: '/kapcsolat', label: 'Contact' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const { lang, setLang, t } = useLanguage();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -37,17 +40,17 @@ export default function Navbar() {
   return (
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''} ${open ? 'nav--open' : ''}`}>
       <div className="container nav__inner">
-        <Link to="/" className="nav__brand" aria-label="MetalFusion főoldal">
+        <Link to="/" className="nav__brand" aria-label={t('MetalFusion home')}>
           <span className="nav__brand-mark" aria-hidden>
             <img src="/images/logo.png" alt="" />
           </span>
           <span className="nav__brand-block">
             <span className="nav__brand-text">METALFUSION</span>
-            <span className="nav__brand-tag">Precízió a fémben</span>
+            <span className="nav__brand-tag">Precision in metal</span>
           </span>
         </Link>
 
-        <nav className="nav__links" aria-label="Főmenü">
+        <nav className="nav__links" aria-label={t('Main navigation')}>
           {links.map((l) => (
             <NavLink
               key={l.to}
@@ -55,22 +58,29 @@ export default function Navbar() {
               end={l.to === '/'}
               className={({ isActive }) => `nav__link ${isActive ? 'nav__link--active' : ''}`}
             >
-              {l.label}
+              {t(l.label)}
             </NavLink>
           ))}
         </nav>
 
-        <div className="nav__lang" aria-label="Nyelvválasztó">
-          <button type="button" className="nav__lang-flag nav__lang-flag--active" aria-pressed="true" title="Magyar">
-            <span className="nav__lang-hu" aria-hidden />
-          </button>
-          <button type="button" className="nav__lang-flag" aria-pressed="false" title="English">
-            <span className="nav__lang-en" aria-hidden />
-          </button>
-        </div>
+        <ThemeToggle />
 
+        <div className="nav__lang" aria-label={t('Language selector')}>
+          {(['hu', 'en'] as Language[]).map((language) => (
+            <button
+              key={language}
+              type="button"
+              className={`nav__lang-flag${lang === language ? ' nav__lang-flag--active' : ''}`}
+              aria-pressed={lang === language}
+              title={language === 'hu' ? t('Hungarian') : t('English')}
+              onClick={() => setLang(language)}
+            >
+              <span className={language === 'hu' ? 'nav__lang-hu' : 'nav__lang-en'} aria-hidden />
+            </button>
+          ))}
+        </div>
         <Link to="/kapcsolat" className="nav__cta">
-          <span className="nav__cta-label">Ajánlatkérés</span>
+          <span className="nav__cta-label">{t('Request a quote')}</span>
           <span className="nav__cta-arrow" aria-hidden>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M13 6l6 6-6 6" />
@@ -81,7 +91,7 @@ export default function Navbar() {
 
         <button
           className="nav__toggle"
-          aria-label="Menü"
+          aria-label={t('Menu')}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
@@ -92,7 +102,7 @@ export default function Navbar() {
       </div>
 
       <div className="nav__mobile" role="dialog" aria-hidden={!open}>
-        <nav className="nav__mobile-links" aria-label="Mobil menü">
+        <nav className="nav__mobile-links" aria-label={t('Mobile navigation')}>
           {links.map((l) => (
             <NavLink
               key={l.to}
@@ -102,11 +112,11 @@ export default function Navbar() {
                 `nav__mobile-link ${isActive ? 'nav__mobile-link--active' : ''}`
               }
             >
-              {l.label}
+              {t(l.label)}
             </NavLink>
           ))}
           <Link to="/kapcsolat" className="nav__cta nav__mobile-cta">
-            <span className="nav__cta-label">Ajánlatkérés</span>
+            <span className="nav__cta-label">{t('Request a quote')}</span>
             <span className="nav__cta-arrow" aria-hidden>
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M13 6l6 6-6 6" />

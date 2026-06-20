@@ -3,8 +3,8 @@ import './Hero.css';
 
 const values = [
   {
-    title: 'Precizitás',
-    text: 'Pontosság és minőség modern megmunkálóközpontokkal.',
+    title: 'Precision',
+    text: 'Accurate, high-quality production on modern machining centres.',
     icon: (
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="9" />
@@ -14,8 +14,8 @@ const values = [
     ),
   },
   {
-    title: 'Megbízhatóság',
-    text: 'Tartjuk a határidőket, számíthat ránk.',
+    title: 'Reliability',
+    text: 'Clear deadlines, dependable delivery and predictable communication.',
     icon: (
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="9" />
@@ -24,8 +24,8 @@ const values = [
     ),
   },
   {
-    title: 'Rugalmasság',
-    text: 'Egyedi igényekre szabott megoldások.',
+    title: 'Flexibility',
+    text: 'Tailored solutions for one-off parts, prototypes and series production.',
     icon: (
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M3 12c4 0 4-6 8-6s4 6 8 6" />
@@ -34,8 +34,8 @@ const values = [
     ),
   },
   {
-    title: 'Tapasztalat',
-    text: 'Évek óta a fémiparban, széleskörű szakértelemmel.',
+    title: 'Experience',
+    text: 'Years of metalworking knowledge across demanding industrial projects.',
     icon: (
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
@@ -53,25 +53,25 @@ export default function Hero() {
 
       <div className="container hero__inner">
         <div className="hero__copy">
-          <span className="hero__eyebrow">Egyedi gyártás • Precízió • Megbízhatóság</span>
+          <span className="hero__eyebrow">Custom manufacturing • Precision • Reliability</span>
           <h1 className="hero__title">
-            Egyedi kis- és nagyszériás alkatrészgyártás
-            <span className="hero__title-accent">magas minőségben, megfizethető áron</span>
+            Custom low- and high-volume component manufacturing
+            <span className="hero__title-accent">high quality at a competitive price</span>
           </h1>
           <p className="hero__lead">
-            Precíziós megmunkálás modern gépparkkal, tapasztalt szakemberekkel és megbízható
-            határidővel.
+            Precision machining with modern equipment, experienced specialists and reliable
+            delivery dates.
           </p>
 
           <div className="hero__actions">
             <Link to="/szolgaltatasok" className="btn btn--primary">
-              Szolgáltatásaink
+              Our services
               <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                 <path d="M9 18l6-6-6-6" />
               </svg>
             </Link>
             <Link to="/referenciak" className="btn btn--ghost">
-              Referenciáink
+              References
               <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                 <path d="M9 18l6-6-6-6" />
               </svg>

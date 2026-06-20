@@ -81,14 +81,14 @@ export default function Lightbox({ images, index, onClose, onIndexChange }: Prop
       className="lightbox"
       role="dialog"
       aria-modal="true"
-      aria-label="Képnagyítás"
+      aria-label="Image preview"
       onClick={onClose}
     >
       <button
         type="button"
         className="lightbox__close"
         onClick={(e) => { e.stopPropagation(); onClose(); }}
-        aria-label="Bezárás"
+        aria-label="Close"
       >
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
           <path d="M6 6l12 12M18 6L6 18" />
@@ -107,7 +107,7 @@ export default function Lightbox({ images, index, onClose, onIndexChange }: Prop
             type="button"
             className="lightbox__nav lightbox__nav--prev"
             onClick={(e) => { e.stopPropagation(); goPrev(); }}
-            aria-label="Előző kép"
+            aria-label="Previous image"
           >
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
               <path d="M15 6l-6 6 6 6" />
@@ -117,7 +117,7 @@ export default function Lightbox({ images, index, onClose, onIndexChange }: Prop
             type="button"
             className="lightbox__nav lightbox__nav--next"
             onClick={(e) => { e.stopPropagation(); goNext(); }}
-            aria-label="Következő kép"
+            aria-label="Next image"
           >
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 6l6 6-6 6" />

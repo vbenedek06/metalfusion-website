@@ -1162,3 +1162,199 @@
     display: none;
   }
 }
+
+/* ============================================================
+   LIGHT THEME OVERRIDES
+   ============================================================ */
+:root[data-theme='light'] .contact-page .contact-hero::before {
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+:root[data-theme='light'] .contact-page .contact-hero__status {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--rule-strong);
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .contact-page .contact-hero__status-sep {
+  background: rgba(15, 23, 42, 0.15);
+}
+:root[data-theme='light'] .contact-page .contact-hero__status-sub {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .contact-page .contact-hero__title {
+  color: var(--text) !important;
+}
+:root[data-theme='light'] .contact-page .contact-hero__lead {
+  color: var(--text-dim) !important;
+}
+:root[data-theme='light'] .contact-page .contact-hero__meta {
+  border-top-color: var(--rule);
+}
+:root[data-theme='light'] .contact-page .contact-hero__meta-label {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .contact-page .contact-hero__meta-value {
+  color: var(--text);
+}
+:root[data-theme='light'] .contact-page .contact-hero__meta-value small {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .contact-page .contact-form-card {
+  background: #ffffff;
+  box-shadow: 0 24px 50px -20px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+:root[data-theme='light'] .contact-page .contact-form-card__head {
+  border-bottom-color: var(--rule);
+}
+:root[data-theme='light'] .contact-page .contact-form-card__head h2 {
+  color: var(--text);
+}
+:root[data-theme='light'] .contact-page .contact-form-card__head p {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .contact-page .contact-form__chip {
+  background: #ffffff;
+  color: var(--text-dim);
+  border-color: var(--rule-strong);
+}
+:root[data-theme='light'] .contact-page .contact-form__chip:hover {
+  color: var(--text);
+}
+:root[data-theme='light'] .contact-page .contact-form__chip--active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+:root[data-theme='light'] .contact-page .contact-form__attach {
+  background: #f8fafc;
+  border-color: var(--rule-strong);
+}
+:root[data-theme='light'] .contact-page .contact-form__attach-head {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .contact-page .contact-form__formats li {
+  background: #ffffff;
+  color: var(--text-dim);
+  border-color: var(--rule);
+}
+:root[data-theme='light'] .contact-page .contact-form__legal {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .contact-page .contact-channel__link {
+  background: #ffffff;
+  color: var(--text);
+}
+:root[data-theme='light'] .contact-page .contact-channel__link:hover {
+  background: var(--accent-soft);
+}
+:root[data-theme='light'] .contact-page .contact-channel__icon {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: rgba(31, 114, 216, 0.3);
+}
+:root[data-theme='light'] .contact-page .contact-channel__label {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .contact-page .contact-channel__value {
+  color: var(--text);
+}
+:root[data-theme='light'] .contact-page .contact-channel__sub {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .contact-page .contact-hours {
+  background: #ffffff;
+}
+:root[data-theme='light'] .contact-page .contact-hours__head {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .contact-page .contact-hours li {
+  border-bottom-color: var(--rule);
+}
+:root[data-theme='light'] .contact-page .contact-hours li span {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .contact-page .contact-hours li strong {
+  color: var(--text);
+}
+:root[data-theme='light'] .contact-page .contact-hours__pill {
+  background: #f8fafc;
+  color: var(--text-dim);
+  border-color: var(--rule-strong);
+}
+:root[data-theme='light'] .contact-page .contact-hours__pill--open {
+  background: rgba(74, 222, 128, 0.12);
+  color: #047857;
+  border-color: rgba(4, 120, 87, 0.4);
+}
+:root[data-theme='light'] .contact-page .contact-map-head {
+  border-bottom-color: var(--rule);
+}
+:root[data-theme='light'] .contact-page .contact-map-head h2 {
+  color: var(--text);
+}
+:root[data-theme='light'] .contact-page .contact-map-head p {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .contact-page .contact-map-head__btn {
+  background: #ffffff;
+  color: var(--text);
+  border-color: var(--rule-strong);
+}
+:root[data-theme='light'] .contact-page .contact-map-head__btn:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+:root[data-theme='light'] .contact-page .contact-map iframe {
+  filter: contrast(1.02) saturate(0.95);
+}
+:root[data-theme='light'] .contact-page .contact-map__overlay {
+  background:
+    linear-gradient(180deg, transparent 50%, rgba(15, 23, 42, 0.18) 100%),
+    radial-gradient(circle at 50% 50%, transparent 30%, rgba(15, 23, 42, 0.15) 75%);
+}
+:root[data-theme='light'] .contact-page .contact-map__pin {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: var(--accent);
+}
+:root[data-theme='light'] .contact-page .contact-map__pin strong {
+  color: var(--text);
+}
+:root[data-theme='light'] .contact-page .contact-map__pin span {
+  color: var(--text-mute);
+}
+:root[data-theme='light'] .contact-page .contact-map__corners span {
+  border-color: var(--rule-strong);
+}
+:root[data-theme='light'] .contact-page .contact-faq__intro h2 {
+  color: var(--text);
+}
+:root[data-theme='light'] .contact-page .contact-faq__intro p {
+  color: var(--text-dim);
+}
+:root[data-theme='light'] .contact-page .contact-faq details {
+  background: #ffffff;
+}
+:root[data-theme='light'] .contact-page .contact-faq details[open] {
+  border-color: var(--accent);
+}
+:root[data-theme='light'] .contact-page .contact-faq summary {
+  color: var(--text);
+}
+:root[data-theme='light'] .contact-page .contact-faq summary span::before,
+:root[data-theme='light'] .contact-page .contact-faq summary span::after {
+  background: var(--text);
+}
+:root[data-theme='light'] .contact-page .contact-faq summary span {
+  border-color: var(--rule-strong);
+}
+:root[data-theme='light'] .contact-page .contact-faq details[open] summary span::before,
+:root[data-theme='light'] .contact-page .contact-faq details[open] summary span::after {
+  background: var(--accent);
+}
+:root[data-theme='light'] .contact-page .contact-faq details[open] summary span {
+  border-color: var(--accent);
+}
+:root[data-theme='light'] .contact-page .contact-faq details > p {
+  color: var(--text-dim);
+}
