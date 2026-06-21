@@ -134,7 +134,7 @@ export default function Kapcsolat() {
           loop
           playsInline
           preload="metadata"
-          poster="/images/gallery/nagygep2.jpg"
+          poster="/images/contact-hero-poster.jpg"
           aria-hidden="true"
         />
         <div className="contact-hero__video-overlay" aria-hidden />

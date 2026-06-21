@@ -54,7 +54,7 @@
   object-fit: cover;
   object-position: center;
   z-index: -2;
-  filter: grayscale(18%) saturate(0.85) contrast(1.05) brightness(0.55);
+  filter: grayscale(8%) saturate(1.04) contrast(1.2) brightness(0.64);
 }
 
 .contact-hero__video-overlay {
@@ -63,9 +63,9 @@
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(5, 8, 12, 0.45) 0%, rgba(5, 8, 12, 0.7) 60%, rgba(5, 8, 12, 0.92) 100%),
-    linear-gradient(90deg, rgba(5, 8, 12, 0.85) 0%, rgba(5, 8, 12, 0.55) 50%, rgba(5, 8, 12, 0.35) 100%),
-    radial-gradient(700px 400px at 78% 30%, rgba(47, 141, 255, 0.18), transparent 70%);
+    linear-gradient(180deg, rgba(5, 8, 12, 0.42) 0%, rgba(5, 8, 12, 0.64) 60%, rgba(5, 8, 12, 0.88) 100%),
+    linear-gradient(90deg, rgba(5, 8, 12, 0.8) 0%, rgba(5, 8, 12, 0.46) 50%, rgba(5, 8, 12, 0.24) 100%),
+    radial-gradient(700px 400px at 78% 30%, rgba(47, 141, 255, 0.16), transparent 70%);
 }
 
 .contact-hero__inner {
@@ -168,7 +168,6 @@
   gap: 14px 40px;
   margin-top: 8px;
   padding-top: 26px;
-  border-top: 1px solid var(--rule);
 }
 
 .contact-hero__meta-item {
@@ -350,7 +349,6 @@
   gap: 10px;
   padding-bottom: 26px;
   margin-bottom: 28px;
-  border-bottom: 1px solid var(--rule);
 }
 
 .contact-form-card__eyebrow {
@@ -1131,6 +1129,10 @@
     padding-top: clamp(120px, 24vw, 160px);
   }
 
+  .contact-hero__video {
+    object-position: 36% center;
+  }
+
   .contact-hero__title {
     font-size: clamp(1.7rem, 7vw, 2.4rem);
   }
@@ -1226,6 +1228,15 @@
     linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
+:root[data-theme='light'] .contact-page .contact-hero__video {
+  filter: grayscale(4%) saturate(1.08) contrast(1.24) brightness(0.64) !important;
+}
+:root[data-theme='light'] .contact-page .contact-hero__video-overlay {
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.34) 0%, rgba(248, 250, 252, 0.52) 60%, rgba(248, 250, 252, 0.8) 100%),
+    linear-gradient(90deg, rgba(248, 250, 252, 0.68) 0%, rgba(248, 250, 252, 0.32) 50%, rgba(248, 250, 252, 0.12) 100%),
+    radial-gradient(700px 400px at 78% 30%, rgba(31, 114, 216, 0.08), transparent 70%) !important;
+}
 :root[data-theme='light'] .contact-page .contact-hero__status {
   background: rgba(255, 255, 255, 0.85);
   border-color: var(--rule-strong);
@@ -1244,7 +1255,7 @@
   color: var(--text-dim) !important;
 }
 :root[data-theme='light'] .contact-page .contact-hero__meta {
-  border-top-color: var(--rule);
+  border-top: 0;
 }
 :root[data-theme='light'] .contact-page .contact-hero__meta-label {
   color: var(--text-mute);
@@ -1260,7 +1271,7 @@
   box-shadow: 0 24px 50px -20px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 :root[data-theme='light'] .contact-page .contact-form-card__head {
-  border-bottom-color: var(--rule);
+  border-bottom: 0;
 }
 :root[data-theme='light'] .contact-page .contact-form-card__head h2 {
   color: var(--text);

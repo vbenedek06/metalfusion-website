@@ -3,6 +3,15 @@ import './ThemeToggle.css';
 
 type Theme = 'dark' | 'light';
 const STORAGE_KEY = 'mf-theme';
+const THEME_CHANGE_EVENT = 'mf-theme-change';
+
+interface ThemeToggleProps {
+  className?: string;
+}
+
+function isTheme(value: unknown): value is Theme {
+  return value === 'dark' || value === 'light';
+}
 
 function readInitialTheme(): Theme {
   if (typeof window === 'undefined') return 'dark';
@@ -21,12 +30,33 @@ export function initTheme() {
   applyTheme(readInitialTheme());
 }
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
   const [theme, setTheme] = useState<Theme>(() => readInitialTheme());
+
+  useEffect(() => {
+    const onThemeChange = (event: Event) => {
+      const next = (event as CustomEvent<Theme>).detail;
+      if (isTheme(next)) setTheme(next);
+    };
+
+    const onStorage = (event: StorageEvent) => {
+      if (event.key === STORAGE_KEY && isTheme(event.newValue)) {
+        setTheme(event.newValue);
+      }
+    };
+
+    window.addEventListener(THEME_CHANGE_EVENT, onThemeChange);
+    window.addEventListener('storage', onStorage);
+    return () => {
+      window.removeEventListener(THEME_CHANGE_EVENT, onThemeChange);
+      window.removeEventListener('storage', onStorage);
+    };
+  }, []);
 
   useEffect(() => {
     applyTheme(theme);
     window.localStorage.setItem(STORAGE_KEY, theme);
+    window.dispatchEvent(new CustomEvent(THEME_CHANGE_EVENT, { detail: theme }));
   }, [theme]);
 
   const toggle = useCallback(() => {
@@ -38,7 +68,7 @@ export default function ThemeToggle() {
   return (
     <button
       type="button"
-      className="theme-toggle"
+      className={`theme-toggle${className ? ` ${className}` : ''}`}
       onClick={toggle}
       aria-label={`Switch to ${next} theme`}
       title={`Theme: ${theme} - click to switch`}

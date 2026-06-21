@@ -63,7 +63,9 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <ThemeToggle />
+        <div className="nav__theme-desktop">
+          <ThemeToggle />
+        </div>
 
         <div className="nav__lang" aria-label={t('Language selector')}>
           {(['hu', 'en'] as Language[]).map((language) => (
@@ -124,6 +126,14 @@ export default function Navbar() {
             </span>
             <span className="nav__cta-shine" aria-hidden />
           </Link>
+
+          <div className="nav__mobile-tools" aria-label={t('Theme mode')}>
+            <span className="nav__mobile-tools-copy">
+              <span className="nav__mobile-tools-label">{t('Theme mode')}</span>
+              <span className="nav__mobile-tools-sub">{t('Dark / light')}</span>
+            </span>
+            <ThemeToggle className="nav__mobile-theme" />
+          </div>
         </nav>
       </div>
     </header>

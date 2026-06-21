@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import './Hero.css';
 
+const heroVideo = '/videos/home-hero-cnc-loop.mp4';
+const heroPoster = '/images/hero-video-poster.jpg';
+
 const values = [
   {
     title: 'Precision',
@@ -49,7 +52,19 @@ const values = [
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="hero__bg" aria-hidden />
+      <div className="hero__bg" aria-hidden>
+        <video
+          className="hero__video"
+          src={heroVideo}
+          poster={heroPoster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          disablePictureInPicture
+        />
+      </div>
 
       <div className="container hero__inner">
         <div className="hero__copy">
