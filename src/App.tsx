@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import CookieConsent from './components/CookieConsent';
+import DevEditor from './components/DevEditor';
 import { useScrollReveal } from './hooks/useScrollReveal';
 import { useAnalyticsPageView } from './hooks/useAnalyticsPageView';
 import { initAnalytics } from './lib/analytics';
@@ -44,6 +45,7 @@ export default function App() {
       </main>
       <Footer />
       <CookieConsent />
+      <DevEditor />
     </>
   );
 }

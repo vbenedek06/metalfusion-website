@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import T from './T';
 import './Hero.css';
 
 const heroVideo = '/videos/home-hero-cnc-loop.mp4';
@@ -68,15 +69,12 @@ export default function Hero() {
 
       <div className="container hero__inner">
         <div className="hero__copy">
-          <span className="hero__eyebrow">Custom manufacturing • Precision • Reliability</span>
+          <T k="home.hero.eyebrow" as="span" className="hero__eyebrow" />
           <h1 className="hero__title">
-            Custom low- and high-volume component manufacturing
-            <span className="hero__title-accent">high quality at a competitive price</span>
+            <T k="home.hero.title" as="span" />
+            <T k="home.hero.titleAccent" as="span" className="hero__title-accent" />
           </h1>
-          <p className="hero__lead">
-            Precision machining with modern equipment, experienced specialists and reliable
-            delivery dates.
-          </p>
+          <T k="home.hero.lead" as="p" className="hero__lead" />
 
           <div className="hero__actions">
             <Link to="/szolgaltatasok" className="btn btn--primary">

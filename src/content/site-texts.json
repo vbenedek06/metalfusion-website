@@ -1,0 +1,22 @@
+{
+  "home": {
+    "hero": {
+      "eyebrow": {
+        "hu": "Egyedi gyártás • Precízió • Megbízhatóság",
+        "en": "Custom manufacturing • Precision • Reliability"
+      },
+      "title": {
+        "hu": "Egyedi kis- és nagyszériás alkatrészgyártás",
+        "en": "Custom low- and high-volume component manufacturing"
+      },
+      "titleAccent": {
+        "hu": "magas minőségben, megfizethető áron",
+        "en": "high quality at a competitive price"
+      },
+      "lead": {
+        "hu": "Precíziós megmunkálás modern gépparkkal, tapasztalt szakemberekkel és megbízható határidővel.",
+        "en": "Precision machining with modern equipment, experienced specialists and reliable delivery dates."
+      }
+    }
+  }
+}
