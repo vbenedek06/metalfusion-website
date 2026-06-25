@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import { useSEO } from '../hooks/useSEO';
+import { canonical, localBusinessSchema, OG_IMAGE_PATH } from '../data/seo';
 import './Rolunk.css';
 
 const principles = [
@@ -120,9 +121,12 @@ const specs = [
 
 export default function Rolunk() {
   useSEO({
-    title: 'About us - MetalFusion CNC workshop',
+    title: 'Rólunk — 15+ éves CNC műhely Budapesten | MetalFusion',
     description:
-      'For more than a decade, we have manufactured CNC components in Budapest. Complete mechanical production, precise execution and documented quality.',
+      'MetalFusion: 2010 óta gyártunk egyedi CNC alkatrészeket Budapesten. Modern géppark, dokumentált minőség, mérnöki gondolkodás egy felelős partnerrel.',
+    canonical: canonical('/rolunk'),
+    ogImage: OG_IMAGE_PATH,
+    jsonLd: localBusinessSchema(),
   });
 
   return (
@@ -131,7 +135,7 @@ export default function Rolunk() {
         eyebrow="About us"
         title={<>Workshop, machines and engineers <br />through one partner.</>}
         lead="Since 2010, MetalFusion has manufactured custom low- and high-volume metal components in Budapest. Modern machinery, experienced specialists and engineering thinking through a single point of contact."
-        bgImage="/images/gallery/Screenshot_20211014-220249_Gallery.jpg"
+        bgImage="/images/gallery/Screenshot_20211014-220249_Gallery.webp"
       />
 
       <div className="about-marker">
@@ -258,7 +262,7 @@ export default function Rolunk() {
         <div className="container about-workshop__grid">
           <figure className="about-workshop__visual">
             <img
-              src="/images/gallery/nagygep1.jpg"
+              src="/images/gallery/nagygep1.webp"
               alt="MetalFusion CNC workshop in operation"
               loading="lazy"
             />
@@ -331,6 +335,10 @@ export default function Rolunk() {
               <span className="about-num about-num--light">05 / 05 · Let's talk</span>
               <h2>Let's work together on your next project.</h2>
               <p>Send us your drawing or 3D model and we will respond with a quote within 24 hours.</p>
+              <p className="about-cta__inline-links">
+                Nézze meg a <Link to="/szolgaltatasok">szolgáltatásainkat</Link>, vagy
+                tekintse át <Link to="/referenciak">korábbi gyártási projektjeinket</Link>.
+              </p>
               <div className="about-cta__actions">
                 <Link to="/kapcsolat" className="btn btn--primary">
                   Request a quote

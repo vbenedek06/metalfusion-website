@@ -1169,3 +1169,27 @@
     linear-gradient(to right, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
 }
+
+/* Inline contextual links inside the CTA block */
+.geppark-cta__inline-links {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(218, 227, 236, 0.78);
+}
+.geppark-cta__inline-links a {
+  color: var(--accent-strong);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(31, 114, 216, 0.45);
+}
+.geppark-cta__inline-links a:hover {
+  color: rgba(255, 255, 255, 0.95);
+  border-bottom-color: rgba(255, 255, 255, 0.75);
+}
+:root[data-theme='light'] .geppark-page .geppark-cta__inline-links {
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+:root[data-theme='light'] .geppark-page .geppark-cta__inline-links a {
+  color: #ffffff !important;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}

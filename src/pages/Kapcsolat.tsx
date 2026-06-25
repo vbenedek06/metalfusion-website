@@ -1,34 +1,8 @@
-import { useEffect, useMemo, useState, type FormEvent } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSEO } from '../hooks/useSEO';
+import { canonical, localBusinessSchema, OG_IMAGE_PATH } from '../data/seo';
+import ContactForm from '../components/ContactForm';
 import './Kapcsolat.css';
-
-interface FormState {
-  name: string;
-  company: string;
-  email: string;
-  phone: string;
-  topic: string;
-  message: string;
-}
-
-const empty: FormState = {
-  name: '',
-  company: '',
-  email: '',
-  phone: '',
-  topic: 'Quote request',
-  message: '',
-};
-
-const topics = [
-  'Quote request',
-  'Prototype / small batch',
-  'Series production',
-  'Workshop visit',
-  'Other',
-];
-
-const acceptedFormats = ['STEP', 'IGES', 'DWG', 'STL', 'PDF', 'JPG'];
 
 const channels = [
   {
@@ -88,13 +62,14 @@ function getOpenStatus(now: Date) {
 
 export default function Kapcsolat() {
   useSEO({
-    title: 'Contact - MetalFusion quote request',
+    title: 'Kapcsolat — CNC ajánlatkérés 24 órán belül | MetalFusion',
     description:
-      'Send your technical drawing or 3D model and we will respond within 24 hours. Phone, email and Budapest workshop contact details.',
+      'Küldje el műhelyrajzát vagy 3D modelljét: 24 órán belül árajánlattal és gyárthatósági visszajelzéssel válaszolunk. Budapest, Kozma utca, X. kerület.',
+    canonical: canonical('/kapcsolat'),
+    ogImage: OG_IMAGE_PATH,
+    jsonLd: localBusinessSchema(),
   });
 
-  const [data, setData] = useState<FormState>(empty);
-  const [status, setStatus] = useState<'idle' | 'sent'>('idle');
   const [now, setNow] = useState(() => new Date());
 
   useEffect(() => {
@@ -107,20 +82,6 @@ export default function Kapcsolat() {
     hour: '2-digit',
     minute: '2-digit',
   });
-
-  function update<K extends keyof FormState>(key: K, value: FormState[K]) {
-    setData((d) => ({ ...d, [key]: value }));
-  }
-
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const subject = encodeURIComponent(`${data.topic} - ${data.name || 'MetalFusion'}`);
-    const body = encodeURIComponent(
-      `Name: ${data.name}\nCompany: ${data.company}\nEmail: ${data.email}\nPhone: ${data.phone}\nTopic: ${data.topic}\n\nMessage:\n${data.message}`
-    );
-    window.location.href = `mailto:info@metalfusion.hu?subject=${subject}&body=${body}`;
-    setStatus('sent');
-  }
 
   return (
     <div className="contact-page">
@@ -184,119 +145,7 @@ export default function Kapcsolat() {
               <p>The more details you provide - material, quantity, deadline and drawings - the more accurate our quote can be.</p>
             </header>
 
-            <form className="contact-form" onSubmit={onSubmit} noValidate>
-              <div className="contact-form__row">
-                <label className="contact-form__field">
-                  <span className="contact-form__label">Name</span>
-                  <input
-                    required
-                    type="text"
-                    value={data.name}
-                    onChange={(e) => update('name', e.target.value)}
-                    autoComplete="name"
-                    placeholder="John Smith"
-                  />
-                </label>
-                <label className="contact-form__field">
-                  <span className="contact-form__label">Company</span>
-                  <input
-                    type="text"
-                    value={data.company}
-                    onChange={(e) => update('company', e.target.value)}
-                    autoComplete="organization"
-                    placeholder="Example Ltd."
-                  />
-                </label>
-              </div>
-
-              <div className="contact-form__row">
-                <label className="contact-form__field">
-                  <span className="contact-form__label">Email address</span>
-                  <input
-                    required
-                    type="email"
-                    value={data.email}
-                    onChange={(e) => update('email', e.target.value)}
-                    autoComplete="email"
-                    placeholder="name@company.com"
-                  />
-                </label>
-                <label className="contact-form__field">
-                  <span className="contact-form__label">Phone number</span>
-                  <input
-                    type="tel"
-                    value={data.phone}
-                    onChange={(e) => update('phone', e.target.value)}
-                    autoComplete="tel"
-                    placeholder="+36 20 123 4567"
-                  />
-                </label>
-              </div>
-
-              <fieldset className="contact-form__topic">
-                <legend className="contact-form__label">Topic</legend>
-                <div className="contact-form__chips">
-                  {topics.map((t) => (
-                    <label key={t} className={`contact-form__chip${data.topic === t ? ' contact-form__chip--active' : ''}`}>
-                      <input
-                        type="radio"
-                        name="topic"
-                        value={t}
-                        checked={data.topic === t}
-                        onChange={() => update('topic', t)}
-                      />
-                      {t}
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
-
-              <label className="contact-form__field">
-                <span className="contact-form__label">Message</span>
-                <textarea
-                  required
-                  rows={6}
-                  value={data.message}
-                  onChange={(e) => update('message', e.target.value)}
-                  placeholder="Material grade, quantity, deadline, attached drawing / 3D model availability..."
-                />
-              </label>
-
-              <div className="contact-form__attach">
-                <span className="contact-form__attach-head">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <path d="M21 12.5l-9 9a5 5 0 0 1-7-7l9-9a3.5 3.5 0 0 1 5 5l-9 9a2 2 0 0 1-3-3l8-8" />
-                  </svg>
-                  Accepted file formats by email
-                </span>
-                <ul className="contact-form__formats">
-                  {acceptedFormats.map((f) => (
-                    <li key={f}>{f}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="contact-form__footer">
-                <button type="submit" className="contact-form__submit">
-                  <span>Send quote request</span>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
-                    <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-                <span className="contact-form__legal">
-                  Your data will only be used to respond to your quote request.
-                </span>
-              </div>
-
-              {status === 'sent' && (
-                <div className="contact-form__sent" role="status">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <path d="M5 12l5 5L20 7" />
-                  </svg>
-                  Your email client is open - please send the message and we will respond within 24 hours.
-                </div>
-              )}
-            </form>
+            <ContactForm />
           </div>
 
           {/* CHANNELS SIDEBAR */}

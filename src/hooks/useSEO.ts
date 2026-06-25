@@ -1,5 +1,20 @@
 import { useEffect } from 'react';
 
+const GSC_VERIFICATION = (import.meta.env.VITE_GSC_VERIFICATION ?? '').trim();
+
+let gscApplied = false;
+function ensureGscMeta(): void {
+  if (gscApplied || !GSC_VERIFICATION || typeof document === 'undefined') return;
+  const selector = 'meta[name="google-site-verification"]';
+  if (!document.head.querySelector(selector)) {
+    const m = document.createElement('meta');
+    m.setAttribute('name', 'google-site-verification');
+    m.setAttribute('content', GSC_VERIFICATION);
+    document.head.appendChild(m);
+  }
+  gscApplied = true;
+}
+
 interface SEOInput {
   title: string;
   description: string;
@@ -7,6 +22,7 @@ interface SEOInput {
   ogImage?: string;
   ogType?: 'website' | 'article';
   jsonLd?: Record<string, unknown>;
+  noindex?: boolean;
 }
 
 function setMeta(selector: string, build: () => HTMLElement, attr: string, value: string): void {
@@ -52,9 +68,26 @@ export function useSEO({
   ogImage,
   ogType = 'website',
   jsonLd,
+  noindex,
 }: SEOInput): void {
   useEffect(() => {
     document.title = title;
+    ensureGscMeta();
+
+    if (noindex) {
+      setMeta(
+        'meta[name="robots"]',
+        () => {
+          const m = document.createElement('meta');
+          m.setAttribute('name', 'robots');
+          return m;
+        },
+        'content',
+        'noindex, follow',
+      );
+    } else {
+      removeHeadElement('meta[name="robots"]');
+    }
 
     setMeta(
       'meta[name="description"]',
@@ -72,7 +105,7 @@ export function useSEO({
       ['og:description', description],
       ['og:type', ogType],
       ['og:site_name', 'MetalFusion'],
-      ['og:locale', 'en_US'],
+      ['og:locale', 'hu_HU'],
     ];
     if (ogImage) {
       ogPairs.push(['og:image', new URL(ogImage, window.location.origin).toString()]);
@@ -113,5 +146,5 @@ export function useSEO({
     }
 
     setJsonLd(jsonLd);
-  }, [title, description, canonical, ogImage, ogType, jsonLd]);
+  }, [title, description, canonical, ogImage, ogType, jsonLd, noindex]);
 }

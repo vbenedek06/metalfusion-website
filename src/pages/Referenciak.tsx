@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero';
 import Lightbox, { type LightboxImage } from '../components/Lightbox';
 import { references, workshopGallery } from '../data/references';
 import { useSEO } from '../hooks/useSEO';
+import { canonical, localBusinessSchema, OG_IMAGE_PATH } from '../data/seo';
 import './Referenciak.css';
 
 type Filter = 'all' | string;
@@ -21,9 +22,12 @@ const industries = [
 
 export default function Referenciak() {
   useSEO({
-    title: 'References - MetalFusion manufacturing projects',
+    title: 'Referenciák — gyártási projektek | MetalFusion',
     description:
-      'Custom components and complete mechanical assemblies manufactured for pharmaceutical, medical technology and machine-building companies.',
+      'MetalFusion gyártási referenciák: gyógyszeripari, orvostechnikai, gépgyártó és csomagolástechnikai partnerek egyedi alkatrészei és berendezései.',
+    canonical: canonical('/referenciak'),
+    ogImage: OG_IMAGE_PATH,
+    jsonLd: localBusinessSchema(),
   });
 
   const [filter, setFilter] = useState<Filter>('all');
@@ -87,7 +91,7 @@ export default function Referenciak() {
         eyebrow="References"
         title={<>Real manufacturing projects <br />for real customers.</>}
         lead="A curated selection of completed work. Our industrial partners include pharmaceutical, medical technology and machine-building companies."
-        bgImage="/images/gallery/Screenshot_20211014-220249_Gallery.jpg"
+        bgImage="/images/gallery/Screenshot_20211014-220249_Gallery.webp"
       />
 
       <div className="refs-filter">

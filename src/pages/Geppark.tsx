@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import PageHero from '../components/PageHero';
 import { machines } from '../data/machines';
 import { useSEO } from '../hooks/useSEO';
+import { canonical, localBusinessSchema, OG_IMAGE_PATH } from '../data/seo';
 import './Geppark.css';
 
 const stats = [
@@ -21,9 +22,12 @@ const categoryLabels: Record<string, string> = {
 
 export default function Geppark() {
   useSEO({
-    title: 'Machine Park - CNC machining centres and lathes | MetalFusion',
+    title: 'Géppark — Hurco, Hwacheon, Doosan CNC | MetalFusion',
     description:
-      'Hurco and Doosan CNC machining centres, a Hwacheon driven-tool lathe and precision measuring equipment in our Budapest workshop.',
+      'Hurco CNC megmunkálóközpontok, Hwacheon hajtott szerszámos eszterga, Doosan tengelyeszterga és precíziós 3D mérőeszközök egy budapesti műhelyben.',
+    canonical: canonical('/geppark'),
+    ogImage: OG_IMAGE_PATH,
+    jsonLd: localBusinessSchema(),
   });
 
   const production = useMemo(
@@ -66,7 +70,7 @@ export default function Geppark() {
         eyebrow="Machine Park"
         title={<>Modern CNC capacity <br />in our Budapest workshop.</>}
         lead="3- and 4-axis machining centres, driven-tool CNC lathes and auxiliary machines ensure consistent quality and reliable delivery dates."
-        bgImage="/images/gallery/nagygep2.jpg"
+        bgImage="/images/gallery/nagygep2.webp"
       />
 
       <section className="geppark-stats">
@@ -301,6 +305,10 @@ export default function Geppark() {
               <span className="geppark-num geppark-num--light">Let's talk</span>
               <h2>Complex part? Let's review manufacturability.</h2>
               <p>Our manufacturability feedback can save time and material. Send us the model and we will walk through the machining strategy.</p>
+              <p className="geppark-cta__inline-links">
+                Mit gyártunk ezeken a gépeken? Lásd a <Link to="/szolgaltatasok">szolgáltatásokat</Link> és
+                a <Link to="/referenciak">megvalósult projekteket</Link>.
+              </p>
               <div className="geppark-cta__actions">
                 <Link to="/kapcsolat" className="btn btn--primary">
                   Request a quote

@@ -518,6 +518,48 @@ const pairs = [
   ['Page not found.', 'Az oldal nem található.'],
   ['Back to home', 'Vissza a főoldalra'],
   ['The page you are looking for could not be found. Return to the home page.', 'A keresett oldal nem található. Térjen vissza a főoldalra.'],
+
+  // Cookie consent banner
+  ['Cookie settings', 'Süti beállítások'],
+  ['We use cookies to improve the site.', 'Sütiket használunk az oldal jobb működéséhez.'],
+  ['Necessary cookies are always active. Analytics and marketing cookies are loaded only after your consent.', 'A működéshez szükséges sütik mindig aktívak. Az analitikai és marketing sütik csak az Ön hozzájárulása után töltődnek be.'],
+  ['Read more in the Privacy Policy.', 'Részletek az Adatvédelmi tájékoztatóban.'],
+  ['Cookie categories', 'Sütikategóriák'],
+  ['Necessary', 'Szükséges'],
+  ['Essential for the site to work (language preference, theme).', 'Az oldal alapvető működéséhez (nyelvválasztó, téma).'],
+  ['Analytics', 'Analitika'],
+  ['Google Analytics — anonymised visitor statistics to improve the site.', 'Google Analytics — anonimizált látogatói statisztikák az oldal fejlesztéséhez.'],
+  ['Marketing', 'Marketing'],
+  ['Conversion measurement for ad campaigns. Inactive by default.', 'Konverziómérés hirdetési kampányokhoz. Alapból kikapcsolva.'],
+  ['Settings', 'Beállítások'],
+  ['Save choices', 'Választás mentése'],
+  ['Only necessary', 'Csak szükséges'],
+  ['Accept all', 'Mindet elfogadom'],
+  ['Manage cookie consent', 'Süti hozzájárulás kezelése'],
+  ['Revoke cookie consent', 'Süti hozzájárulás visszavonása'],
+
+  // Contact form (new wiring)
+  ['Sending…', 'Küldés folyamatban…'],
+  ['Thank you, we will respond within 24 hours.', 'Köszönjük, 24 órán belül válaszolunk.'],
+  ['Sending failed. Please try again, or write to us directly.', 'A küldés nem sikerült. Próbálja újra, vagy írjon nekünk közvetlenül.'],
+  ['This field is required.', 'Ez a mező kötelező.'],
+  ['Please enter a valid email address.', 'Adjon meg egy érvényes e-mail címet.'],
+  ['Or write directly to', 'Vagy írjon közvetlenül a'],
+  ['Submitting the form sends your message to MetalFusion via a secure form service.', 'Az űrlap elküldésével biztonságos űrlapszolgáltatáson keresztül juttatja el üzenetét a MetalFusionhöz.'],
+
+  // Imprint page
+  ['Imprint', 'Impresszum'],
+  ['Imprint - MetalFusion', 'Impresszum — MetalFusion'],
+  ['Mandatory company information under the Hungarian Electronic Commerce Act (Ekertv).', 'Kötelező cégadatok a magyar elektronikus kereskedelmi törvény (Ekertv.) szerint.'],
+  ['Company information', 'Cégadatok'],
+  ['Company name', 'Cég neve'],
+  ['Registered seat', 'Székhely'],
+  ['Company registration number', 'Cégjegyzékszám'],
+  ['Tax number', 'Adószám'],
+  ['Representative', 'Képviselő'],
+  ['Hosting provider', 'Tárhelyszolgáltató'],
+  ['Activity', 'Tevékenység'],
+  ['Custom precision CNC component manufacturing for industrial partners.', 'Egyedi precíziós CNC alkatrészgyártás ipari partnereknek.'],
 ] as const;
 
 const enToHu = new Map<string, string>(pairs);

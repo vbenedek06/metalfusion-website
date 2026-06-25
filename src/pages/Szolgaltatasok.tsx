@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import { services } from '../data/services';
 import { useSEO } from '../hooks/useSEO';
+import { canonical, localBusinessSchema, OG_IMAGE_PATH } from '../data/seo';
 import './Szolgaltatasok.css';
 
 const serviceVisuals: Record<string, { image: string; tag: string; icon: JSX.Element }> = {
   'cnc-maras': {
-    image: '/images/gallery/nagygep1.jpg',
+    image: '/images/gallery/nagygep1.webp',
     tag: '3- · 4-axis',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
@@ -18,7 +19,7 @@ const serviceVisuals: Record<string, { image: string; tag: string; icon: JSX.Ele
     ),
   },
   'cnc-esztergalas': {
-    image: '/images/gallery/nagygep3.jpg',
+    image: '/images/gallery/nagygep3.webp',
     tag: 'Ø3 – Ø250 mm',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
@@ -29,7 +30,7 @@ const serviceVisuals: Record<string, { image: string; tag: string; icon: JSX.Ele
     ),
   },
   'prototipusgyartas': {
-    image: '/images/gallery/m1d.png',
+    image: '/images/gallery/m1d.webp',
     tag: 'STEP · IGES · DWG',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
@@ -39,7 +40,7 @@ const serviceVisuals: Record<string, { image: string; tag: string; icon: JSX.Ele
     ),
   },
   'szerszamgyartas': {
-    image: '/images/gallery/nagygep4.jpg',
+    image: '/images/gallery/nagygep4.webp',
     tag: 'Custom design',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
@@ -48,7 +49,7 @@ const serviceVisuals: Record<string, { image: string; tag: string; icon: JSX.Ele
     ),
   },
   'kis-es-nagysorozat': {
-    image: '/images/gallery/1.jpg',
+    image: '/images/gallery/1.webp',
     tag: '10-10,000 pcs',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
@@ -59,7 +60,7 @@ const serviceVisuals: Record<string, { image: string; tag: string; icon: JSX.Ele
     ),
   },
   'komplett-mechanika': {
-    image: '/images/gallery/a-1.jpg',
+    image: '/images/gallery/a-1.webp',
     tag: 'Complete assembly',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
@@ -178,9 +179,12 @@ const tolerances = [
 
 export default function Szolgaltatasok() {
   useSEO({
-    title: 'Services - CNC milling, turning and tooling | MetalFusion',
+    title: 'Szolgáltatások — CNC megmunkálás Budapest | MetalFusion',
     description:
-      'CNC milling, turning, prototype manufacturing, low- and high-volume production, tooling and complete mechanical solutions from drawings or 3D models.',
+      'CNC marás, esztergálás, prototípusgyártás, szerszámgyártás, kis- és nagyszériás termelés, komplett mechanikai gyártás Budapesten műhelyrajzból.',
+    canonical: canonical('/szolgaltatasok'),
+    ogImage: OG_IMAGE_PATH,
+    jsonLd: localBusinessSchema(),
   });
 
   return (
@@ -189,7 +193,7 @@ export default function Szolgaltatasok() {
         eyebrow="Services"
         title={<>Complex manufacturing processes <br />through one partner.</>}
         lead="From machining to assembly: milling, turning, tooling and documented series production from technical drawings and/or 3D models."
-        bgImage="/images/gallery/nagygep2.jpg"
+        bgImage="/images/gallery/nagygep2.webp"
       />
 
       <div className="services-marquee">
@@ -221,10 +225,10 @@ export default function Szolgaltatasok() {
               const visual = serviceVisuals[s.slug];
               return (
                 <li key={s.slug} className="service-tile">
-                  <Link to="/kapcsolat" className="service-tile__link" aria-label={`Request a quote for ${s.title}`}>
+                  <Link to={`/szolgaltatasok/${s.slug}`} className="service-tile__link" aria-label={`${s.title} szolgáltatás részletei`}>
                     <div className="service-tile__media">
                       {visual?.image && (
-                        <img src={visual.image} alt={s.title} loading="lazy" />
+                        <img src={visual.image} alt={`${s.title} — MetalFusion CNC megmunkálás Budapesten`} loading="lazy" />
                       )}
                       <div className="service-tile__overlay" aria-hidden />
                       <span className="service-tile__num">{String(i + 1).padStart(2, '0')}</span>
@@ -251,7 +255,7 @@ export default function Szolgaltatasok() {
                       </ul>
 
                       <span className="service-tile__cta">
-                        Request a quote
+                        Részletek megtekintése
                         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
                           <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>

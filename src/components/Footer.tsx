@@ -72,6 +72,8 @@ export default function Footer() {
           <span className="footer__bottom-links">
             <Link to="/adatvedelem">Privacy policy</Link>
             <span aria-hidden>·</span>
+            <Link to="/impresszum">Imprint</Link>
+            <span aria-hidden>·</span>
             <span className="footer__meta">Precision machining · Budapest</span>
           </span>
         </div>

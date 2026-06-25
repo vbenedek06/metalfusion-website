@@ -1,12 +1,17 @@
 import PageHero from '../components/PageHero';
 import { useSEO } from '../hooks/useSEO';
+import { canonical, OG_IMAGE_PATH } from '../data/seo';
+import { useConsent } from '../hooks/useConsent';
 import './Adatvedelem.css';
 
 export default function Adatvedelem() {
+  const { consent, revoke } = useConsent();
   useSEO({
-    title: 'Privacy Policy - MetalFusion',
+    title: 'Adatvédelmi tájékoztató | MetalFusion',
     description:
-      'MetalFusion privacy information for contact form submissions and quote requests.',
+      'A MetalFusion adatkezelési tájékoztatója a kapcsolatfelvételhez és ajánlatkéréshez tartozó személyes adatok GDPR szerinti, jogszerű kezeléséről.',
+    canonical: canonical('/adatvedelem'),
+    ogImage: OG_IMAGE_PATH,
   });
 
   return (
@@ -95,9 +100,50 @@ export default function Adatvedelem() {
 
             <h2>9. Cookies</h2>
             <p>
-              The current codebase does not include external analytics or marketing cookie
-              integrations. If measurement, advertising or embedded third-party services are added
-              later, the cookie notice and consent management must be updated accordingly.
+              A weboldal csak az alapvető működéshez szükséges sütiket állítja be alapból
+              (nyelvválasztó, téma-preferencia, hozzájárulási állapot). Az analitikai és
+              marketing célú sütik kizárólag a látogató kifejezett, opt-in jellegű
+              hozzájárulása után aktiválódnak.
+            </p>
+            <ul>
+              <li>
+                <strong>Szükséges sütik (mindig aktív):</strong> <code>mf-lang</code>,{' '}
+                <code>mf-theme</code>, <code>mf-consent</code> — kliens oldali tárolásban
+                (localStorage), külső kiszolgálónak NEM küldjük.
+              </li>
+              <li>
+                <strong>Analitikai sütik (csak hozzájárulás után):</strong> Google Analytics
+                4 (<code>_ga</code>, <code>_ga_*</code>). Anonimizált IP-vel, kizárólag
+                aggregált látogatói statisztikákhoz. Felelős kezelő: Google Ireland Ltd.
+                Adatkezelési tájékoztatójuk:{' '}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer noopener">
+                  policies.google.com/privacy
+                </a>.
+              </li>
+              <li>
+                <strong>Marketing sütik (alapból kikapcsolva):</strong> Google Ads
+                konverziómérés, csak akkor töltődnek be, ha külön bekapcsolod a süti
+                beállításokban.
+              </li>
+            </ul>
+            <p className="privacy__consent-actions">
+              <strong>Hozzájárulás-kezelés:</strong>{' '}
+              {consent.decidedAt === null ? (
+                <span>Még nem rögzítettünk hozzájárulási döntést — a süti sáv az oldal alján jelenik meg.</span>
+              ) : (
+                <>
+                  Az aktuális hozzájárulása:{' '}
+                  <span className="privacy__pill">
+                    Analitika: {consent.analytics ? 'engedélyezve' : 'kikapcsolva'}
+                  </span>{' '}
+                  <span className="privacy__pill">
+                    Marketing: {consent.marketing ? 'engedélyezve' : 'kikapcsolva'}
+                  </span>
+                  <button type="button" className="privacy__revoke" onClick={revoke}>
+                    Hozzájárulás visszavonása
+                  </button>
+                </>
+              )}
             </p>
 
             <p className="privacy__updated">

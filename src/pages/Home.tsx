@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import ReferenceCard from '../components/ReferenceCard';
 import { references } from '../data/references';
 import { useSEO } from '../hooks/useSEO';
+import { canonical, localBusinessSchema, OG_IMAGE_PATH } from '../data/seo';
 import './Home.css';
 
 const serviceIcons: Record<string, JSX.Element> = {
@@ -100,9 +101,12 @@ const materials = ['Steel and stainless steel', 'Aluminium and brass', 'Engineer
 
 export default function Home() {
   useSEO({
-    title: 'MetalFusion - Precision CNC component manufacturing in Budapest',
+    title: 'MetalFusion — precíziós CNC alkatrészgyártás Budapesten',
     description:
-      'Custom low- and high-volume CNC machining, prototype manufacturing and tooling from technical drawings or 3D models.',
+      'Egyedi kis- és nagyszériás CNC alkatrészgyártás Budapesten. Precíziós megmunkálás, modern géppark, megbízható határidő, 24 órás ajánlat műhelyrajzból.',
+    canonical: canonical('/'),
+    ogImage: OG_IMAGE_PATH,
+    jsonLd: localBusinessSchema(),
   });
 
   const featuredRefs = references.slice(0, 4);
