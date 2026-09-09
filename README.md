@@ -2,7 +2,7 @@
 
 Marketing website for a real Budapest-based CNC precision manufacturing client (CNC milling, turning, prototyping, tooling, and batch production).
 
-**Status:** in active development — not yet live on its final production domain (see Known limitations below).
+**Status:** live at [metalfusion.eu](https://metalfusion.eu) — solo-built, in active development, minor content/SEO polish ongoing.
 
 ## What this is
 
@@ -28,10 +28,10 @@ React 18 · TypeScript · Vite · React Router v6 · Vitest
 
 This project is still in progress. Documented gaps I'm actively working through:
 
-- Contact form currently falls back to `mailto:` — a server-side submission is planned
-- No cookie-consent banner yet — required before analytics can go live (GDPR)
-- Legal notice page (impresszum) not yet built — required under Hungarian e-commerce law
-- Production domain not yet finalized/confirmed live
+- Contact form submits via Web3Forms when an API key is configured, with a `mailto:` fallback if it's missing or errors
+- Cookie-consent banner implemented (GDPR)
+- Legal notice page (`/impresszum`) implemented, per Hungarian e-commerce law
+- Production domain confirmed live: metalfusion.eu — `sitemap.xml` still references the old `metalfusion.hu` domain and needs updating
 
 ## Local development
 
